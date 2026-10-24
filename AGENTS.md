@@ -2,7 +2,7 @@
 
 Read `research/brief.md`, `research/decisions.md`, and the current literature/candidate notes before continuing.
 
-- Current owner-endorsed agenda: develop both approaches in `research/two-approach-agenda.md`. Architectural prevention means ground-up integration of transformer computation and verified code, not merely wrapping an ordinary LLM. The second approach is post-creation rewriting that preserves the original task. Specific full study and spending budget remain unselected.
+- Current owner-endorsed agenda: develop both approaches in `research/two-approach-agenda.md`. Architectural prevention means ground-up integration of transformer computation and verified code, not merely wrapping an ordinary LLM. The second approach is post-creation rewriting that preserves the original task. No full study selected. The owner-approved 12-call OpenRouter research batch ($5 ceiling) is **complete at $0.601760**; no continuing or unlimited inference authorization follows. See `results/openrouter-research-01/assessment.md` and the compute ledger. Model critiques/revisions contain independently corrected errors; do not adopt their impossibility claims as established facts.
 
 - Preserve exploratory scope. No full hackathon study has been selected. The owner explicitly authorized a local anti-steganography prototype; see `experiments/anti_stego/README.md`. Compare candidates and discuss a research question before expanding to a full experiment. Small feasibility checks are allowed when they discriminate between candidates.
 - Be skeptical: challenge weak assumptions, confounded designs, and novelty claims. Do not optimize for implementation convenience over contribution.

@@ -1,0 +1,84 @@
+## Adversarial Review: Architecturally Confined Neural Invariant Generation
+
+---
+
+### Objection 1: The Authorized Release Function Is Ill-Defined
+**Severity: Critical**
+
+**Premise:** The proposal states the released bit is exactly `F(x) = is_provable(x, fallback) ∨ is_provable(x, neural_guess)`.
+
+**Problem:** `is_provable(x, neural_guess)` is not a fixed semantic function of `x` alone—it depends on `θ` (private neural weights). A neural guess succeeds or fails depending on which invariant is generated, which depends on `m` and `θ`. So `F` is actually `F(x, θ, m)`, not `F(x)`. The verified-context architecture requires `F(x,z)` to be a *fixed trusted predicate* with `q` supplying arguments, not arbitrary executable code. This construction violates that foundational requirement: the "authorized result" is not independent of protected state.
+
+**Concrete counterexample:** Two private worlds with identical `x`, `P`, but different `θ₁, θ₂` where `θ₁` guesses a valid invariant and `θ₂` does not, and the fallback times out on both. World 1 releases `v=1`, World 2 releases `v=0`. The released bit reveals information about `θ`, which is protected state. This is not authorized disclosure.
+
+**Repair:** Redefine `F(x) = is_provable_by_any_means(x, P)` (the true mathematical provability, or bounded-fallback provability as the sole oracle). The neural phase must only *accelerate* reaching this fixed answer, never *change* it. This requires the fallback to be complete within `K_F` for any program where the neural guess could succeed—otherwise the neural phase can alter the released value.
+
+**Acceptance test:** Prove that for every `x`, every pair of private worlds `(θ₁,m₁)` and `(θ₂,m₂)` release the same `v`. This requires the fallback to be a complete decision procedure within `K_F`, not a heuristic that might fail where the neural guess succeeds.
+
+**Does repair preserve owner's goal?** Mostly yes, but it eliminates the "capability advantage" claim (the most interesting part of the proposal). If the fallback is complete, the neural phase only provides speed, not new capability—and speed is nullified by fixed-slot padding.
+
+---
+
+### Objection 2: The Capability Claim and the Padding Paradox Are Jointly Incoherent
+**Severity: High**
+
+**Premise:** The proposal claims two benefits: (a) efficiency and (b) capability (proving things the fallback cannot). The proposal acknowledges the padding paradox kills (a), then relies on (b).
+
+**Problem:** Benefit (b) requires the neural phase to succeed where the fallback fails. But from Objection 1, if the fallback can fail where the neural guess succeeds, the release is `F(x,θ,m)`, not `F(x)`. You cannot have both a fixed `F(x)` and neural-only capability. The proposal cannot simultaneously claim noninterference and a genuine capability extension.
+
+**No repair preserves both.** This is a structural contradiction, not a parameter-tuning issue. The owner's goal (architecturally confined, no steganography) requires `F(x)` to be fixed. Capability advantage requires `F` to depend on neural output in cases where the fallback fails. These are mutually exclusive given the proposal's construction.
+
+---
+
+### Objection 3: Invariant Verification Is Not Trivially Cheaper Than Solving
+**Severity: Moderate**
+
+**Premise:** The proposal assumes `K_V << K_F`, making verification fast relative to solving. The rejection criterion tests this empirically.
+
+**Problem:** For non-linear arithmetic invariants (the motivating domain), checking inductiveness itself requires discharging verification conditions, typically by calling the same solver (Z3 or similar) on the inductive check `I ∧ T ⊢ I'`. This is not syntactic checking; it is another SMT query. For hard non-linear instances, the verification query can be as expensive as the original query. The proposal's cost accounting (`K_V` as a fixed small tick budget) may be systematically wrong for exactly the hard cases where neural guidance is supposedly most valuable.
+
+**Evidence within packet:** The Polak–Schmidt APSP analogy (verified context, §10) is cited approvingly—but their verification is linear-time distance comparison, categorically cheaper than re-solving. Invariant inductiveness verification has no such categorical cheapness guarantee.
+
+**Repair:** Restrict to invariant classes where verification is syntactically checkable (e.g., linear arithmetic, fixed template invariants). This reduces the domain substantially and may eliminate the non-linear arithmetic motivation entirely.
+
+**Acceptance test:** For the proposed benchmark, measure `K_V` (inductiveness verification time) vs `K_F` (solver time) on the hard instances. If median `K_V > 0.1 × K_F`, the cost argument fails.
+
+---
+
+### Objection 4: Prior Art Gap—Neural Invariant Generation Systems
+**Severity: Moderate**
+
+The proposal lists "Code2Inv or LLM-based provers" as unverified leads and claims the delta is *confining the invariant to private memory*. This framing is incomplete.
+
+**Problem:** The architectural confinement of intermediate artifacts is already fully specified in the verified-context abstract machine (§9, §13): any intermediate private computation that is erased before release and does not affect the public transition beyond the declared `F` satisfies the existing extension rule. The invariant generation proposal is an *instantiation* of the existing architecture, not an extension of it. The proposal does not identify a new architectural mechanism; it identifies a new application domain. This does not advance the architecture research gate, which requires identifying a useful novel transformer architecture beyond named predecessors.
+
+**Severity is moderate rather than critical** because instantiation in a new domain could still be research-valuable if the domain provides a concrete positive answer to the efficiency or capability gates—but those are foreclosed by Objections 1–2.
+
+---
+
+### Objection 5: The Rejection Criterion Tests the Wrong Thing
+**Severity: Low-Moderate**
+
+The proposed rejection criterion uses a *perfect oracle* for the neural invariant. But the actual research question is whether a *learnable* neural model can supply useful invariants. An oracle test establishes an upper bound on capability but says nothing about learnability, generalization, or whether the neural model can be trained without the training process itself becoming a steganographic channel (a concern flagged in Tiwari et al., verified context).
+
+**Repair:** The benchmark should include: (i) oracle test (upper bound), (ii) a trained model test on held-out programs, and (iii) an accounting of training cost and data assumptions. Without (ii), a positive oracle result is not evidence that the architecture is useful.
+
+---
+
+## Summary Table
+
+| Objection | Severity | Repairable? | Repair Preserves Goal? |
+|---|---|---|---|
+| F depends on protected θ | Critical | Only by removing capability claim | Partially |
+| Capability vs. noninterference contradiction | Critical | No | N/A |
+| Verification cost assumption | Moderate | Yes, restrict domain | Yes, narrowed |
+| No new architectural mechanism | Moderate | Domain motivation only | Weakly |
+| Oracle ≠ learnable test | Low-moderate | Yes | Yes |
+
+---
+
+## Verdict: **Reject**
+
+The two critical objections are not independently repairable: fixing the noninterference violation (making `F(x)` independent of `θ`) eliminates the capability advantage that distinguishes this from a padded fallback solver with neural overhead. The proposal's most interesting claim—neural-only provability—is precisely what the architecture cannot release without violating the conditional-history invariant. What remains after repair is an efficiency-only claim that the padding paradox (acknowledged by the proposal itself) renders null.
+
+**What would change the verdict:** A domain where (a) the authorized `F(x)` is fixed and agreed on independently of neural output, (b) verification of a neural *certificate* is categorically cheaper than solving (as in APSP), and (c) the certificate class is rich enough that a neural model has a demonstrated learning advantage over symbolic enumeration. Shortest-path certificates already have this structure (verified context, Polak–Schmidt). The proposal needs an analogous domain for verification, not invariant generation.

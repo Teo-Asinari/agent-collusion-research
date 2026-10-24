@@ -1,0 +1,1016 @@
+{
+  "timestamp_utc": "2026-10-24T21:45:18.553207+00:00",
+  "authorized_batch_cap_usd": 5,
+  "account": {
+    "limit": 100,
+    "limit_remaining": 100,
+    "usage": 0,
+    "usage_daily": 0,
+    "is_free_tier": false
+  },
+  "shortlisted_models": [
+    {
+      "model": {
+        "id": "anthropic/claude-sonnet-4.6",
+        "name": "Anthropic: Claude Sonnet 4.6"
+      },
+      "endpoints": {
+        "id": "anthropic/claude-sonnet-4.6",
+        "name": "Anthropic: Claude Sonnet 4.6",
+        "created": 1771342990,
+        "description": "Sonnet 4.6 is Anthropic's most capable Sonnet-class model yet, with frontier performance across coding, agents, and professional work. It excels at iterative development, complex codebase navigation, end-to-end project management with...",
+        "architecture": {
+          "tokenizer": "Claude",
+          "instruct_type": null,
+          "modality": "text+image+file->text",
+          "input_modalities": [
+            "text",
+            "image",
+            "file"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Claude Platform on AWS | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000003",
+              "completion": "0.000015",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000003",
+              "input_cache_write": "0.00000375",
+              "input_cache_write_1h": "0.000006",
+              "discount": 0
+            },
+            "provider_name": "Claude Platform on AWS",
+            "tag": "claude-on-aws",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format",
+              "verbosity",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "web_search_20260209"
+              },
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              },
+              "openrouter:advisor": {
+                "type": "advisor_20260301"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Azure | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000003",
+              "completion": "0.000015",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000003",
+              "input_cache_write": "0.00000375",
+              "input_cache_write_1h": "0.000006",
+              "discount": 0
+            },
+            "provider_name": "Azure",
+            "tag": "azure/global",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "structured_outputs",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "max_completion_tokens",
+              "tools",
+              "tool_choice",
+              "response_format",
+              "verbosity",
+              "top_k",
+              "stop",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Anthropic | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000003",
+              "completion": "0.000015",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000003",
+              "input_cache_write": "0.00000375",
+              "input_cache_write_1h": "0.000006",
+              "discount": 0
+            },
+            "provider_name": "Anthropic",
+            "tag": "anthropic",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "stop",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format",
+              "verbosity",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "web_search_20260209"
+              },
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              },
+              "openrouter:advisor": {
+                "type": "advisor_20260301"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Amazon Bedrock | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000003",
+              "completion": "0.000015",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000003",
+              "input_cache_write": "0.00000375",
+              "input_cache_write_1h": "0.000006",
+              "discount": 0
+            },
+            "provider_name": "Amazon Bedrock",
+            "tag": "amazon-bedrock/global",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format",
+              "verbosity",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.000003",
+              "completion": "0.000015",
+              "web_search": "0.01",
+              "input_cache_read": "0.0000003",
+              "input_cache_write": "0.00000375",
+              "input_cache_write_1h": "0.000006",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/global",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "verbosity",
+              "structured_outputs",
+              "stop",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Amazon Bedrock | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.0000033",
+              "completion": "0.0000165",
+              "web_search": "0.01",
+              "input_cache_read": "0.00000033",
+              "input_cache_write": "0.000004125",
+              "input_cache_write_1h": "0.0000066",
+              "discount": 0
+            },
+            "provider_name": "Amazon Bedrock",
+            "tag": "amazon-bedrock/us",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format",
+              "verbosity",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Amazon Bedrock | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.0000033",
+              "completion": "0.0000165",
+              "web_search": "0.01",
+              "input_cache_read": "0.00000033",
+              "input_cache_write": "0.000004125",
+              "input_cache_write_1h": "0.0000066",
+              "discount": 0
+            },
+            "provider_name": "Amazon Bedrock",
+            "tag": "amazon-bedrock/eu-west-1",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "top_k",
+              "stop",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "response_format",
+              "verbosity",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.0000033",
+              "completion": "0.0000165",
+              "web_search": "0.01",
+              "input_cache_read": "0.00000033",
+              "input_cache_write": "0.000004125",
+              "input_cache_write_1h": "0.0000066",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/europe",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "response_format",
+              "tool_choice",
+              "tools",
+              "verbosity",
+              "structured_outputs",
+              "stop",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google | anthropic/claude-4.6-sonnet-20260217",
+            "model_id": "anthropic/claude-sonnet-4.6",
+            "model_name": "Anthropic: Claude Sonnet 4.6",
+            "context_length": 1000000,
+            "pricing": {
+              "prompt": "0.0000033",
+              "completion": "0.0000165",
+              "web_search": "0.01",
+              "input_cache_read": "0.00000033",
+              "input_cache_write": "0.000004125",
+              "input_cache_write_1h": "0.0000066",
+              "discount": 0
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/us-east5",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 128000,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "response_format",
+              "tool_choice",
+              "tools",
+              "verbosity",
+              "structured_outputs",
+              "stop",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:bash": {
+                "type": "bash_20250124"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          }
+        ]
+      }
+    },
+    {
+      "model": {
+        "id": "google/gemini-3.1-pro-preview",
+        "name": "Google: Gemini 3.1 Pro Preview"
+      },
+      "endpoints": {
+        "id": "google/gemini-3.1-pro-preview",
+        "name": "Google: Gemini 3.1 Pro Preview",
+        "created": 1771509627,
+        "description": "Gemini 3.1 Pro Preview is Google\u2019s frontier reasoning model, delivering enhanced software engineering performance, improved agentic reliability, and more efficient token usage across complex workflows. Building on the multimodal foundation...",
+        "architecture": {
+          "tokenizer": "Gemini",
+          "instruct_type": null,
+          "modality": "text+image+file+audio+video->text",
+          "input_modalities": [
+            "audio",
+            "file",
+            "image",
+            "text",
+            "video"
+          ],
+          "output_modalities": [
+            "text"
+          ]
+        },
+        "endpoints": [
+          {
+            "name": "Google | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.000001",
+              "completion": "0.000006",
+              "image": "0.000001",
+              "audio": "0.000001",
+              "input_audio_cache": "0.0000001",
+              "web_search": "0.014",
+              "internal_reasoning": "0.000006",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000001875",
+              "discount": 0,
+              "overrides": [
+                {
+                  "min_prompt_tokens": 200000,
+                  "prompt": "0.000002",
+                  "completion": "0.000009",
+                  "audio": "0.000002",
+                  "input_audio_cache": "0.0000002",
+                  "input_cache_read": "0.0000002"
+                }
+              ]
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/global/flex",
+            "service_tier": "flex",
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "stop",
+              "structured_outputs",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": null,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 0,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "google_search"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google AI Studio | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.000001",
+              "completion": "0.000006",
+              "image": "0.000001",
+              "audio": "0.000001",
+              "input_audio_cache": "0.0000001",
+              "web_search": "0.014",
+              "internal_reasoning": "0.000006",
+              "input_cache_read": "0.0000001",
+              "input_cache_write": "0.0000001875",
+              "discount": 0,
+              "overrides": [
+                {
+                  "min_prompt_tokens": 200000,
+                  "prompt": "0.000002",
+                  "completion": "0.000009",
+                  "audio": "0.000002",
+                  "input_audio_cache": "0.0000002",
+                  "input_cache_read": "0.0000002"
+                }
+              ]
+            },
+            "provider_name": "Google AI Studio",
+            "tag": "google-ai-studio/flex",
+            "service_tier": "flex",
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "google_search"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.000002",
+              "completion": "0.000012",
+              "image": "0.000002",
+              "audio": "0.000002",
+              "input_audio_cache": "0.0000002",
+              "web_search": "0.014",
+              "internal_reasoning": "0.000012",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000000375",
+              "discount": 0,
+              "overrides": [
+                {
+                  "min_prompt_tokens": 200000,
+                  "prompt": "0.000004",
+                  "completion": "0.000018",
+                  "audio": "0.000004",
+                  "input_audio_cache": "0.0000004",
+                  "input_cache_read": "0.0000004"
+                }
+              ]
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/global",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "stop",
+              "structured_outputs",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 99.93055555555556,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "google_search"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google AI Studio | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.000002",
+              "completion": "0.000012",
+              "image": "0.000002",
+              "audio": "0.000002",
+              "input_audio_cache": "0.0000002",
+              "web_search": "0.014",
+              "internal_reasoning": "0.000012",
+              "input_cache_read": "0.0000002",
+              "input_cache_write": "0.000000375",
+              "discount": 0,
+              "overrides": [
+                {
+                  "min_prompt_tokens": 200000,
+                  "prompt": "0.000004",
+                  "completion": "0.000018",
+                  "audio": "0.000004",
+                  "input_audio_cache": "0.0000004",
+                  "input_cache_read": "0.0000004"
+                }
+              ]
+            },
+            "provider_name": "Google AI Studio",
+            "tag": "google-ai-studio",
+            "service_tier": null,
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 97.80590717299577,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "google_search"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.0000036",
+              "completion": "0.0000216",
+              "image": "0.0000036",
+              "audio": "0.0000036",
+              "input_audio_cache": "0.00000036",
+              "web_search": "0.014",
+              "internal_reasoning": "0.0000216",
+              "input_cache_read": "0.00000036",
+              "input_cache_write": "0.000000675",
+              "discount": 0,
+              "overrides": [
+                {
+                  "min_prompt_tokens": 200000,
+                  "prompt": "0.0000072",
+                  "completion": "0.0000324",
+                  "audio": "0.0000072",
+                  "input_audio_cache": "0.00000072",
+                  "input_cache_read": "0.00000072"
+                }
+              ]
+            },
+            "provider_name": "Google",
+            "tag": "google-vertex/global/priority",
+            "service_tier": "priority",
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "stop",
+              "structured_outputs",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": 100,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "google_search"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          },
+          {
+            "name": "Google AI Studio | google/gemini-3.1-pro-preview-20260219",
+            "model_id": "google/gemini-3.1-pro-preview",
+            "model_name": "Google: Gemini 3.1 Pro Preview",
+            "context_length": 1048576,
+            "pricing": {
+              "prompt": "0.0000036",
+              "completion": "0.0000216",
+              "image": "0.0000036",
+              "audio": "0.0000036",
+              "input_audio_cache": "0.00000036",
+              "web_search": "0.014",
+              "internal_reasoning": "0.0000216",
+              "input_cache_read": "0.00000036",
+              "input_cache_write": "0.000000675",
+              "discount": 0,
+              "overrides": [
+                {
+                  "min_prompt_tokens": 200000,
+                  "prompt": "0.0000072",
+                  "completion": "0.0000324",
+                  "audio": "0.0000072",
+                  "input_audio_cache": "0.00000072",
+                  "input_cache_read": "0.00000072"
+                }
+              ]
+            },
+            "provider_name": "Google AI Studio",
+            "tag": "google-ai-studio/priority",
+            "service_tier": "priority",
+            "quantization": "unknown",
+            "max_completion_tokens": 65536,
+            "max_prompt_tokens": null,
+            "supported_parameters": [
+              "reasoning",
+              "include_reasoning",
+              "max_tokens",
+              "temperature",
+              "top_p",
+              "seed",
+              "response_format",
+              "tools",
+              "tool_choice",
+              "structured_outputs",
+              "reasoning_effort"
+            ],
+            "supports_tool_choice": {
+              "none": true,
+              "auto": true,
+              "required": true,
+              "function": true
+            },
+            "status": 0,
+            "uptime_last_30m": 100,
+            "uptime_last_5m": null,
+            "uptime_last_1d": 100,
+            "supports_implicit_caching": false,
+            "native_tools": {
+              "openrouter:web_search": {
+                "type": "google_search"
+              }
+            },
+            "supports_voice_cloning": false,
+            "supports_multiple_audio_references": false,
+            "supports_image_reference": false,
+            "supports_diarization": false,
+            "latency_last_30m": null,
+            "throughput_last_30m": null
+          }
+        ]
+      }
+    }
+  ]
+}

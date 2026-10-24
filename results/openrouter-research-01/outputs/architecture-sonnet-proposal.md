@@ -1,0 +1,72 @@
+## Proposed Next Move: Content Release via Canonical Minimum Selection
+
+### Specific Useful Capability
+
+The current machine releases one bit. The first meaningful extension is releasing *which record* matched—necessary for any retrieval task beyond existence testing. The problem: if multiple records satisfy P(q,·), the predictor's choice of candidate j selects among valid answers, giving the sender a steganographic degree of freedom even when the Boolean F is fixed.
+
+**Target capability:** release the lexicographically minimum matching record (or ⊥), deterministically independent of predictor choice j.
+
+---
+
+### Operational Construction
+
+Extend the private accumulator from a single bit v to a pair (found: bit, min_rec: b-bit), initialized to (0, 0^b).
+
+| Phase | Transition |
+|---|---|
+| B neural ticks | Unchanged; predictor writes j ∈ 1..N |
+| K candidate ticks | Evaluate P(q, z_j); if 1, set found=1, min_rec=z_j |
+| N blocks of K+b ticks | For i=1..N, i≠j: evaluate P(q,z_i); if 1, set found=1 and if z_i <_lex min_rec then min_rec=z_i. Pad to fixed K+b ticks per block. |
+| J readout ticks | G reads only (found, min_rec) and public state; releases min_rec if found=1, else ⊥ |
+
+The total time is B + (N+1)(K+b) + J, fixed and independent of j, predicate outcomes, and record content beyond the lex comparisons.
+
+---
+
+### Exact Guarantee / Utility Contract
+
+**Claim (informal):** The released value is a deterministic function of {z_i : P(q,z_i) = 1} alone, independent of j, theta, H, or any private state not captured in that set.
+
+**Argument:** min_rec after the sweep equals the lex-minimum over all i where P(q,z_i)=1, regardless of which i the predictor nominated. If j is a true positive: min_rec is initialized to z_j, then potentially updated by sweep; if a smaller matching record exists, the sweep finds it. If j is a false positive: found remains 0 after the candidate phase; the sweep sets found and min_rec from actual matches. If j is a true positive and the unique match: sweep finds no update; min_rec = z_j, correct. The conditional-history invariant of §11 holds: two private worlds with identical {(i, P(q,z_i))} and identical matching record contents release identical frames. Different j values in the same world produce the same output.
+
+**Assumption:** lex ordering on b-bit strings is a fixed public total order, independent of private state. Record content z_i is immutable during the invocation (already in spec). Predicate correctness is inherited from the Boolean case.
+
+---
+
+### Closest Predecessor and Delta
+
+**Pandey et al. §V-C** gives task-only canonicalization with zero-error release and key-aware leakage bounds. The construction there is conceptually aligned: release is determined by task answer, not sender witness.
+
+**Delta (unverified):** Pandey et al.'s Proposition V.3 gives distributional/average-case bounds under balanced conditional attributes. The construction here gives a *per-instance* deterministic guarantee: for every fixed record frame, every predictor output produces the identical released bitstring. Whether this per-instance determinism is strictly stronger than or subsumed by their framework requires reading their full proof, which has not been done. Do not claim novelty.
+
+**LLMbda and the rewrite proposal** already handle unique-output tasks. This extends to the multi-match case within the closed machine, which is a concrete step, not a new principle.
+
+---
+
+### Most Damaging Counterexample
+
+**Predictor advantage is zero for this task.** The sweep must visit all N records to find the minimum regardless of j's correctness. The predictor's only remaining value is early termination of the *existence* sub-question—but min-finding requires the full pass anyway. The cost is B + (N+1)(K+b) + J in all cases; there is no expected-case improvement over a sequential scan without a predictor. If the goal is useful efficiency, this construction provides none. It is a correctness argument only.
+
+**Content-level steganography is not addressed.** If the sender embeds covert data in z_i's content itself, min_rec releases it faithfully—that is authorized disclosure of record content, outside the architecture's scope. The construction eliminates *selection* steganography among valid answers, not record-content steganography.
+
+**Lex ordering leaks structure.** Releasing the lex-min record reveals that no matching record with a smaller encoding exists. Depending on the record encoding, this is additional authorized information beyond the Boolean. The authorization contract must explicitly cover this disclosure; the current §9 spec does not.
+
+---
+
+### Full Computation Cost
+
+Per query: B neural ticks + (N+1)(K+b) predicate+comparison ticks + J readout ticks. The b-tick lex comparison must be charged explicitly; for large b this is non-negligible. Descriptor/predictor build cost is unchanged from §10. Net: strictly worse than the Boolean machine in wall time; predictor provides no savings. A strong comparator is a plain sorted index on predicate-matching record hashes: O(log N) lookup, O(1) minimum, no neural cost.
+
+---
+
+### Bounded Next Check (Rejection Criterion)
+
+**Finite check:** Fix N=3, b=8, K=1 (equality predicate on one byte). Enumerate all 2^24 record triples × 3 predictor choices j ∈ {1,2,3}. For each triple, compute expected lex-min matching record independently, then compute machine output for each j. Verify: (a) all three j values produce identical output for every triple—this tests j-independence; (b) output equals the independently computed lex-min—this tests correctness. If any mismatch is found, the construction is wrong. This is ~50M cases, runtime under ten minutes in standard Python.
+
+**Rejection condition:** Any (record triple, j-pair) with differing outputs, or any mismatch with independent lex-min computation, rejects the construction. If the check passes, the construction is correct for this bounded instance; it does not establish novelty, efficiency, or general utility.
+
+---
+
+### Assessment
+
+This is a concrete, checkable extension of the Boolean machine to content release with a deterministic j-independence guarantee. It is not novel in principle, provides no efficiency benefit, and requires an updated authorization contract. Its value is as a precise capability upgrade with a falsifiable test—suitable as the next bounded artifact, not as a research contribution. The unresolved technical question that would constitute a real advance: **can the predictor provide correctness-preserving shortcuts for minimum-finding, not just existence, under a verifiable certificate scheme?** That requires a new algorithmic idea, not more machine specification.

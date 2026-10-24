@@ -2,13 +2,15 @@
 
 Private exploratory research workspace for the Apart Research AI Collusion Research Sprint, October 23–25, 2026.
 
-**Status: no full hackathon study selected.** At the owner's request, a local scripted [anti-steganography prototype](experiments/anti_stego/README.md) now tests task-aware release protocols and an explicit surviving semantic channel. No model inference expenditure has been incurred.
+**Status: no full hackathon study selected.** A local scripted [anti-steganography prototype](experiments/anti_stego/README.md) tests task-aware release protocols and a surviving semantic channel. The first hosted research batch completed for **$0.601760**; no model-based steganography experiment or training has run.
 
-**Current research agenda:** develop two approaches in parallel—[a ground-up learned/verified architecture and task-preserving steganography removal](research/two-approach-agenda.md). Specific theorem, task, full experiment and inference budget remain unselected.
+**Current research agenda:** develop two approaches in parallel—[a ground-up learned/verified architecture and task-preserving steganography removal](research/two-approach-agenda.md). Specific theorem, task and full experiment remain unselected; the one approved 12-call inference batch is complete, with no continuing budget.
 
 First delegated research passes are complete: [architecture proposal](research/workstreams/architecture/proposal.md) and [task-preserving reconstruction proposal](research/workstreams/task-preserving-rewrite/proposal.md). Both record limitations and source-reading scope; neither establishes novelty or a general security theorem.
 
 [Adversarial review outcome](research/reviews/outcome.md): two review/revision rounds sharpened both restricted mechanisms and their failure models. Useful efficiency, generality and novelty remain open.
+
+[First OpenRouter batch](results/openrouter-research-01/assessment.md): 12 cross-family research calls completed for $0.601760 within the approved $5 cap. Independent checks caught both proposal failures and invalid reviewer/impossibility claims; no new design or novelty was validated.
 
 - [Research brief](research/brief.md): enduring context and constraints.
 - [Literature](research/literature.md): source-verified claims, assumptions, and limitations.

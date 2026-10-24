@@ -41,3 +41,4 @@ credentials*
 *.log
 results/raw/
 references/pdfs/
+.run.lock

@@ -1,0 +1,107 @@
+{
+  "created_utc": "2026-10-24T21:48:30.359497+00:00",
+  "authorized_cap_usd": "5.00",
+  "max_requests": 12,
+  "max_output_tokens_per_request": 5000,
+  "max_prompt_bytes": 95000,
+  "concurrency": 2,
+  "worst_case_operational_reservation_usd": "4.82252400",
+  "models": {
+    "sonnet": {
+      "id": "anthropic/claude-sonnet-4.6",
+      "provider_tag": "anthropic",
+      "endpoint_name": "Anthropic | anthropic/claude-4.6-sonnet-20260217",
+      "pricing": {
+        "prompt": "0.000003",
+        "completion": "0.000015",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000003",
+        "input_cache_write": "0.00000375",
+        "input_cache_write_1h": "0.000006",
+        "discount": 0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "gemini": {
+      "id": "google/gemini-3.1-pro-preview",
+      "provider_tag": "google-ai-studio",
+      "endpoint_name": "Google AI Studio | google/gemini-3.1-pro-preview-20260219",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000012",
+        "image": "0.000002",
+        "audio": "0.000002",
+        "input_audio_cache": "0.0000002",
+        "web_search": "0.014",
+        "internal_reasoning": "0.000012",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.000000375",
+        "discount": 0,
+        "overrides": [
+          {
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004",
+            "completion": "0.000018",
+            "audio": "0.000004",
+            "input_audio_cache": "0.0000004",
+            "input_cache_read": "0.0000004"
+          }
+        ]
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "reasoning_effort"
+      ]
+    }
+  },
+  "packets": {
+    "architecture": {
+      "path": "results/openrouter-research-01/packet-architecture.md",
+      "sha256": "a886d231d4322b16b08ba7788e8b777340dd74b4f831c837e796be7659204110"
+    },
+    "task-preserving-rewrite": {
+      "path": "results/openrouter-research-01/packet-task-preserving-rewrite.md",
+      "sha256": "92698759c255505e7c2bee5bba52f2d33bfa69b05b0a196c8cddcc8c5917f67c"
+    }
+  },
+  "stages": [
+    "proposal",
+    "cross_family_critique",
+    "revision"
+  ],
+  "design": "Two reciprocal proposer/critic chains per direction; four chains x three calls. No model tool use or live literature retrieval.",
+  "price_note": "Input/output endpoint snapshot; provider max_price matches snapshot, no fallback or paid retries. No explicit cache writes, paid tools, search or plugins.",
+  "status": "complete",
+  "started_utc": "2026-10-24T21:50:06.085504+00:00",
+  "account_usage_delta_usd": "0.433056",
+  "finished_utc": "2026-10-24T21:55:00.002272+00:00",
+  "actual_reported_cost_usd": "0.601760",
+  "attempted_requests": 12,
+  "completed_requests": 12,
+  "account_usage_delta_usd_reconciled": "0.60176",
+  "account_reconciliation_status": "Matches sum of all 12 response usage.cost values",
+  "runner_sha256": "e0bf5f6c9ce36f678e5a1b8054d76bec453c9cb293993785976f0e38e03e2bc2",
+  "independent_checks_sha256": "73518d88ebc42e7948e43cddc8de7026ddd6af951f1b5877df7342c644a7fb80"
+}

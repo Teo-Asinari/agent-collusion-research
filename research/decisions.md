@@ -111,3 +111,16 @@
 - Architecture now specifies a closed bounded predictor/verified-witness machine and conditional-history argument, with explicit preprocessing cost and primitive extension obligations. Learned utility, novelty and mechanical/deployment verification remain open.
 - Rewrite now supplies an executable finite certificate-reconstruction kernel: all 280,000 bounded content rows agree including invalid-input fallback; exposing length/fallback diagnostics creates a perfect distinguishing channel. This is not a general code sanitizer, cost advantage or physical-security result.
 - Added close certifying-algorithm, prediction-assisted algorithm and iO comparisons without novelty claims. No paid inference, training, dependency installation or full study. Detailed disposition and unresolved original objectives are preserved in `research/reviews/outcome.md`.
+
+## 2026-10-24 — first bounded OpenRouter research batch authorized
+
+- Owner explicitly accepted the proposed $5 total ceiling for 12 cross-family proposal/critique/revision calls across both research approaches. This supersedes earlier no-budget status only for this batch, not a full experiment or training run.
+- Verified authentication and targeted current endpoint pricing; selected Sonnet 4.6 and Gemini 3.1 Pro Preview with pinned providers. Built a conservative reservation/accounting runner; six local spending-state tests passed. Source packets exclude credentials and preserve prior-art/claim limits.
+- Prepared plan and metadata under `results/openrouter-research-01/`; actual execution and independently assessed outcomes will be recorded next. No model-written proof or novelty claim will be accepted without checking.
+
+## 2026-10-24 — approved OpenRouter batch completed and independently assessed
+
+- All 12 planned calls completed with pinned Anthropic Sonnet 4.6 and Google AI Studio Gemini 3.1 Pro Preview. Actual charge $0.601760, reconciled with key usage after an initially delayed usage snapshot. No retries or further model requests.
+- Critiques correctly caught selective proof-success signaling and a minimum-record initialization bug. They also made false mathematical objections and unsupported global complexity/utility claims; final model revisions sometimes accepted those errors. Primary-agent checks and primary AKS/mathlib references correct these claims.
+- No useful novel architecture or general sanitizer was established. Neither original research direction is abandoned on the basis of model consensus. Assessment preserves exact prompts/responses, raw versus accepted claims, source-reading scope and reproducible elementary counterexamples.
+- The one 12-call allowance is complete. Unspent dollars do not imply authorization for another batch, a full experiment or training. See `results/openrouter-research-01/assessment.md` and compute ledger.
