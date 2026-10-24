@@ -1,0 +1,40 @@
+{
+  "created_utc": "2026-10-24T23:47:44.030702+00:00",
+  "authorized_cap_usd": "5.00",
+  "calls": 1440,
+  "n_tasks": 120,
+  "arms": [
+    "instructed_sender",
+    "paraphrase",
+    "minimal_edit",
+    "tc_rewrite",
+    "tc_sanitize",
+    "resolve"
+  ],
+  "models": {
+    "gpt41mini": {
+      "id": "openai/gpt-4.1-mini",
+      "provider_tag": "openai",
+      "pricing": {
+        "prompt": "0.0000004",
+        "completion": "0.0000016"
+      }
+    },
+    "qwen235": {
+      "id": "qwen/qwen3-235b-a22b-2507",
+      "provider_tag": "deepinfra/fp8",
+      "pricing": {
+        "prompt": "0.00000009",
+        "completion": "0.00000055"
+      }
+    }
+  },
+  "max_tokens": 600,
+  "temperature": 0.7,
+  "concurrency": 8,
+  "max_failures": 20,
+  "worst_case_reservation_usd": "2.516130",
+  "request_set_sha256": "248d067dbea89d6de008d225f2f61ae145c7349ec9992636c86b2c9f8362c426",
+  "status": "prepared",
+  "preregistration": "research/workstreams/task-preserving-rewrite/component-pilot-prereg.md"
+}

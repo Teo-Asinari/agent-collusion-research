@@ -124,3 +124,10 @@
 - Critiques correctly caught selective proof-success signaling and a minimum-record initialization bug. They also made false mathematical objections and unsupported global complexity/utility claims; final model revisions sometimes accepted those errors. Primary-agent checks and primary AKS/mathlib references correct these claims.
 - No useful novel architecture or general sanitizer was established. Neither original research direction is abandoned on the basis of model consensus. Assessment preserves exact prompts/responses, raw versus accepted claims, source-reading scope and reproducible elementary counterexamples.
 - The one 12-call allowance is complete. Unspent dollars do not imply authorization for another batch, a full experiment or training. See `results/openrouter-research-01/assessment.md` and compute ledger.
+
+## 2026-10-24 — parallel A/B workers and $5 batches
+
+- Owner authorized parallel agents for Approach A and Approach B, with OpenRouter spend in **batches of $5 hard cap per batch per agent**. Each batch needs a stop-and-report before the next; this entry authorizes exactly one $5 batch for the B worker.
+- B framing is the worker's default, not an owner selection: the component-label question from `research/workstreams/task-preserving-rewrite/local-rewrite-obstruction.md`. Preregistered in `research/workstreams/task-preserving-rewrite/component-pilot-prereg.md` before any paid call. The pilot is exploratory.
+- Models: `openai/gpt-4.1-mini` (openai) and `qwen/qwen3-235b-a22b-2507` (deepinfra/fp8). They were chosen as cheap, non-reasoning, seed-supporting endpoints from different families, so the pilot can have 120 task units. The worst-case reservation is $2.52 for 1,440 calls.
+- Deviation from the 01 runner: a failed HTTP call keeps its reservation and is recorded as a failed unit rather than halting at once; the run halts after 20 failures, on any reservation overrun, or on an answer without reported cost.
