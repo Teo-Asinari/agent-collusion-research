@@ -106,3 +106,7 @@ The starter additionally links Fish pricing, Lin market division, Aharon focal p
 - Keep statistical dependence, information transfer, policy violation, outsider harm, and deliberate agreement separate. None alone identifies all the others.
 - Capacity, choice, interoperability, harm, and adaptive persistence require separate measurements and denominators. Pre-register which step the study addresses.
 - Candidate gaps below are provisional. An experiment may be useful as a careful replication or methodological stress test without being a novel communication mechanism.
+
+## Formal hybrid architecture follow-up
+
+[Formal hybrid architectures](formal-hybrid-architectures.md) records LLMbda's machine-checked but termination-insensitive guarantee, Fides's explicit-flow limitation, hyperproperty-based specifications and related composition work. A general claim that a verified wrapper prevents all steganography or collusion is not established.

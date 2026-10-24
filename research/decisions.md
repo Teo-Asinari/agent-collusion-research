@@ -80,3 +80,8 @@
 - Reviewed targeted primary sources on deterministic execution, seL4 time protection, thermal and robotic motion channels, and collusion-free physical/mediated protocols. Added abstract-level formal time-protection, AutoCC and runtime-assurance references with explicit scope.
 - Recorded key limits: 2019 hardware/time-protection assumptions, generic-model versus complete deployed-system verification, external timing rate limits, physical channels excluded by the 2005 protocol theorem, and the single abort-presence bit allowed in the 2009 mediated model.
 - Both broad directions have established prior art. Preserved exploratory candidates with controls and feasibility limits; no claim of a novel universal steganography-free environment, no full project selected, no hardware deployment or model experiment.
+
+## 2026-10-24 — formal hybrid architecture remains exploratory
+
+- Owner asked whether formal methods could yield an LLM architecture that never uses steganography or colludes. Reviewed close primary precedents and recorded precise guarantee targets and assumptions in `formal-hybrid-architectures.md`.
+- LLMbda already supplies machine-checked probabilistic noninterference with termination qualifications; Fides explicitly leaves control-flow/side channels outside its secrecy guarantee. No broad novelty claim, implementation or selected study follows.
