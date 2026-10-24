@@ -2,6 +2,8 @@
 
 2026-10-24. **No study selected.** These refine the owner's interest in practical barriers and active prevention. [Prior-art review](stego-prior-art.md) supplies the qualifications. Cost estimates below are planning sketches, not approved spend or a power analysis.
 
+**Subsequent focus:** the owner requested prior art on substantive task choices and the cost of replacing useful work. [Semantic erasure](semantic-erasure.md) records the direct predecessors, counterexamples and a further replacement-cost candidate. The comparison below remains exploratory; token-sampling schemes are not the only research scope.
+
 ## A. How much receiver-side assistance does a successful demonstration require?
 
 **Question.** Do isolated receivers recover payloads as reliably as same-process or encoder-assisted evaluations?

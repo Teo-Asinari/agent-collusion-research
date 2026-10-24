@@ -1,0 +1,128 @@
+{
+  "review_date": "2026-10-24",
+  "scope": "Targeted prior art on substantive-choice carriers and task-preserving erasure; not exhaustive.",
+  "papers": [
+    {
+      "name": "watermarks-sand",
+      "url": "https://raw.githubusercontent.com/mlresearch/v235/main/assets/zhang24o/zhang24o.pdf",
+      "sha256": "6a2cc716e86b3a805a637667a0ab9a2f4671f81f3a73de40b8802a2ff1f29a00",
+      "pages": 30,
+      "review_depth": "Targeted Introduction assumptions, task-quality versus semantic equivalence, Section 4 and Theorem 2; not a full proof audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "sandcastles",
+      "url": "https://aclanthology.org/2025.acl-long.1436.pdf",
+      "sha256": "b5277972205f027014701278b9854c80dcd425ffb27ba7e08f27849f4458f896",
+      "pages": 38,
+      "review_depth": "Targeted setup, lineage attribution, Section 5 discussion and limitations. Not reproduced.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "perry-robust",
+      "url": "https://arxiv.org/pdf/2504.08977v1",
+      "sha256": "ebf64a35373cec760865c4bb1befb7822584400ebd39afc12737b1d8f828835f",
+      "pages": 36,
+      "review_depth": "Targeted Sections 4-7, evaluation costs and Appendix B.3 assumption/proof passages. No full proof certification.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "reverse-firewalls",
+      "url": "https://www.iacr.org/archive/eurocrypt2015/90560152/90560152.pdf",
+      "error": "HTTP Error 403: Forbidden",
+      "review_depth": "Primary abstract and search passages only; full PDF request blocked.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "stego-free-zk",
+      "url": "https://ntt-research.com/wp-content/uploads/2023/01/Steganography-Free-Zero-Knowledge.pdf",
+      "sha256": "569eeb40a73ed925b4ae504bae393a3687f427433361a31c056b33961b899142",
+      "pages": 34,
+      "review_depth": "Section 1 definitions/construction overview and Section 7 impossibility statement. No proof audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "code-transformations",
+      "url": "https://www.johnsolis.com/publications/stego-wiis11.pdf",
+      "sha256": "e5c4721f7b334b12b8d0de4d70cf695519d5048e3b42d6449a353ad88559899b",
+      "pages": 5,
+      "review_depth": "Abstract, term-rewriting overview and conclusion/future work. Implementation explicitly future work.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "roger-greenblatt",
+      "url": "https://arxiv.org/pdf/2310.18512v2",
+      "pages": 25,
+      "sha256": "f482f2baff935088b53f30b22c0f7805af91a5ff458490b9f5274c2bf871f1ef",
+      "characters": 65188,
+      "review_depth": "Re-read Section 7.2 and surrounding limitations."
+    },
+    {
+      "name": "conceptual",
+      "url": "https://arxiv.org/pdf/2605.26537",
+      "pages": 14,
+      "sha256": "cc9326468ae9f78f1716c92fb2c12c036f1939f52b694e03ac78bf39b18c2f16",
+      "characters": 54044,
+      "review_depth": "Earlier mechanism/Section 4.9 and limitations reading reused; not a new reproduction."
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/ChihshengJ/robust-steganography",
+    "commit": "6264b4ac1f3d2ceff47a5b51ef7b09a3c9726d85",
+    "review": "Selected manuscript sections and static citation-channel functions only; no execution or publication-venue verification.",
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "b8f53fd76ceb3e1fe2736e62b8e5df2c7e78e09dba038988c4e0c66e4d84c493"
+      },
+      {
+        "path": "LICENSE.txt",
+        "sha256": "31ba5515b365d2a0a35761e48ea86a2b7ff86875737063a194f14a82e239a98f"
+      },
+      {
+        "path": "paper/src-realm-2026-cam/sections/00-abstract.tex",
+        "sha256": "abf4f90d3614a14d2275b2f8ffdf11ead7dd630e10fcda3c851481ba8380297c"
+      },
+      {
+        "path": "paper/src-realm-2026-cam/sections/03-setup.tex",
+        "sha256": "98c00d52a1169907076df8df6a5c65cc07e222f49adde72eb85bb2219a670305"
+      },
+      {
+        "path": "paper/src-realm-2026-cam/sections/04-main-results.tex",
+        "sha256": "e8f15708f56c3ed7435263c4f12f102d5d78fae495b2b036d9155b04120aa721"
+      },
+      {
+        "path": "paper/src-realm-2026-cam/sections/21-limitations.tex",
+        "sha256": "c16caa3e4527cb7e94a978ff7798fa7fa04ce8cd46d2249d60feffab80ca8ddb"
+      },
+      {
+        "path": "src/systems/core/litreview.py",
+        "sha256": "6bd340cf578dde59e873f7c1d7f7db68ecf07e604f160882933b648ee45e440a"
+      }
+    ]
+  },
+  "additional_primary_sources": [
+    {
+      "url": "https://eprint.iacr.org/2014/758",
+      "scope": "Primary abstract; full paper access failed."
+    },
+    {
+      "url": "https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2020.55",
+      "scope": "Primary abstract only."
+    },
+    {
+      "url": "https://eprint.iacr.org/2025/1898",
+      "scope": "Primary abstract and author/institution metadata. PDF access failed."
+    },
+    {
+      "url": "https://arxiv.org/abs/cs/0609072v2",
+      "scope": "Primary abstract; reductions/theorems not inspected."
+    },
+    {
+      "url": "https://dspace.mit.edu/entities/publication/e3efeaef-ab06-4226-95e5-fc8813714bda",
+      "scope": "Institutional thesis abstract only."
+    }
+  ],
+  "execution": "No upstream code or model inference executed. No paid APIs, dependencies installed or GPU allocation.",
+  "storage": "Only original notes and metadata committed. PDFs and third-party source remain outside research repository."
+}

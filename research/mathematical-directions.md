@@ -1,5 +1,7 @@
 # Mathematical connections for active anti-steganography
 
+**Prior-art update:** [Watermarks in the Sand and Sandcastles in the Storm](semantic-erasure.md) already formalize/test task-quality-preserving walks and practical mixing obstacles. Our transformation-graph proposal below is therefore a restatement/application of existing research, not a new connection. The same review adds solution-reconfiguration complexity as an adjacent, carefully qualified direction.
+
 2026-10-24. Owner asked whether knot theory, topology and complexity can clarify prevention/erasure. These are conceptual tools and candidate questions, not novelty claims or a selected full experiment.
 
 ## Equivalence classes and constrained release

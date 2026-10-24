@@ -49,6 +49,7 @@ The owner's later focus is active prevention and practical limits of secure cons
 2. Which utility-preserving interventions suppress delivery after codebook repair, resynchronization or semantic encoding? Measure surviving information, not only exact-message failure.
 3. How much private sampling, setup and repair computation is required per delivered bit? Distinguish algebraic simulation from live end-to-end generation.
 4. If the defender controls final sampling, can agents communicate through input/context choice or selective retries instead?
+5. Can a task-preserving sanitizer replace substantive choices cheaply, or do valid-solution structure and generation capability create a measurable replacement-cost gap? [Direct prior art and proposed controls](semantic-erasure.md) distinguish this from merely preserving the sender's original meaning.
 
 ## Earlier focused discussion prompt
 

@@ -4,6 +4,8 @@ Primary URLs, paper versions and review scope are recorded in [the literature re
 
 Expanded follow-up: [secure-steganography review](../research/stego-prior-art.md) and [machine-readable source ledger](stego-review-sources.json). The ledger records 16 paper retrieval attempts (one blocked), artifact hashes, inspected code locations and explicit reading limits. Retrieval does not imply full review.
 
+Substantive-choice follow-up: [semantic erasure review](../research/semantic-erasure.md) and [its source ledger](semantic-erasure-sources.json) record direct conceptual predecessors, task-quality-preserving removal, mixing obstacles, cryptographic counterexamples and the pinned semantic-unit manuscript/code inspection. Abstract-only sources are explicitly marked.
+
 Access date: 2026-10-24. Sources inspected directly include:
 
 | Source | Version / provenance | Review depth |

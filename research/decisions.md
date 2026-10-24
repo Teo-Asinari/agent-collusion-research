@@ -59,3 +59,10 @@
 - Added Codetta, BAM, Alkaid, finite-precision detection, ANStega, classical active-warden theory and semantic/resynchronization defenses. Corrected the universal-model-matching framing and distinguished Codetta's algebraic key-exchange simulations from live exchanges.
 - Revised candidate questions around isolated decoding, utility-constrained interference/repair costs, and trusted release randomness. No new experiment selected or run; no paid inference, model downloads, dependency installation or GPU allocation.
 - Corrected a collaboration-status error: a final response saying work was underway did not correspond to any running background job. Future status reports must distinguish completed work, an actually running tool process and work that has not started. No background continuation is implied after a final response.
+
+## 2026-10-24 — semantic choices and erasure-cost prior art
+
+- Owner questioned the narrow focus on token-sampling schemes and authorized research into substantive choices and whether erasure requires redoing useful work.
+- Found direct conceptual predecessors in Roger–Greenblatt, semantic-unit/codebook implementations, and Conceptual Steganography. The generic replacement-capability intuition is not new.
+- Reviewed targeted primary sections of Watermarks in the Sand, Sandcastles in the Storm, Perry et al., steganography-free ZK, and a source-code transformation proposal. Inspected a pinned semantic-steganography manuscript and selected citation-channel source functions. Cryptographic reverse-firewall/unique-proof abstracts and solution-reconfiguration theory supply qualified adjacent leads, not completed proof audits.
+- Recorded the distinction between preserving submitted meaning and preserving original-task quality. Added a candidate comparison of local edits, global replacement and cheap-rerandomization controls. No full experiment selected or run; no model calls, API expenditure, dependency installation or GPU allocation.
