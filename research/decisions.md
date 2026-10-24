@@ -20,3 +20,7 @@
 ## 2026-10-24 — OpenRouter authentication check
 
 - At the owner’s request, checked the saved key against OpenRouter’s authentication endpoint. It returned HTTP 401 Unauthorized. A valid credential is needed before inference. No model calls or experimental expenditure occurred.
+
+## 2026-10-24 — corrected OpenRouter credential verified
+
+- Replaced the local ignored credential with the owner’s correction. Authentication endpoint returned HTTP 200; key-level limit and remaining limit both USD 100, usage USD 0. No paid inference was attempted. The key limit is not an approved experiment budget or independent account-balance verification.
