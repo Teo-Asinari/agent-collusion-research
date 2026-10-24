@@ -8,6 +8,8 @@ Further follow-up: [semantic choices and erasure cost](semantic-erasure.md) dire
 
 Novelty check: [expanded audit](novelty-audit.md) finds even closer predecessors: constraint-based design watermarking already uses SAT/solution selection and re-solving costs; Hand and Brain addresses agentic strategy channels and decision interventions. Generic erasure-cost/topology claims do not currently clear a novelty threshold. Access and reading limits are explicit.
 
+Physical-environment follow-up: [isolation and mediation](isolation-and-mediation.md) reviews deterministic/time-protected substrates, physical/robot channels and physically enabled versus digitally mediated collusion-free protocols. The formal results are relative to modeled channels and ideal functionality; the reviewed 2009 mediated definition still permits one abort-presence bit.
+
 Follow-up: [shared-knowledge assumptions](shared-knowledge.md) distinguishes shared-key constructions, public-key steganography, covert key exchange, learned protocols and seed recovery. It includes additional primary sources and corrects any inference that pre-shared private knowledge is universally necessary.
 
 ## 1. Tool-use capability versus secure implementation versus choice

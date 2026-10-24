@@ -1,0 +1,112 @@
+{
+  "access_date": "2026-10-24",
+  "scope": "Targeted primary-source review of physical/OS confinement and mediated task protocols, including embodied robot counterexamples. Not exhaustive; no full proof audit, hardware deployment or model experiment. Download does not imply complete reading.",
+  "sources": [
+    {
+      "name": "time-protection",
+      "url": "https://yuval.yarom.org/pdfs/GeYCH19.pdf",
+      "sha256": "c721d53a4a5ef5a331bbd28aea74f3abfb7a01b8912cbb655a37b0644d6a9323",
+      "pages": 17,
+      "review_scope": "Threat scenarios, mechanisms, evaluation and hardware-contract discussion; no reproduction.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "deterland",
+      "url": "https://dedis.cs.yale.edu/cloud/papers/trios15-deterland.pdf",
+      "sha256": "606458edc0ebe00d86b651e60e020365f7742ff42c3192c8bbad90b6061aa210",
+      "pages": 15,
+      "review_scope": "Abstract, sections 2–3 and timing-mitigation overview; no reproduction.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "deterministic-cloud",
+      "url": "https://dedis.cs.yale.edu/cloud/papers/ccsw10.pdf",
+      "sha256": "e7288568b236de15df77d7d76fd319775ad414c98baaf100e7500be6ec858030",
+      "pages": 6,
+      "review_scope": "Primary abstract and design/conclusion overview; no reproduction.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "bitwhisper",
+      "url": "https://arxiv.org/pdf/1503.07919v1",
+      "sha256": "0230b7f838cadceb2c669e60b27fda78179e52551b7d1f37e2c67f4467918681",
+      "pages": 13,
+      "review_scope": "Abstract and setup overview; no reproduction.",
+      "access_date": "2026-10-24",
+      "version": "arXiv 1503.07919v1"
+    },
+    {
+      "name": "physical-collusion-free",
+      "url": "https://shelat.khoury.northeastern.edu/dl/CollusionFreeSTOC.pdf",
+      "sha256": "4072ada4c3aa457001fd97e33b93d5b1d3aefe8eb745e92b50110f5f1afbf99a",
+      "pages": 10,
+      "review_scope": "Ideal/real framing, theorem statements 1–4 and physical-channel caveat; not a proof audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "mediated-2008",
+      "url": "https://crypto.ethz.ch/publications/files/AlShVi08.pdf",
+      "sha256": "ef2ffc6cf09f3d2716cf4e3527848883f5368de6d3b6c82bf9ed8a0696a29060",
+      "pages": 18,
+      "review_scope": "Introduction, mediator model and security discussion; not a proof audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "mediated-mpc-2009",
+      "url": "https://crypto.ethz.ch/publications/files/AKLPSV09.pdf",
+      "sha256": "08ba899847fe3b59d12007587678f7bfc010858a95ef50f614bb03b8e55e012e",
+      "pages": 17,
+      "review_scope": "Sections 1.1–1.2 and model overview, including abort leakage; not a proof audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "robot-environment",
+      "url": "https://www.jstage.jst.go.jp/article/transinf/advpub/0/advpub_2025MUP0001/_pdf",
+      "error": "[Errno 104] Connection reset by peer",
+      "review_scope": "Publisher problem/method/setup and web-accessible PDF passages; local PDF download failed.",
+      "access_date": "2026-10-24",
+      "additional_primary_url": "https://globals.ieice.org/en_transactions/information/10.1587/transinf.2025MUP0001/_f"
+    },
+    {
+      "name": "robot-motion",
+      "url": "https://arxiv.org/pdf/2609.08920v1",
+      "sha256": "1dae43308c585fff54c225f2b368b8a8e4312bf3dff15c992f696290048ff849",
+      "pages": 22,
+      "review_scope": "Problem setting, real-robot results and appendices A.14–A.15; not a full proof audit or reproduction.",
+      "access_date": "2026-10-24",
+      "version": "arXiv 2609.08920v1"
+    },
+    {
+      "name": "time-protection-project",
+      "url": "https://trustworthy.systems/projects/timeprotection/",
+      "review_scope": "Author project overview and verification-status qualifications; mutable page.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "formal-time-protection-2023",
+      "url": "https://trustworthy.systems/publications/papers/Sison_BMKH_23.abstract",
+      "review_scope": "Primary abstract only: generic OS model proof; full proof not inspected.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "autocc-2023",
+      "url": "https://cris.unibo.it/retrieve/0dcfd3b5-3b55-432d-a48f-e33ef5a197dc/AutoCC.pdf",
+      "review_scope": "Primary abstract only: RTL formal property verification and evaluated designs.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "simplex-runtime-assurance-2024",
+      "url": "https://ntrs.nasa.gov/citations/20230017350",
+      "review_scope": "Primary abstract/introduction; safety-property guarantees distinct from information-flow guarantees.",
+      "access_date": "2026-10-24"
+    }
+  ],
+  "search_topics": [
+    "deterministic execution and timing-channel prevention",
+    "time protection hardware assumptions and verification status",
+    "collusion-free protocols physical envelopes and mediated computation",
+    "thermal air-gap communication and automatic covert-channel discovery",
+    "robot motion steganography and actuator defenses",
+    "Simplex runtime assurance versus information-flow confinement"
+  ]
+}

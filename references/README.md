@@ -8,6 +8,8 @@ Substantive-choice follow-up: [semantic erasure review](../research/semantic-era
 
 Latest [novelty audit](../research/novelty-audit.md) and [search/access ledger](novelty-audit-sources.json) record closer constraint-based/SAT, semantic software-watermarking, code-removal and agentic-defense predecessors. Broad novelty claims are downgraded; blocked full texts and indexed-primary-only evidence are marked.
 
+Physical-environment follow-up: [isolation and mediation review](../research/isolation-and-mediation.md) and [source ledger](isolation-prior-art-sources.json) cover hardware assumptions, embodied channels, and conditional collusion-free protocols. Reading depths and failed local retrieval are explicit.
+
 Access date: 2026-10-24. Sources inspected directly include:
 
 | Source | Version / provenance | Review depth |

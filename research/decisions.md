@@ -73,3 +73,10 @@
 - Verified direct overlap with Kahng et al.'s 1998 SAT/solution-selection and re-solving-cost discussion. Located closer 2026 agentic-defense prior art (Hand and Brain) through indexed primary passages, while direct full-text/API access remained blocked. Recorded the synthetic math/particular-decoder qualifications and existing post-hoc codebook adaptation.
 - Updated candidate/research headers: generic semantic-choice, SAT/local-search, and erasure-cost framing does not establish novelty. No full experiment should be selected on that premise. Future work needs an explicit extension/counterexample or narrower result against the closest prior art; no new project selected.
 - Added source/access/query ledger. No inference spend or experiment execution; source inspection only.
+
+## 2026-10-24 — physical isolation and constrained-interaction prior art
+
+- Owner proposed physically preventing steganography and requested both isolation and useful constrained-interaction directions. Included robot embodiment as a separate interpretation.
+- Reviewed targeted primary sources on deterministic execution, seL4 time protection, thermal and robotic motion channels, and collusion-free physical/mediated protocols. Added abstract-level formal time-protection, AutoCC and runtime-assurance references with explicit scope.
+- Recorded key limits: 2019 hardware/time-protection assumptions, generic-model versus complete deployed-system verification, external timing rate limits, physical channels excluded by the 2005 protocol theorem, and the single abort-presence bit allowed in the 2009 mediated model.
+- Both broad directions have established prior art. Preserved exploratory candidates with controls and feasibility limits; no claim of a novel universal steganography-free environment, no full project selected, no hardware deployment or model experiment.
