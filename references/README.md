@@ -2,6 +2,8 @@
 
 Primary URLs, paper versions and review scope are recorded in [the literature review](../research/literature.md). Starter source paths, code observations and license limitations are recorded in [the pinned inventory](../research/starter-map.md).
 
+Expanded follow-up: [secure-steganography review](../research/stego-prior-art.md) and [machine-readable source ledger](stego-review-sources.json). The ledger records 16 paper retrieval attempts (one blocked), artifact hashes, inspected code locations and explicit reading limits. Retrieval does not imply full review.
+
 Access date: 2026-10-24. Sources inspected directly include:
 
 | Source | Version / provenance | Review depth |
@@ -11,7 +13,7 @@ Access date: 2026-10-24. Sources inspected directly include:
 | [Rippin tool-use paper](https://arxiv.org/html/2606.28425v1) | v1 | Methods, theory framing, experiments, limitations, prompts and Appendix D |
 | [Minimum entropy coupling](https://arxiv.org/html/2210.14889v4) | v4 | Threat model, definitions, Theorems 1–2; [author-linked code](https://github.com/schroederdewitt/perfectly-secure-steganography) identified, not audited |
 | [Zamir steganography](https://arxiv.org/html/2401.10360v1) | arXiv v1 under earlier title | Definitions, security/retrieval results, evaluation/limitations; final OpenReview text inaccessible |
-| [OrZamir/steg](https://github.com/OrZamir/steg) | Author-linked from zamir.prof | Repository existence/metadata, not code correctness; no detected license |
+| [OrZamir/steg](https://github.com/OrZamir/steg/tree/c099f157550135e528ee799d686d6b480bdff335) | Pinned author-linked reference | Follow-up static source inspection: single-query/insecure-PRF caveats and model-free decoder; README prohibits commercial use; no separate LICENSE in inspected tree |
 | [Covert conversation/key exchange](https://arxiv.org/html/2604.04757v1) | v1 | Results overview, model, construction overviews; not a complete proof audit |
 | [Voluntary secret tools](https://arxiv.org/html/2605.27593v2) | v2 | Protocol, empirical design, limitations and observation/benign-control appendices |
 | [Hidden in Plain Text](https://arxiv.org/html/2410.03768v2) | v2 | Methods/mitigation overview; [code README](https://github.com/olliematthews/lasr-steganography) associates repository with paper; code not audited |

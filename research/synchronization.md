@@ -1,5 +1,7 @@
 # Synchronization, numerical determinism and optimality
 
+**Follow-up:** the [expanded review](stego-prior-art.md) materially qualifies this initial note. Zamir's receiver does not need the sender's model; Codetta and BAM also relax symmetric model access. Edit-resilient constructions and explicit active-warden theory already exist. SparSamp's v4 experiment path uses saved encoder intervals when recomputation differs; its Basic Test does not. Review depths below describe the earlier pass, not the expanded source inspection. See [revised candidates](practical-barrier-candidates.md).
+
 2026-10-24. Owner questioned whether a receiver can reproduce model probabilities given nondeterministic LLM outputs, expressed interest in breaking synchronization, and asked whether iMEC is the only theoretically optimal scheme. No additional experiment was run for this question.
 
 ## What must be reproduced?

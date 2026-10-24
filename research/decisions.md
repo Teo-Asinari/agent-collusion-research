@@ -51,3 +51,11 @@
 
 - Owner expressed interest in disrupting synchronization and asked about LLM nondeterminism and alternative optimal schemes. Clarified deterministic ideal probability calculation versus random sampling and actual numerical reproducibility limits.
 - Avoid labeling the practical iMEC implementation “theoretically optimal” without qualification: its approximate coupling routine is distinct from the optimality characterization. Added targeted alternative-scheme references and a possible synchronization study, without selecting or running a new experiment.
+
+## 2026-10-24 — expanded secure-steganography review
+
+- Owner authorized deeper review of Zamir, SparSamp, Shimmer, Wang–Moulin and related prior art. Completed a bounded primary-source comparison with an explicit reading-depth and provenance ledger; this is not an exhaustive survey, full proof audit or model reproduction.
+- Inspected pinned Zamir source and retrieved SparSamp/Shimmer artifacts. Recorded research-code randomness caveats. Verified that the SparSamp v4 experimental path substitutes saved encoder intervals on mismatches, whereas Basic Test recomputes independently.
+- Added Codetta, BAM, Alkaid, finite-precision detection, ANStega, classical active-warden theory and semantic/resynchronization defenses. Corrected the universal-model-matching framing and distinguished Codetta's algebraic key-exchange simulations from live exchanges.
+- Revised candidate questions around isolated decoding, utility-constrained interference/repair costs, and trusted release randomness. No new experiment selected or run; no paid inference, model downloads, dependency installation or GPU allocation.
+- Corrected a collaboration-status error: a final response saying work was underway did not correspond to any running background job. Future status reports must distinguish completed work, an actually running tool process and work that has not started. No background continuation is implied after a final response.

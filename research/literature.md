@@ -2,6 +2,8 @@
 
 Initial primary-source review, accessed 2026-10-24. This is a selective landscape, not an exhaustive review of the starter's 234 entries. No novelty claim has been established. Paper results below are author-reported, not reproduced here. Abstract-only readings are marked. Code observations are separate in [starter-map.md](starter-map.md).
 
+Expanded follow-up: [secure steganography prior art](stego-prior-art.md) compares Zamir, SparSamp, Shimmer, Wang–Moulin, asymmetric/keyless schemes and active defenses. It records source-level implementation qualifications and explicit remaining review gaps. [Revised practical-barrier candidates](practical-barrier-candidates.md) supersede any suggestion that simple desynchronization, paraphrasing or numerical artifacts are unexplored ideas.
+
 Follow-up: [shared-knowledge assumptions](shared-knowledge.md) distinguishes shared-key constructions, public-key steganography, covert key exchange, learned protocols and seed recovery. It includes additional primary sources and corrects any inference that pre-shared private knowledge is universally necessary.
 
 ## 1. Tool-use capability versus secure implementation versus choice

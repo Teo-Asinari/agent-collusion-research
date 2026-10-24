@@ -1,5 +1,7 @@
 # Candidate investigations
 
+**Current-focus update:** the owner subsequently prioritized practical barriers to secure steganography and active prevention. See [revised candidates](practical-barrier-candidates.md) and [expanded prior art](stego-prior-art.md). The shortlist below is preserved historical exploration, not the current recommendation or a selected project.
+
 **No candidate selected.** These are proposals for discussion, not experimental findings. Novelty remains provisional after an initial selective review. Scientific value should decide selection; setup convenience is secondary.
 
 ## Comparative judgment

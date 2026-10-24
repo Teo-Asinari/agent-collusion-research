@@ -12,6 +12,8 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 - [Mathematical directions](research/mathematical-directions.md): equivalence classes, invariants, information flow and complexity.
 - [iMEC reference check](research/imec-reference.md): concrete upstream encoder/decoder and a minimal executed round trip.
 - [Synchronization](research/synchronization.md): probability calculation versus sampling, practical mismatch, and alternative secure schemes.
+- [Secure steganography prior art](research/stego-prior-art.md): expanded primary-source comparison, code findings, active wardens and robustness.
+- [Practical-barrier candidates](research/practical-barrier-candidates.md): revised falsifiable questions, controls, costs and novelty limits.
 - [Starter inventory](research/starter-map.md): external code and research-track mapping.
 - [Questions](research/questions.md): unresolved conceptual and empirical questions.
 - [Candidates](research/ideas.md): hypotheses, designs, controls, feasibility, and negative results.

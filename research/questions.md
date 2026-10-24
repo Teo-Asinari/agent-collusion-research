@@ -41,6 +41,15 @@ Storage and timing covert channels are longstanding concepts; actions as signali
 
 Timing and cache studies carry high confounding risk during a short sprint. A workflow-specific measurement or intervention can contribute even when the channel class is old.
 
-## Focused discussion prompt
+## Current practical-barrier questions
+
+The owner's later focus is active prevention and practical limits of secure constructions. The [expanded review](stego-prior-art.md) and [revised candidates](practical-barrier-candidates.md) add:
+
+1. Does exact payload recovery persist when the receiver is isolated from encoder-side numerical data? Separate runtime drift from tokenization ambiguity.
+2. Which utility-preserving interventions suppress delivery after codebook repair, resynchronization or semantic encoding? Measure surviving information, not only exact-message failure.
+3. How much private sampling, setup and repair computation is required per delivered bit? Distinguish algebraic simulation from live end-to-end generation.
+4. If the defender controls final sampling, can agents communicate through input/context choice or selective retries instead?
+
+## Earlier focused discussion prompt
 
 Which uncertainty should the next study resolve: **why agents choose a channel**, **whether restrictions merely relocate coordination**, or **how to establish causal evidence of harmful coordination**? These are scientific priorities, not implementation commitments. Protocol interoperability is a fourth option if theoretical-to-practical translation is the main interest.

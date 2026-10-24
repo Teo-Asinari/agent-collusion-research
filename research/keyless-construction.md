@@ -1,5 +1,7 @@
 # Keyless construction: assumptions and implications
 
+**Later-source update:** this note concerns Vaikuntanathan–Zamir specifically. [The expanded review](stego-prior-art.md) adds Codetta's different keyless construction and distinguishes its measured-channel algebraic evaluation from live exchanges. Do not generalize this note's assumptions or implementation status to every keyless scheme.
+
 Checked 2026-10-24 against [Vaikuntanathan & Zamir, arXiv v1](https://arxiv.org/html/2604.04757v1), especially §§2.4–2.6, 5.2–5.4, 6.2–6.3. Targeted reading, not a complete proof audit.
 
 ## Assumptions from the paper

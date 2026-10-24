@@ -1,0 +1,266 @@
+{
+  "review_date": "2026-10-24",
+  "scope": "Bounded primary-source comparison, not exhaustive survey or proof certification",
+  "storage": "Third-party PDFs/source kept outside repository in /tmp for inspection; only metadata and original notes committed.",
+  "papers": [
+    {
+      "name": "sparsamp",
+      "url": "https://www.usenix.org/system/files/usenixsecurity25-wang-yaofei.pdf",
+      "pages": 20,
+      "sha256": "d574b1edd69ebedd948606d1427d10b3c00b50f373f12e4227b40b66c1dd75de",
+      "characters": 82599,
+      "review_depth": "Targeted main method/security and evaluation, token ambiguity; v1/v4 source inspection. No proof certification or model run.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "shimmer",
+      "url": "https://www.usenix.org/system/files/usenixsecurity25-bai-minhao.pdf",
+      "pages": 18,
+      "sha256": "1702e6dc85a267fcacf5532b712787c7764cd546c7a7b2e1ad1e3f877f848bd9",
+      "characters": 65469,
+      "review_depth": "Threat/security definitions, interval mechanism, selected security/capacity arguments, evaluation setup; source/README inspection. No execution.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "wang-moulin",
+      "url": "https://arxiv.org/pdf/cs/0702161v3",
+      "pages": 31,
+      "sha256": "066a24ffdc386321b26ba065e923c0dc095b909ca19ec518a8f65bf7624a7d83",
+      "characters": 73076,
+      "review_depth": "Sections III-VII: definitions, memoryless attacks, theorem statement, shared-key requirements and passive specialization. Appendices not audited.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "zamir-tmlr",
+      "error": "HTTPError: HTTP Error 403: Forbidden",
+      "url": "https://openreview.net/pdf?id=fq6aQoMSHz",
+      "review_depth": "Published-version access blocked; must not claim this version was reviewed.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "roger-greenblatt",
+      "url": "https://arxiv.org/pdf/2310.18512v2",
+      "pages": 25,
+      "sha256": "f482f2baff935088b53f30b22c0f7805af91a5ff458490b9f5274c2bf871f1ef",
+      "characters": 65188,
+      "review_depth": "Targeted defense methods/results and discussion/limitations; not reproduced.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "cgz-colt",
+      "url": "https://proceedings.mlr.press/v247/christ24a/christ24a.pdf",
+      "pages": 15,
+      "sha256": "3c98678e5c7b31060ed7c6e7df9efb5059041637c7e705f1f4b5f66cd05c55d6",
+      "characters": 41395,
+      "review_depth": "Targeted definitions, substring completeness and Section 5 prefix-specifiable removal theorem; not a proof audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "framework",
+      "url": "https://www.usenix.org/system/files/conference/usenixsecurity25/sec25cycle1-prepub-856-liao.pdf",
+      "pages": 20,
+      "sha256": "8f18c02b73f7bf632d83495ad0b0963b094f38b3344e1a43ee9a9a61e46cf142",
+      "characters": 82630,
+      "review_depth": "Targeted shared-distribution definitions and capacity/complexity framework. Artifact not inspected.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "resynchronization",
+      "url": "https://arxiv.org/pdf/2609.04970",
+      "pages": 9,
+      "sha256": "db6bb76c2b5a197b241b6cf2694e29ecfe8854e6cd3ccff9e595fd265471e73e",
+      "characters": 48402,
+      "review_depth": "Threat/setup and evaluation overview. No complete proof/code audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "conceptual",
+      "url": "https://arxiv.org/pdf/2605.26537",
+      "pages": 14,
+      "sha256": "cc9326468ae9f78f1716c92fb2c12c036f1939f52b694e03ac78bf39b18c2f16",
+      "characters": 54044,
+      "review_depth": "Mechanism overview, Section 4.9 defense and limitations. Not reproduced.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "survey",
+      "url": "https://aclanthology.org/2026.emnlp-main.1058.pdf",
+      "pages": 36,
+      "sha256": "93aa0f2f91611303470e26dc69de76c3fb14d5dcc18a81a780a0b513e179f206",
+      "characters": 155881,
+      "review_depth": "Discovery aid; retrieval does not imply full reading.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "codetta",
+      "url": "https://arxiv.org/pdf/2609.28900v2",
+      "sha256": "b7f160fd73737635e8664f8e43d668ff2fafbafceca73651d862da02680f381a",
+      "pages": 43,
+      "review_depth": "Sections 3, 6.1, 7 and 9; selected key-exchange assumptions/theorem passages. Algebraic simulation qualification verified. No implementation verified.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "alkaid",
+      "url": "https://arxiv.org/pdf/2603.06169v1",
+      "sha256": "eef9d8ccd957fbab819e754123505eb13f2b345d982eaeb7c2c9343f95152e8e",
+      "pages": 17,
+      "review_depth": "Sections II-V, Theorems 1-3 and selected Appendix A argument. No full proof audit or code execution.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "lpv",
+      "url": "https://aclanthology.org/2026.findings-acl.1013.pdf",
+      "sha256": "d4dcccb606b034b7cf64bc1485a93aacece58a26afd9067a94ab776db1715d0d",
+      "pages": 13,
+      "review_depth": "Mechanism, experimental setup and limitations; no reproduction.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "feedback",
+      "url": "https://arxiv.org/pdf/2609.24994v1",
+      "sha256": "b1ed63ce0516a30b8001ec51d00624364aeb90d863d464c15aa08ffc4b606a2e",
+      "pages": 32,
+      "review_depth": "Threat/interface, security overview, evaluation and Appendix A information access; author demo README. No implementation audit.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "anstega",
+      "url": "https://www.ndss-symposium.org/wp-content/uploads/2026-f605-paper.pdf",
+      "sha256": "f24d795b2165b7d6041bcb869ba63016a0668e90f7b419603a199d69ce075cb6",
+      "pages": 17,
+      "review_depth": "Selected security/mechanism and evaluation overview; explicit Section VIII limitations. Artifact retrieved but implementation not inspected.",
+      "access_date": "2026-10-24"
+    },
+    {
+      "name": "zamir-v1",
+      "url": "https://arxiv.org/pdf/2401.10360v1",
+      "sha256": "70c3991dc92aeb69b610e29bf43ee48f462108c7169e12fc7df3451de68c7ef4",
+      "pages": 14,
+      "review_depth": "Targeted definitions, entropy/rate conditions, single-query evaluation and editing limitations; pinned author code inspected.",
+      "access_date": "2026-10-24"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "sparsamp-v1.py",
+      "url": "https://zenodo.org/records/14736967/files/sparsamp.py?download=1",
+      "bytes": 4994,
+      "sha256": "a9844f6d1fce510f28b14c3c0ea0746f84dae4c9e438fdbc718151966e8fd3dc"
+    },
+    {
+      "name": "sparsamp-v4.zip",
+      "url": "https://zenodo.org/records/15025436/files/Artifact%20new.zip?download=1",
+      "bytes": 1897483,
+      "sha256": "e8baf46bff612d87b47acc8f22fb55c93578e9b7fa0012e3e8dafff773120d34"
+    },
+    {
+      "name": "shimmer-metadata.json",
+      "url": "https://zenodo.org/api/records/15582958",
+      "bytes": 4213,
+      "sha256": "af4c620c807c5dc7a18b85146fec8dd0f185205b38393c1c26e4b9b182234fa2"
+    },
+    {
+      "name": "anstega-metadata.json",
+      "url": "https://zenodo.org/api/records/17943483",
+      "bytes": 6331,
+      "sha256": "cfe85e1ece43a545ccc679e336465f06e91fabb0cbccb8a9b6d8ee3928ff50da"
+    },
+    {
+      "name": "shimmer-shimmer.py",
+      "url": "https://zenodo.org/api/records/15636547/files/shimmer.py/content",
+      "bytes": 24947,
+      "sha256": "160fcb65b141bee3daa927d1db4628ceda8e71754143b5f269cd7973c3dff7c1",
+      "record_id": 15636547
+    },
+    {
+      "name": "shimmer-README.md",
+      "url": "https://zenodo.org/api/records/15636547/files/README.md/content",
+      "bytes": 2531,
+      "sha256": "3e19ea3357a2b544fe41cbf162ed8934ddc4c918eddc9bb4b4514dd41a47af7f",
+      "record_id": 15636547
+    },
+    {
+      "name": "anstega-Artifact_ANStega.zip",
+      "url": "https://zenodo.org/api/records/17943483/files/Artifact_ANStega.zip/content",
+      "bytes": 433957,
+      "sha256": "e4253ac2474bfd60df749727ed5cc3c174a365ddec3c7466044d16803ba726f1",
+      "record_id": 17943483
+    },
+    {
+      "name": "Zamir reference repository",
+      "url": "https://github.com/OrZamir/steg",
+      "commit": "c099f157550135e528ee799d686d6b480bdff335",
+      "license_note": "README prohibits commercial use; no separate LICENSE file in inspected tree. Not vendored."
+    },
+    {
+      "name": "iMEC reference repository (earlier check)",
+      "url": "https://github.com/schroederdewitt/perfectly-secure-steganography",
+      "commit": "cc36ae0b585fae4c7fcf65f7ee4db43aac2edd28",
+      "review_note": "Earlier original-definition round trip documented separately in research/imec-reference.md."
+    }
+  ],
+  "source_evidence": [
+    {
+      "description": "SparSamp v4 assisted decoder",
+      "artifact_relative_path": "artifacts/sparsamp-v4/Artifact new/Experiments/src/sparsamp.py",
+      "lines": "102-133",
+      "sha256": "751fdf2825aec3ba1da29477e2035e31cb9549858ef5b6c07e81d7ec83692c8e",
+      "inspection": "static source reading; not executed in this pass"
+    },
+    {
+      "description": "SparSamp v4 caller",
+      "artifact_relative_path": "artifacts/sparsamp-v4/Artifact new/Experiments/src/get_statistics.py",
+      "lines": "94-102",
+      "sha256": "096938e9c8efe58f2833989e5fb17c88dad7f3989eaf9ea4b19a0e861e703ec5",
+      "inspection": "static source reading; not executed in this pass"
+    },
+    {
+      "description": "SparSamp v4 basic decoder",
+      "artifact_relative_path": "artifacts/sparsamp-v4/Artifact new/Basic Test/sparsamp.py",
+      "lines": "86-114",
+      "sha256": "a9844f6d1fce510f28b14c3c0ea0746f84dae4c9e438fdbc718151966e8fd3dc",
+      "inspection": "static source reading; not executed in this pass"
+    },
+    {
+      "description": "Shimmer randomness and import behavior",
+      "artifact_relative_path": "artifacts/shimmer-shimmer.py",
+      "lines": "1-17,165-191,241-268",
+      "sha256": "160fcb65b141bee3daa927d1db4628ceda8e71754143b5f269cd7973c3dff7c1",
+      "inspection": "static source reading; not executed in this pass"
+    },
+    {
+      "description": "Zamir explicit demo caveats",
+      "artifact_relative_path": "zamir-code/OrZamir-steg-c099f15/generate.py",
+      "lines": "8-24,156-177",
+      "sha256": "5e07bed492868341319f18f1d824462d7834f8cd29ceda4c347e799bf1c1837a",
+      "inspection": "static source reading; not executed in this pass"
+    },
+    {
+      "description": "Zamir demonstration PRF",
+      "artifact_relative_path": "zamir-code/OrZamir-steg-c099f15/utils.py",
+      "lines": "7-10",
+      "sha256": "0356de10194dae131fd4a434714607cbfb1195d0a5a94ae9a0f47268a24f54cd",
+      "inspection": "static source reading; not executed in this pass"
+    }
+  ],
+  "additional_primary_discovery": [
+    {
+      "url": "https://eprint.iacr.org/2002/137.pdf",
+      "depth": "Search/excerpt level; no proof audit."
+    },
+    {
+      "url": "https://www.cs.bu.edu/~reyzin/bbstego.html",
+      "depth": "Author abstract; no full proof review."
+    },
+    {
+      "url": "https://eprint.iacr.org/2003/231.pdf",
+      "depth": "Search/excerpt level; security notion only."
+    }
+  ],
+  "limitations": [
+    "Published Zamir TMLR version blocked by OpenReview challenge/HTTP 403.",
+    "No new model inference or runtime failure measurement.",
+    "No verified author implementation for Codetta in this pass.",
+    "Artifact metadata license is not an audit of all bundled dependencies."
+  ]
+}
