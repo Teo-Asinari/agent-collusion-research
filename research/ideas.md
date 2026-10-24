@@ -105,3 +105,11 @@ Scores are qualitative assessments, not measured quantities. Cost uses proposed 
 - Preserve raw versus receiver-visible actions, API usage/retries, cost fields, intended versus effective models, and failed/aborted episodes. No cherry-picking positive controls until they succeed and then treating the selected sample as an unbiased effect estimate.
 
 Selection requires a discussion of the scientific question, available remaining hours, and acceptable inference spend. No candidate here starts a run automatically.
+
+## New exploratory lens: components of the task-valid artifact space
+
+See [local-rewrite obstruction](workstreams/task-preserving-rewrite/local-rewrite-obstruction.md). Treat artifacts that solve a fixed task as vertices and allowed elementary edits as edges. A sanitizer restricted to those edits cannot leave the connected component containing its input; a receiver-distinguishable component choice can therefore survive every local edit while task validity remains perfect.
+
+This makes one part of the owner's topology intuition precise, but the operative concept is graph connectivity / zero-dimensional components, not knot theory or a new topological invariant. The mathematical framework and hardness of reconfiguration reachability are established prior art. The possible contribution is a focused evaluation of whether realistic rewrite grammars preserve receiver-readable component choices, and the cost of allowing global reconstruction to cross them. Novelty and practical relevance are both unverified.
+
+Qualitative screen: **conceptual clarity: high; potential significance: medium but speculative; tractability for a small exact benchmark: high; generalizability: low until a realistic artifact domain is found; prior-art risk: high.** Keep as a lens for candidate design, not a selected project. The one-bit `x != y` example is only a proof illustration and should not be promoted as the experiment.
