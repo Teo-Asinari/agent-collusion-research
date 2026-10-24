@@ -51,6 +51,8 @@ The owner's later focus is active prevention and practical limits of secure cons
 4. If the defender controls final sampling, can agents communicate through input/context choice or selective retries instead?
 5. Can a task-preserving sanitizer replace substantive choices cheaply, or do valid-solution structure and generation capability create a measurable replacement-cost gap? [Direct prior art and proposed controls](semantic-erasure.md) distinguish this from merely preserving the sender's original meaning.
 
+**Novelty qualification:** the [expanded audit](novelty-audit.md) finds direct predecessors for question 5's broad premise and closer agentic defenses. Any proposed experiment now needs an explicit claim beyond those sources; no generic SAT/solution-choice study is selected.
+
 ## Earlier focused discussion prompt
 
 Which uncertainty should the next study resolve: **why agents choose a channel**, **whether restrictions merely relocate coordination**, or **how to establish causal evidence of harmful coordination**? These are scientific priorities, not implementation commitments. Protocol interoperability is a fourth option if theoretical-to-practical translation is the main interest.

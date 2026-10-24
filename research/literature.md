@@ -6,6 +6,8 @@ Expanded follow-up: [secure steganography prior art](stego-prior-art.md) compare
 
 Further follow-up: [semantic choices and erasure cost](semantic-erasure.md) directly investigates substantive choices, task-preserving replacement, random-walk removal/mixing, source-code transformations and constrained cryptographic prevention. Roger–Greenblatt already explicitly discusses replacement-capability limits; do not attribute that conceptual insight to this workspace.
 
+Novelty check: [expanded audit](novelty-audit.md) finds even closer predecessors: constraint-based design watermarking already uses SAT/solution selection and re-solving costs; Hand and Brain addresses agentic strategy channels and decision interventions. Generic erasure-cost/topology claims do not currently clear a novelty threshold. Access and reading limits are explicit.
+
 Follow-up: [shared-knowledge assumptions](shared-knowledge.md) distinguishes shared-key constructions, public-key steganography, covert key exchange, learned protocols and seed recovery. It includes additional primary sources and corrects any inference that pre-shared private knowledge is universally necessary.
 
 ## 1. Tool-use capability versus secure implementation versus choice

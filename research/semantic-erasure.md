@@ -1,5 +1,7 @@
 # Substantive choices as channels: prior art and limits of erasure
 
+**Subsequent novelty correction:** [the expanded audit](novelty-audit.md) found direct constraint-based/SAT watermarking predecessors and a closer agentic-defense paper, Hand and Brain. The candidate below is retained as exploration, but its broad mechanism and erasure-cost intuition are insufficiently novel. Do not start a full study on the assumption that they are new.
+
 2026-10-24. Follow-up requested by the owner after questioning the focus on token-sampling codecs. Scope: signaling through examples, reasoning, citations, programs and solutions; the computational cost of replacing those contributions; and counterexamples where a protocol can sanitize outputs efficiently. This is targeted primary-source research, not an exhaustive survey or proof audit. No new experiment selected or run.
 
 ## Main assessment

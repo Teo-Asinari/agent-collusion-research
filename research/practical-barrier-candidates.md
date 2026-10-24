@@ -2,6 +2,8 @@
 
 2026-10-24. **No study selected.** These refine the owner's interest in practical barriers and active prevention. [Prior-art review](stego-prior-art.md) supplies the qualifications. Cost estimates below are planning sketches, not approved spend or a power analysis.
 
+**Novelty downgrade:** the [latest audit](novelty-audit.md) finds closer predecessors in constraint-based watermarking, code watermark removal and Hand and Brain. The provisional comparisons below do not establish novelty. In particular, a generic solution-choice/rewriting-cost study should not be selected without an explicit contribution beyond those sources.
+
 **Subsequent focus:** the owner requested prior art on substantive task choices and the cost of replacing useful work. [Semantic erasure](semantic-erasure.md) records the direct predecessors, counterexamples and a further replacement-cost candidate. The comparison below remains exploratory; token-sampling schemes are not the only research scope.
 
 ## A. How much receiver-side assistance does a successful demonstration require?

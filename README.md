@@ -15,6 +15,7 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 - [Secure steganography prior art](research/stego-prior-art.md): expanded primary-source comparison, code findings, active wardens and robustness.
 - [Practical-barrier candidates](research/practical-barrier-candidates.md): revised falsifiable questions, controls, costs and novelty limits.
 - [Semantic-choice channels and erasure cost](research/semantic-erasure.md): substantive task choices, replacement capability, mixing barriers and cryptographic counterexamples.
+- [Novelty audit](research/novelty-audit.md): closer predecessors and explicit reasons the broad solution-choice/erasure-cost proposal is not yet a novel project.
 - [Starter inventory](research/starter-map.md): external code and research-track mapping.
 - [Questions](research/questions.md): unresolved conceptual and empirical questions.
 - [Candidates](research/ideas.md): hypotheses, designs, controls, feasibility, and negative results.

@@ -1,0 +1,151 @@
+{
+  "review_date": "2026-10-24",
+  "verdict": "Novelty not established; broad solution-choice/erasure-cost mechanism has direct predecessors.",
+  "method": "Targeted open-web primary/author searches plus related-work trails; not exhaustive citation-index search.",
+  "representative_queries": [
+    "steganography \"computational\" \"erase\" \"solutions\"",
+    "steganography \"sanitization\" \"hardness\"",
+    "\"watermark\" \"solution space\" \"complexity\"",
+    "\"steganography\" \"task\" \"recomputation\"",
+    "\"constraint-based watermarking\" \"removal\" recomputation",
+    "\"Watermarking Cryptographic Programs\" unremovable",
+    "\"semantics-based\" \"watermarking\" Cousot",
+    "\"steganography\" \"SAT\" \"solutions\"",
+    "\"watermarking\" \"re-solving\" constraints",
+    "LLM steganography \"solutions\" \"constraint\"",
+    "LLM steganography \"recomputation\" OR \"re-solving\" OR \"optimization\"",
+    "\"steganography\" \"code generation\" \"semantic\"",
+    "\"steganography\" \"program synthesis\"",
+    "\"SrcMarker\" code watermarking semantics",
+    "AI control \"trusted editing\" \"steganography\"",
+    "\"steganography\" \"regeneration\" \"task\" agent defense",
+    "\"Hand and Brain\" \"Steganography\"",
+    "\"Hand and Brain\" steganography github",
+    "\"Hand and Brain\" steganography adaptive decoder",
+    "\"agentic steganography\" \"adaptive\" defense",
+    "\"watermarking\" \"optimization-intensive\" attack"
+  ],
+  "paper_retrievals": [
+    {
+      "name": "kahng-1998",
+      "url": "https://www.cs.ucla.edu/~miodrag/papers/Kahng_DAC_98.pdf",
+      "sha256": "374cf17fb1206a028e1fdb5452513c6cb94388435438e4452af3a3380f954f20",
+      "pages": 6,
+      "access_date": "2026-10-24",
+      "review_depth": "Motivating 3SAT example, Section 3.1 solution-space/local-barrier requirements and Section 4 tampering/re-solving discussion. No general hardness theorem certified."
+    },
+    {
+      "name": "kahng-2001",
+      "url": "https://web.eecs.umich.edu/~imarkov/pubs/jour/j009.pdf",
+      "error": "<urlopen error timed out>",
+      "access_date": "2026-10-24",
+      "review_depth": "Primary follow-up located; full download timed out at both UCSD and Michigan copies. Search passages only."
+    },
+    {
+      "name": "semantic-watermarking",
+      "url": "https://iris.univr.it/bitstream/11562/1002042/1/main.pdf",
+      "error": "HTTP Error 403: Forbidden",
+      "access_date": "2026-10-24",
+      "review_depth": "Direct download forbidden. Published primary abstract and targeted extended-manuscript Section 3.2 passages read through web tool; not a full proof audit."
+    },
+    {
+      "name": "crypto-capabilities",
+      "url": "https://people.csail.mit.edu/holmgren/papers/watermarking.pdf",
+      "sha256": "d11a977128213eb542400afa7bd45564ec07c0e4dd0dee47a94ab442697231a8",
+      "pages": 48,
+      "access_date": "2026-10-24",
+      "review_depth": "Full PDF retrieved; introduction, definitions/results overview and Section 1.1 positive/negative theorem statements inspected. Proofs not audited."
+    },
+    {
+      "name": "srcmarker",
+      "url": "https://arxiv.org/pdf/2309.00860v2",
+      "sha256": "2167eef14bdb82db52f8726b227922bcc7eea8fdd87ec48acb9a72fab743d18c",
+      "pages": 16,
+      "access_date": "2026-10-24",
+      "review_depth": "Full PDF retrieved; problem/threat model, Section IV-D/E functionality and adaptive removal, and discussion inspected. No reproduction."
+    },
+    {
+      "name": "decoma",
+      "url": "https://wssun.github.io/papers/2025-ISSTA-DeCoMa.pdf",
+      "sha256": "96230b9b114923d30141dbfa6ccbeffb5f74e77dda9345685c83afcf03419be3",
+      "pages": 24,
+      "access_date": "2026-10-24",
+      "review_depth": "Full PDF retrieved; abstract and Section 5.3.3 rewriting-cost comparison inspected. Dataset purification distinguished from per-output sanitization."
+    },
+    {
+      "name": "placemark",
+      "url": "https://arxiv.org/pdf/2610.21031v1",
+      "sha256": "6beae0b72dbbe83ab5ff4de33cd0956a5e583c3e7b3369f60d205c6c390db92e",
+      "pages": 15,
+      "access_date": "2026-10-24",
+      "review_depth": "Primary abstract checked, full PDF retrieved. Not full method/code audit."
+    },
+    {
+      "name": "hand-brain-attachment",
+      "url": "https://openreview.net/attachment?id=P7fHU7ZNFQ&name=pdf",
+      "error": "HTTP Error 403: Forbidden",
+      "access_date": "2026-10-24",
+      "review_depth": "Blocked. Indexed primary introduction, Table 3, Section 5, Appendices A.5/A.6 and D.1/D.2 passages used. Not full text or code verification."
+    },
+    {
+      "name": "hand-brain-pdf",
+      "url": "https://openreview.net/pdf?id=P7fHU7ZNFQ",
+      "error": "HTTP Error 403: Forbidden",
+      "access_date": "2026-10-24",
+      "review_depth": "Blocked. Same indexed-primary-passage qualification as attachment."
+    },
+    {
+      "name": "hand-brain-api",
+      "url": "https://api2.openreview.net/attachment?id=P7fHU7ZNFQ&name=pdf",
+      "error": "HTTP Error 403: Forbidden",
+      "access_date": "2026-10-24",
+      "review_depth": "Blocked. No full API attachment obtained."
+    },
+    {
+      "name": "sew",
+      "url": "https://arxiv.org/pdf/2609.39414v1",
+      "sha256": "43df7f95a479848f6a46d939cf30a3642d55ac6eb14b15d71e8f8ac99acd998a",
+      "pages": 19,
+      "access_date": "2026-10-24",
+      "review_depth": "Full PDF retrieved; method/evaluation overview, rewriting and targeted attacks, appendix caveats inspected. No code execution."
+    },
+    {
+      "name": "ai-control",
+      "url": "https://arxiv.org/pdf/2312.06942v5",
+      "sha256": "999f7a92bb8c085799e68f3d88f491ad8a334f862ccf5b286e5c2766677864c0",
+      "pages": 47,
+      "access_date": "2026-10-24",
+      "review_depth": "Full PDF retrieved; abstract and targeted trusted-editing/output-signaling protocol passages inspected, not a new reproduction."
+    }
+  ],
+  "additional_primary_sources": [
+    {
+      "url": "https://doi.org/10.1016/j.entcs.2017.02.005",
+      "scope": "Published primary abstract; formal semantic observer/transformation framework."
+    },
+    {
+      "url": "https://openreview.net/pdf?id=P7fHU7ZNFQ",
+      "scope": "Primary indexed passages only; retrieval challenge. Venue/version not independently confirmed; no verified source-code release."
+    },
+    {
+      "url": "https://www.mdpi.com/2079-9292/15/18/4251",
+      "scope": "Primary abstract/introduction and Section 4.3; code functional benchmark already present."
+    },
+    {
+      "url": "https://github.com/suhanmen/SEW",
+      "scope": "Author release metadata and primary paper link, not implementation audit."
+    }
+  ],
+  "rejected_secondary_lead": {
+    "claimed_identifier": "2610.08868",
+    "reason": "Secondary result associated a different agentic-memory title with this identifier. Primary arXiv page resolves to Visible-Spectrum Optical Covert Channels in Commodity Smart Lighting. Rejected as support for the memory study."
+  },
+  "limitations": [
+    "Full Hand and Brain paper and release not obtained; indexed primary excerpts suffice for broad overlap, not a complete extension audit.",
+    "Direct author-manuscript download for abstract interpretation failed; targeted web-readable passages available.",
+    "No verified novel theorem or empirically established original contribution.",
+    "Negative keyword searches do not prove absence of follow-up work."
+  ],
+  "execution": "No experiment, model inference, dependency installation or GPU allocation.",
+  "storage": "Third-party PDFs outside repository in /tmp; only metadata and original research notes committed."
+}

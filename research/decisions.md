@@ -66,3 +66,10 @@
 - Found direct conceptual predecessors in Roger–Greenblatt, semantic-unit/codebook implementations, and Conceptual Steganography. The generic replacement-capability intuition is not new.
 - Reviewed targeted primary sections of Watermarks in the Sand, Sandcastles in the Storm, Perry et al., steganography-free ZK, and a source-code transformation proposal. Inspected a pinned semantic-steganography manuscript and selected citation-channel source functions. Cryptographic reverse-firewall/unique-proof abstracts and solution-reconfiguration theory supply qualified adjacent leads, not completed proof audits.
 - Recorded the distinction between preserving submitted meaning and preserving original-task quality. Added a candidate comparison of local edits, global replacement and cheap-rerandomization controls. No full experiment selected or run; no model calls, API expenditure, dependency installation or GPU allocation.
+
+## 2026-10-24 — novelty audit materially downgrades broad proposal
+
+- Owner explicitly requested further prior-art search to ensure new ground. Expanded into constraint-based IP/design watermarking, abstract interpretation, cryptographic program watermarking, code de-watermarking and AI control.
+- Verified direct overlap with Kahng et al.'s 1998 SAT/solution-selection and re-solving-cost discussion. Located closer 2026 agentic-defense prior art (Hand and Brain) through indexed primary passages, while direct full-text/API access remained blocked. Recorded the synthetic math/particular-decoder qualifications and existing post-hoc codebook adaptation.
+- Updated candidate/research headers: generic semantic-choice, SAT/local-search, and erasure-cost framing does not establish novelty. No full experiment should be selected on that premise. Future work needs an explicit extension/counterexample or narrower result against the closest prior art; no new project selected.
+- Added source/access/query ledger. No inference spend or experiment execution; source inspection only.

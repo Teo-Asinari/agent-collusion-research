@@ -6,6 +6,8 @@ Expanded follow-up: [secure-steganography review](../research/stego-prior-art.md
 
 Substantive-choice follow-up: [semantic erasure review](../research/semantic-erasure.md) and [its source ledger](semantic-erasure-sources.json) record direct conceptual predecessors, task-quality-preserving removal, mixing obstacles, cryptographic counterexamples and the pinned semantic-unit manuscript/code inspection. Abstract-only sources are explicitly marked.
 
+Latest [novelty audit](../research/novelty-audit.md) and [search/access ledger](novelty-audit-sources.json) record closer constraint-based/SAT, semantic software-watermarking, code-removal and agentic-defense predecessors. Broad novelty claims are downgraded; blocked full texts and indexed-primary-only evidence are marked.
+
 Access date: 2026-10-24. Sources inspected directly include:
 
 | Source | Version / provenance | Review depth |
