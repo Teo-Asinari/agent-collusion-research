@@ -46,3 +46,8 @@
 - Owner identified the original iMEC repository as a concrete example. Inspected pinned source and ran its original selected numerical/encoder/decoder definitions with our four-symbol carrier adapter. Recovered `Hi` exactly. This was not a GPT-2 reproduction, optimality/security certification, or autonomous-agent study. No dependencies installed; no inference spend.
 - Added a reproducible inspection runner without vendoring upstream source. Documented stale standalone-demo calls, actual harness path, shared setup assumptions and approximate coupling implementation.
 - Owner asked about knot theory, topology and complexity connections. Recorded equivalence-class release, transformation invariants/mixing, noninterference/hyperproperties and complexity distinctions. These are candidate tools, with existing literature acknowledged; no full study selected.
+
+## 2026-10-24 — synchronization interest and terminology correction
+
+- Owner expressed interest in disrupting synchronization and asked about LLM nondeterminism and alternative optimal schemes. Clarified deterministic ideal probability calculation versus random sampling and actual numerical reproducibility limits.
+- Avoid labeling the practical iMEC implementation “theoretically optimal” without qualification: its approximate coupling routine is distinct from the optimality characterization. Added targeted alternative-scheme references and a possible synchronization study, without selecting or running a new experiment.
