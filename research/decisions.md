@@ -16,3 +16,7 @@
 - A tiny arithmetic feasibility check found the audit starter's permutation-null statistic invariant to its shuffle. No upstream code modification was made.
 - Owner subsequently supplied an OpenRouter credential. Stored it only in local ignored `.env` (0600); no provider requests or paid inference performed. No budget/model selected.
 - Next scientific decision remains which uncertainty to prioritize; no full experiment should be built until that discussion selects a question.
+
+## 2026-10-24 — OpenRouter authentication check
+
+- At the owner’s request, checked the saved key against OpenRouter’s authentication endpoint. It returned HTTP 401 Unauthorized. A valid credential is needed before inference. No model calls or experimental expenditure occurred.
