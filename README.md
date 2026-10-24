@@ -6,6 +6,8 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 
 **Current research agenda:** develop two approaches in parallel—[a ground-up learned/verified architecture and task-preserving steganography removal](research/two-approach-agenda.md). Specific theorem, task, full experiment and inference budget remain unselected.
 
+First delegated research passes are complete: [architecture proposal](research/workstreams/architecture/proposal.md) and [task-preserving reconstruction proposal](research/workstreams/task-preserving-rewrite/proposal.md). Both record limitations and source-reading scope; neither establishes novelty or a general security theorem.
+
 - [Research brief](research/brief.md): enduring context and constraints.
 - [Literature](research/literature.md): source-verified claims, assumptions, and limitations.
 - [Shared-knowledge assumptions](research/shared-knowledge.md): which approaches require pre-shared secrets, and which do not.

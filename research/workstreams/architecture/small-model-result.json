@@ -1,0 +1,21 @@
+{
+  "scope": "All 64 directed three-vertex graphs, unit edges, source 0",
+  "two_sweep_schedules": 614227,
+  "two_sweep_mismatches": 0,
+  "graphs_with_order_dependent_one_sweep_state": 16,
+  "first_counterexample_edges": [
+    [
+      0,
+      2
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "limitations": [
+    "Not a mechanized general proof",
+    "No trained model, floats, resource isolation or physical timing",
+    "Results cover only the finite graph family declared above"
+  ]
+}

@@ -97,3 +97,10 @@
 - Owner requested developing both a ground-up transformer/verified-code architecture and steganography removal by rewriting with task preservation. This is an active two-approach agenda; neither should displace the other by default.
 - Added design seeds, prospective proof/evaluation targets, baselines, controls, confounders, costs and informative negatives. The architecture approach concerns internal computation/training; rewrite preservation is against the original task, not automatic retention of every submitted choice.
 - Specific task/theorem/full experiment and model budget remain unselected. No inference, training or new experiment launched. Closest precedents continue to constrain novelty claims.
+
+## 2026-10-24 — both delegated first research passes completed
+
+- Owner explicitly authorized two agents, one per approach. Both produced proposals, reading-scope/source ledgers and completed checklists under `research/workstreams/`.
+- Architecture: internal learned scheduling and verified exact updates support an informal authorized-release/noninterference argument. A finite 64-graph check covered 614,227 schedules. No general mechanized theorem or useful neural advantage was established; complete sweeps retain the exact work and add neural overhead.
+- Rewrite: recommended bounded executable programs with exhaustive functional validation and a task-fixed cost ceiling. A four-output analytical example retains 75% optimal bit recovery when the preservation threshold depends on the submitted artifact. This is a sanity check, not a new theorem. Further canonical-interface prior art narrows novelty.
+- Primary agent inspected the drafts and finite-check source. No paid inference, training, dependency installation or full experiment. Proposed next checks remain proposals; novelty is unestablished for both approaches.
