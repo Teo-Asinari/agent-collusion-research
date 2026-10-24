@@ -6,6 +6,7 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 
 - [Research brief](research/brief.md): enduring context and constraints.
 - [Literature](research/literature.md): source-verified claims, assumptions, and limitations.
+- [Shared-knowledge assumptions](research/shared-knowledge.md): which approaches require pre-shared secrets, and which do not.
 - [Starter inventory](research/starter-map.md): external code and research-track mapping.
 - [Questions](research/questions.md): unresolved conceptual and empirical questions.
 - [Candidates](research/ideas.md): hypotheses, designs, controls, feasibility, and negative results.

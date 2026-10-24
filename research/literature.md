@@ -2,6 +2,8 @@
 
 Initial primary-source review, accessed 2026-10-24. This is a selective landscape, not an exhaustive review of the starter's 234 entries. No novelty claim has been established. Paper results below are author-reported, not reproduced here. Abstract-only readings are marked. Code observations are separate in [starter-map.md](starter-map.md).
 
+Follow-up: [shared-knowledge assumptions](shared-knowledge.md) distinguishes shared-key constructions, public-key steganography, covert key exchange, learned protocols and seed recovery. It includes additional primary sources and corrects any inference that pre-shared private knowledge is universally necessary.
+
 ## 1. Tool-use capability versus secure implementation versus choice
 
 **Rippin et al., [Tool Use Enables Undetectable Steganography in Multi-Agent LLM Systems](https://arxiv.org/html/2606.28425v1), v1.** Inspected §§3–4, Appendix A, prompts, Appendix D/Table 1, code-availability statement.

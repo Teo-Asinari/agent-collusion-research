@@ -24,3 +24,11 @@
 ## 2026-10-24 — corrected OpenRouter credential verified
 
 - Replaced the local ignored credential with the owner’s correction. Authentication endpoint returned HTTP 200; key-level limit and remaining limit both USD 100, usage USD 0. No paid inference was attempted. The key limit is not an approved experiment budget or independent account-balance verification.
+
+## 2026-10-24 — clarified research focus and knowledge assumptions
+
+- Owner clarified interest in practical barriers to theoretically undetectable steganography. Earlier candidate preferences for restriction/causal auditing are not the current research priority and were never a selection.
+- Discussed speculative alternatives: auditor feedback aiding synchronization, interference between concurrent covert protocols, ambiguity from multiple public implementations, and detectability during channel formation. Novelty unverified; none selected.
+- Owner requested primary-source verification of whether all approaches assume common private knowledge. Added `research/shared-knowledge.md`: pre-shared secrets are not universally required; distinguish public-key systems, covert establishment of session secrets, training-derived conventions and public decoding.
+- Corrected conceptual framing: a secure setup transcript need not expose “courtship”; theoretical covert key exchange already addresses that possibility. Practical formation traces remain a conditional empirical proposal.
+- No experiment or inference was run.
