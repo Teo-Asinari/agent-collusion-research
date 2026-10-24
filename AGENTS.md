@@ -2,7 +2,7 @@
 
 Read `research/brief.md`, `research/decisions.md`, and the current literature/candidate notes before continuing.
 
-- Preserve exploratory scope. No experiment has been selected. Compare candidates and discuss a research question with the user before building a full experiment. Small disposable feasibility checks are allowed when they discriminate between candidates.
+- Preserve exploratory scope. No full hackathon study has been selected. The owner explicitly authorized a local anti-steganography prototype; see `experiments/anti_stego/README.md`. Compare candidates and discuss a research question before expanding to a full experiment. Small feasibility checks are allowed when they discriminate between candidates.
 - Be skeptical: challenge weak assumptions, confounded designs, and novelty claims. Do not optimize for implementation convenience over contribution.
 - Verify claims against primary papers and author repositories. Record URLs, versions/commit SHAs, inspected sections, and access dates. Separate paper claims, verified code behavior, our interpretations, and untested hypotheses. Mark incomplete reviews explicitly.
 - Distinguish channel capacity, instructed use, independent discovery, chosen exploitation, harmful coordination, and adaptation under monitoring. Do not label all cooperation or correlated behavior collusion.

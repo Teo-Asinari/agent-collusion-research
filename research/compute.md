@@ -1,6 +1,6 @@
 # Compute and expenditure ledger
 
-No model inference or cloud compute has been run for this project. Actual experiment spend: **$0**. Literature browsing and development assistant service costs are outside this experimental ledger.
+No model inference or cloud compute has been run for this project. Actual experiment spend: **$0**. Local standard-library scripted feasibility tests have run. Literature browsing and development assistant service costs are outside this experimental ledger.
 
 An OpenRouter credential was supplied by the owner and stored only in the ignored local `.env` with mode 0600. Its value is never recorded in research notes. Corrected credential authenticated on 2026-10-24 via OpenRouter’s `/api/v1/auth/key` endpoint: HTTP 200. Endpoint reports key limit USD 100, limit remaining USD 100, usage USD 0, and no expiration. These are key-level limits, not independent verification of account credit balance or model availability. The earlier credential returned HTTP 401 and has been replaced locally. No inference request was made; model prices remain unverified. No budget ceiling has been selected. Do not silently treat unknown usage as free.
 
@@ -8,4 +8,5 @@ Before a pilot record model/provider, input/output token estimates, current unit
 
 | Run | Status | Estimated USD | Actual USD | Tokens / compute | Notes |
 | --- | --- | --- | --- | --- | --- |
-| None | No experiment selected | — | 0 | 0 | No provider credentials accessed |
+| Initial literature work | No inference | — | 0 | 0 | Later credential verification used only the authentication endpoint |
+| anti_stego/local-smoke | Scripted feasibility complete | 0 | 0 | 7,680 local records; no model tokens | Eight tests; no API calls |

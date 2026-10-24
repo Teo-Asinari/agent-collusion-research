@@ -32,3 +32,11 @@
 - Owner requested primary-source verification of whether all approaches assume common private knowledge. Added `research/shared-knowledge.md`: pre-shared secrets are not universally required; distinguish public-key systems, covert establishment of session secrets, training-derived conventions and public decoding.
 - Corrected conceptual framing: a secure setup transcript need not expose “courtship”; theoretical covert key exchange already addresses that possibility. Practical formation traces remain a conditional empirical proposal.
 - No experiment or inference was run.
+
+## 2026-10-24 — active-defense prototype authorized and implemented
+
+- Owner requested research into assumptions of the keyless construction, then supplied the cache/RAM timing example and requested actual creation of anti-steganographic protocols. This authorizes the scoped prototype; earlier exploration-only instructions are updated for this action.
+- Verified cache-timing example against OpenAI's primary Oct 23 report, including elicitation caveats. Recorded keyless assumptions separately.
+- Built a local standard-library assignment-release broker with syntax normalization, semantic projection, defender-controlled rerendering and public-task replanning. All six scripted encoders work before intervention; task-choice encoding deliberately survives projection.
+- Ran eight tests and 256 balanced trials per cell (six carriers × five modes, 7,680 logged records), with model spend USD 0. These are feasibility controls, not evidence of autonomous behavior, real hardware isolation, or a novel universal defense.
+- Full hackathon question, model-based/adaptive evaluation and inference budget remain unselected. Prototype boundaries and reproduction instructions are recorded with the artifacts.

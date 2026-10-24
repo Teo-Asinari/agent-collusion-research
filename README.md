@@ -2,18 +2,20 @@
 
 Private exploratory research workspace for the Apart Research AI Collusion Research Sprint, October 23–25, 2026.
 
-**Status: no research question or experiment selected.** Compare alternatives before implementation. No inference expenditure has been incurred by this workspace.
+**Status: no full hackathon study selected.** At the owner's request, a local scripted [anti-steganography prototype](experiments/anti_stego/README.md) now tests task-aware release protocols and an explicit surviving semantic channel. No model inference expenditure has been incurred.
 
 - [Research brief](research/brief.md): enduring context and constraints.
 - [Literature](research/literature.md): source-verified claims, assumptions, and limitations.
 - [Shared-knowledge assumptions](research/shared-knowledge.md): which approaches require pre-shared secrets, and which do not.
+- [Keyless construction](research/keyless-construction.md): assumptions and practical questions.
+- [Active defenses](research/anti-steganography.md): prototype, literature context and verified cache-timing report.
 - [Starter inventory](research/starter-map.md): external code and research-track mapping.
 - [Questions](research/questions.md): unresolved conceptual and empirical questions.
 - [Candidates](research/ideas.md): hypotheses, designs, controls, feasibility, and negative results.
 - [Decisions](research/decisions.md): explicit choices and their rationale.
 - [Compute ledger](research/compute.md): proposed budgets and actual spending.
 
-`experiments/` is reserved for selected experiments; `results/` for documented outputs; `references/` for source provenance. There is no experiment implementation yet.
+`experiments/` contains scoped feasibility work; `results/` holds documented outputs; `references/` records source provenance. The first prototype is scripted and does not evaluate autonomous collusion.
 
 ## External starting points
 
