@@ -85,3 +85,9 @@
 
 - Owner asked whether formal methods could yield an LLM architecture that never uses steganography or colludes. Reviewed close primary precedents and recorded precise guarantee targets and assumptions in `formal-hybrid-architectures.md`.
 - LLMbda already supplies machine-checked probabilistic noninterference with termination qualifications; Fides explicitly leaves control-flow/side channels outside its secrecy guarantee. No broad novelty claim, implementation or selected study follows.
+
+## 2026-10-24 — clarified ground-up neural and verified architecture scope
+
+- Owner clarified that the intended system interleaves/restructures transformer computation and verified code from the ground up, rather than monitoring an ordinary LLM with external tooling. Current focus is prevention of steganographic transfer.
+- Recorded proposed architecture-preserved invariants covering inference, training, release, randomness, recurrence and deployment assumptions. Located transformer-level IFC precedent (Tiwari et al., USENIX Security 2024) and adjacent architectural proof/Vehicle work with reading limits.
+- This clarification does not select a full study or establish a new theorem. Future proposals must respect the architectural scope and compare against learned-model IFC, not only agent wrappers.

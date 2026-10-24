@@ -33,3 +33,30 @@ Proofs of ordinary task correctness alone are insufficient. If two distinct acce
 Generic verified wrappers, dual-model isolation, information-flow tracking and machine-checked LLM harnesses already have precedents. A meaningful investigation needs a specific missing guarantee and useful task, compared directly with these systems. No gap has yet been established. Proving lack of extra communication and ruling out harmful joint outcomes are different objectives; neither should silently substitute for the other.
 
 See also [physical isolation and mediation](isolation-and-mediation.md) and [the novelty audit](novelty-audit.md).
+
+## Owner clarification: redesign the learned architecture itself
+
+The owner explicitly means a ground-up combination of transformer computation and formally verified code, with anti-steganography invariants built into the computational architecture. A conventional LLM monitored by a wrapper does not satisfy the intended scope. Focus is steganography, not general harmful coordination. The earlier runtime-oriented sketch is a comparison point, not the requested architecture.
+
+**A stronger possible target:** prove an information-flow property for every allowed choice of neural weights, by construction of the permitted computation graph and state transitions. Training would improve task performance within that class. This is a proposed proof strategy, not an established theorem for a new design. If useful neural operations require semantic contracts beyond structural separation, those contracts need independent proofs or a narrower learned-module class.
+
+Candidate proof obligations, to be refined before implementation:
+
+| Obligation | Architectural consequences to investigate |
+| --- | --- |
+| Protected information has no unauthorized causal path | Partition neural state and attention; inspect residual paths, normalization, caches, routing and recurrence as well as attention masks |
+| Only a specified task function may release protected information | Formally define that function; an unconstrained learned summarizer is not automatically a trusted semantic boundary |
+| Learning preserves separation | Constrain parameter sharing, gradients, optimizer state and permitted online updates |
+| Randomness cannot carry a sender-controlled choice | Specify joint randomness, receiver side information and how all random choices are generated and used |
+| Repeated operation preserves the property | Prove composition over memory, steps and interactions; a one-step or marginal result is insufficient |
+| Implementation matches abstract observations | Specify numerical semantics, scheduling, errors and hardware assumptions; code-level flow separation alone does not certify physical noninterference |
+
+These obligations should imply a relational property over complete receiver views, rather than merely certify every individual output as task-valid. Preventing operational transfer does not require banning arbitrary internal encodings, which may be ordinary learned representations and require a separate definition.
+
+### Additional architectural primary sources
+
+- [Tiwari et al., Information Flow Control in Machine Learning through Modular Model Architecture, USENIX Security 2024](https://www.usenix.org/system/files/usenixsecurity24-tiwari.pdf): inspected introduction, §2 definitions, architecture overview and limitations. Separates training-domain influence into experts; restricts gating and aggregation to accessible domains. Direct transformer/training architectural precedent, not general malicious-agent steganography prevention. No mechanized-proof or implementation audit performed.
+- [Chong & van der Meyden, Using Architecture to Reason about Information Security, 2015](https://people.seas.harvard.edu/~chong/abstracts/ChongM2015.html): author abstract only. Architectural causal constraints plus local trusted-component properties support information-flow proofs and refinement. Adjacent compositional methodology; not a neural architecture.
+- [Daggitt et al., Vehicle, FSCD 2025](https://drops.dagstuhl.de/storage/00lipics/lipics-vol337-fscd2025/html/LIPIcs.FSCD.2025.2/LIPIcs.FSCD.2025.2.html): abstract/introduction inspected. Integrates neural specifications and symbolic proofs, addressing their embedding gap. Adjacent verification infrastructure; demonstrated controller safety is not anti-steganography.
+
+All three accessed 2026-10-24. No new architecture implemented, experiment selected, budget spent or novelty established. Next useful theoretical artifact would be a small explicit architecture, an operational definition and a compositional theorem or counterexample—not a generic proof-of-correctness output filter.
