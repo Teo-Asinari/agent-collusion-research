@@ -9,6 +9,8 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 - [Shared-knowledge assumptions](research/shared-knowledge.md): which approaches require pre-shared secrets, and which do not.
 - [Keyless construction](research/keyless-construction.md): assumptions and practical questions.
 - [Active defenses](research/anti-steganography.md): prototype, literature context and verified cache-timing report.
+- [Mathematical directions](research/mathematical-directions.md): equivalence classes, invariants, information flow and complexity.
+- [iMEC reference check](research/imec-reference.md): concrete upstream encoder/decoder and a minimal executed round trip.
 - [Starter inventory](research/starter-map.md): external code and research-track mapping.
 - [Questions](research/questions.md): unresolved conceptual and empirical questions.
 - [Candidates](research/ideas.md): hypotheses, designs, controls, feasibility, and negative results.

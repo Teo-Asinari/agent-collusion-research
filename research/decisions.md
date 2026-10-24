@@ -40,3 +40,9 @@
 - Built a local standard-library assignment-release broker with syntax normalization, semantic projection, defender-controlled rerendering and public-task replanning. All six scripted encoders work before intervention; task-choice encoding deliberately survives projection.
 - Ran eight tests and 256 balanced trials per cell (six carriers × five modes, 7,680 logged records), with model spend USD 0. These are feasibility controls, not evidence of autonomous behavior, real hardware isolation, or a novel universal defense.
 - Full hackathon question, model-based/adaptive evaluation and inference budget remain unselected. Prototype boundaries and reproduction instructions are recorded with the artifacts.
+
+## 2026-10-24 — reference iMEC and mathematical framing
+
+- Owner identified the original iMEC repository as a concrete example. Inspected pinned source and ran its original selected numerical/encoder/decoder definitions with our four-symbol carrier adapter. Recovered `Hi` exactly. This was not a GPT-2 reproduction, optimality/security certification, or autonomous-agent study. No dependencies installed; no inference spend.
+- Added a reproducible inspection runner without vendoring upstream source. Documented stale standalone-demo calls, actual harness path, shared setup assumptions and approximate coupling implementation.
+- Owner asked about knot theory, topology and complexity connections. Recorded equivalence-class release, transformation invariants/mixing, noninterference/hyperproperties and complexity distinctions. These are candidate tools, with existing literature acknowledged; no full study selected.
