@@ -15,6 +15,11 @@ Access date: 2026-10-24. All links below are primary author/publisher sources. T
 
 Representative searches used: neural/transformer architectural information-flow control; neural-guided algorithms with formal correctness; delimited release; chaotic/fixed-point iteration and scheduling; verified neurosymbolic exploration. This is not an exhaustive citation-index audit. The absence of an exact match in this pass does not establish novelty.
 
-## Our executable artifact
+## Revision 1 primary additions
+
+- [Polak & Schmidt, Warm-Starting All-Pairs Shortest Paths with Predictions, arXiv 2607.00857v1, July 1 2026](https://arxiv.org/html/2607.00857v1): accessed 2026-10-24. Read abstract, §1.1/Theorem 1, Algorithm 1 and targeted §§3–4 verification/recovery passages. Predictive certificates can reduce exact APSP work while maintaining unconditional correctness. Its bound accounts for verification and recovery but not an arbitrary neural predictor's cost. No proof audit, code inspection or reproduction. Author-linked release identified in paper, not inspected. This directly prevents novelty claims for merely combining prediction, certification and fallback.
+- [Pandey et al., Don't Judge an Agent by Its Messages, arXiv 2610.25032v1, October 18 2026](https://arxiv.org/html/2610.25032v1): accessed 2026-10-24. Read §V-C including Proposition V.3 and surrounding key-aware framing. Task-only canonicalization and zero-error release are direct precedents. Balanced conditional attributes and a key independent of private state qualify the advertised bounds; these are not silently substituted for a per-history/per-key system theorem. Full paper/proofs not audited.
+
+## Our executable artifact (scope unchanged)
 
 `check_small_model.py` is newly authored standard-library code for a bounded analytical check, not copied upstream. It abstracts a scheduler as an arbitrary permutation, so no neural implementation is claimed. Run command and observed result are recorded in `proposal.md`. No credentials, external datasets or model endpoints are used.

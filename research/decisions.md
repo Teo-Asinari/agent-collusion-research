@@ -104,3 +104,10 @@
 - Architecture: internal learned scheduling and verified exact updates support an informal authorized-release/noninterference argument. A finite 64-graph check covered 614,227 schedules. No general mechanized theorem or useful neural advantage was established; complete sweeps retain the exact work and add neural overhead.
 - Rewrite: recommended bounded executable programs with exhaustive functional validation and a task-fixed cost ceiling. A four-output analytical example retains 75% optimal bit recovery when the preservation threshold depends on the submitted artifact. This is a sanity check, not a new theorem. Further canonical-interface prior art narrows novelty.
 - Primary agent inspected the drafts and finite-check source. No paid inference, training, dependency installation or full experiment. Proposed next checks remain proposals; novelty is unestablished for both approaches.
+
+## 2026-10-24 — two-round adversarial review and revision
+
+- Owner explicitly requested an adversarial review/improvement loop incorporating prior art. Ran an independent reviewer across both workstreams, with two author revision rounds and source-scope ledgers.
+- Architecture now specifies a closed bounded predictor/verified-witness machine and conditional-history argument, with explicit preprocessing cost and primitive extension obligations. Learned utility, novelty and mechanical/deployment verification remain open.
+- Rewrite now supplies an executable finite certificate-reconstruction kernel: all 280,000 bounded content rows agree including invalid-input fallback; exposing length/fallback diagnostics creates a perfect distinguishing channel. This is not a general code sanitizer, cost advantage or physical-security result.
+- Added close certifying-algorithm, prediction-assisted algorithm and iO comparisons without novelty claims. No paid inference, training, dependency installation or full study. Detailed disposition and unresolved original objectives are preserved in `research/reviews/outcome.md`.

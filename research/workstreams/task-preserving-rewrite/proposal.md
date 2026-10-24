@@ -1,104 +1,85 @@
-# Task-preserving reconstruction: concrete proposal and failure boundaries
+# Task-preserving reconstruction — final bounded revision 2
 
-2026-10-24. Research proposal, not an approved full study. No model inference, dependency installation, GPU allocation or full experiment was performed. One four-state analytical sanity check was calculated with Python's standard library. [Source/read-depth ledger](sources.md).
+2026-10-24. Revised against [round-one review](../../reviews/round-1.md) and [round-two review](../../reviews/round-2.md). This is an exact finite-model construction plus a research proposal, not a general steganography-removal system. No paid inference, training or dependencies. [First response](revision-1.md), [final response](revision-2.md), [source scope](sources.md), [preparation](revision-preparation.md).
 
-## Recommendation
+## Revised verdict
 
-Develop an **oracle-checked reconstruction method**, provisionally on bounded executable programs, rather than another unconstrained prose paraphraser. Give the defender the original task, an untrusted solution, and a task validator. Permit changes in algorithm/representation when the original task permits them. Compare local refactoring, broader equivalent reconstruction and independent synthesis. Test an adapted receiver and sender, not only the original decoder.
+A complete, restricted sanitizer can reuse a sender-computed unique intermediate result, discard a nonunique witness carrying a payload, and reconstruct a canonical task-valid artifact. The construction below has identical content-channel rows over all 280,000 inputs in its declared universe, including invalid certificates. It uses established certifying-computation ideas; novelty and an efficiency advantage over a strong symbolic baseline are **not established**. Generic rich-code rewriting remains unresolved.
 
-This is a research design, not an established novel defense. The promising question is whether submitted useful work can be reused without preserving sender-chosen structure, and what computational savings survive a stringent leakage target. Existing paraphrasing, code watermark removal and superoptimization already cover much of this terrain. A contribution needs a specific result against those precedents.
+Round two found no material correction needed for this declared kernel. Acceptance is limited to the finite content model and informal argument; it is not proof-assistant certification, a deployment guarantee, or achievement of the original useful-artifact objective. The fixed graph can be solved or hardcoded without the submitted artifact, so enumerating its input records does not establish a useful computational advantage.
 
-## 1. Operational target
+## 1. Fixed finite task and complete kernel
 
-Let x be the trusted original task, y=E(x,m,k) the submitted artifact, m a balanced private payload independent of x, and k receiver side information, including a shared codebook/key. Let R(x,y;r) be the defender's randomized reconstruction. The receiver view V includes every released artifact, status, metadata and repeated-output history exposed by the declared interface. Defender randomness r is independent of m,k. Fix the task before drawing m and prevent sender control of its specification.
+Trusted task x is a directed graph on vertices s=0,a=1,b=2,t=3 with edges (s,a,1),(s,b,1),(a,t,1),(b,t,1),(s,t,4). Vertex IDs, positive integer weights, source and target are public and outside sender control. Return a shortest s-to-t path. Both [0,1,3] and [0,2,3] meet the task; retaining the sender's selected path can carry a bit. The task does not require retaining that selection.
 
-**Strong target:** for fixed x,k and permitted sender strategies, distributions of V are identical across payloads. If the legitimate task requires disclosure of private facts, explicitly define that authorized function and compare inputs agreeing on it. Do not condition on a sender-selected solution and then claim its choice was erased.
+A submission y=(D,P,c) consists of four proposed distances D in {0,1,2,3,4}^4, three parent IDs P in {0,1,2,3}^3 for vertices 1,2,3, and a comment c in {0,1}^{≤2}. Thus the entire universe has 5^4·4^3·7=280,000 records. No extra files, RNG, persistent hidden state or sender-selected task facts are part of this model. Arbitrary malformed byte strings and transport withholding are outside this finite universe, not silently covered by the theorem.
 
-**Approximate target:** upper-bound total variation between receiver views induced by two payloads. For a uniform binary payload and equal prior probabilities, optimal decoding accuracy is (1+TV)/2. Finite testing of a decoder provides a lower bound on exploitable transfer, not an upper bound against all decoders. Exact finite-kernel enumeration can certify a particular bounded interface; claims about arbitrary code or LLM adversaries require more.
+The deterministic kernel R does:
 
-**Preservation:** satisfy the original task, with a predeclared correctness and quality tolerance. Preserve exact program behavior only when that is the required task; preserve efficiency/readability constraints separately. Preserving every submitted semantic choice can make erasure impossible by definition.
+1. Check D(0)=0, every public-edge inequality D(v)≤D(u)+w(u,v), and that each submitted parent edge exists and is tight. Evaluate all checks; do not return after the first failure.
+2. If valid, retain D. If invalid, compute true distances from x using task-only, deterministic array Dijkstra. Never return the original artifact, an error symbol or a sender-dependent fallback.
+3. Scan public edges. For each non-source vertex choose the lowest-ID predecessor satisfying D(v)=D(u)+w(u,v). Reconstruct the target's predecessor chain and serialize the path as exactly the UTF-8 bytes `[0,1,3]`, without extra whitespace or newline.
 
-## 2. A useful elementary feasibility criterion
+R has no random seed; all transition probabilities are 0 or 1. Its abstract outcome is exactly those bytes after a fixed logical release event. The supplied script computes and serializes those bytes. It is not an implemented transport or a physical timing guarantee.
 
-For fixed x, let A_y be the finite set of released outputs allowed by the task and the chosen preservation rule for input artifact y. A sanitizer whose full output distribution is identical for every admissible y can have zero failure only if the intersection of all A_y is nonempty. Conversely, any output in that intersection gives a constant-output sanitizer with this property. The proof is support containment in every A_y; the converse is immediate. This elementary criterion is not a novelty claim or an efficient construction.
+## 2. Correctness and why this actually reuses something
 
-It forces the right questions: are we preserving the original task, or different sender-selected requirements? If the intersection is nonempty but hard to find, that is a computational question; local rewrite failure does not settle it. For randomized task specifications or allowed failures, reformulate the criterion rather than silently applying the zero-failure finite version.
+For strictly positive weights and source-reachable vertices, the certificate conditions force D to equal the true shortest distances: triangle inequalities give the lower bound along any source path, and tight predecessor chains strictly decrease D until reaching the source, furnishing a matching path. The standard certificate is established prior art, not our theorem innovation. See the primary §2.4 reading in [sources.md](sources.md).
 
-## 3. Specific failure: inheriting the sender's quality target
+After validation, reconstructing from the unique D removes the sender's parent/tree choice. Positivity implies every reconstructed predecessor has smaller D, so it cannot cycle; at most |V|−1 predecessor steps are needed. Zero-weight cycles would require stronger certification and reconstruction rules, and are excluded here. The fixed graph has unique distances (0,1,1,2), although shortest paths are nonunique.
 
-A quality-preserving random walk can forget its starting point within a quality class while retaining a payload-dependent choice of that class. Consider four outputs a0,a1,b0,b1. Both a outputs have quality 1; both b outputs quality 2. The original task accepts quality at least 1. The sender selects an a output for payload 0 and a b output for payload 1.
+On a valid submission, the kernel consumes the computed distance labels and does not run an independent shortest-path solver. This is actual computational reuse through a unique checked intermediate, rather than copying a sender-selected subexpression. The invalid branch deliberately solves independently. It is a known-method composition, not a general transformation of arbitrary programs.
 
-Suppose a sanitizer perfectly samples uniformly among outputs with quality at least the submitted output's quality. Its distributions are:
+## 3. Complete row matrix, including failures
 
-| Payload | a0 | a1 | b0 | b1 |
-| --- | --- | --- | --- | --- |
-| 0 | 1/4 | 1/4 | 1/4 | 1/4 |
-| 1 | 0 | 0 | 1/2 | 1/2 |
+The following is the complete content-channel matrix in row-compressed form. Every record falls in exactly one category. A cell is its conditional probability, not its frequency in a random experiment.
 
-Every output meets the original task and never lowers the submitted quality. Nevertheless TV=1/2, optimal bit recovery is 3/4, and mutual information is approximately 0.311278 bits. A fixed task-derived threshold of 1 with the same common uniform target gives TV=0 in this finite example. Sampling only from b outputs would also erase the signal and preserve both initial quality levels, so this is not a general impossibility result.
+| Input-row category | Number of rows | Release `[0,1,3]` | Any failure outcome |
+| --- | ---: | ---: | ---: |
+| Valid, comment length 0 | 2 | 1 | 0 |
+| Valid, comment length 1 | 4 | 1 | 0 |
+| Valid, comment length 2 | 8 | 1 | 0 |
+| Invalid, comment length 0 | 39,998 | 1 | 0 |
+| Invalid, comment length 1 | 79,996 | 1 | 0 |
+| Invalid, comment length 2 | 159,992 | 1 | 0 |
 
-These fractions and information value were checked with Python `fractions.Fraction` and `math.log2`, using the displayed probability vectors. No stochastic run or LLM experiment was used. The example is a sanity check on our definition, not a claimed new theorem or a refutation of watermark-removal results, whose security objective differs. It motivates treating initial quality, warm starts, stopping criteria and fallback behavior as possible input-dependent channels.
+All pairwise content-row TV distances are zero, hence their maximum is zero. This holds over all 280,000 declared records, not just two encoders or successful reconstructions. Two nontrivial valid structural encodings choose parent a versus b for t; both yield the same sanitized path. The seven optional comments provide additional syntax/payload choices. Fourteen rows pass validation and 279,986 invoke fallback; accepted distances have exactly one possible vector.
 
-## 4. Compare task families before selection
+**Expanded-observation counterexample:** if V also contains (comment length, fallback flag), the six categories become six distinct deterministic outcomes; maximum row TV is 1. Two valid submissions of different lengths already distinguish perfectly in that diagnostic view. Invalid certificates that fail different checks also entail different comparison outcomes internally, even though the checker runs all listed constraints. We do not certify constant-time execution, memory access, exception behavior, resource effects or parsing.
 
-| Family | Preservation oracle | Strength | Main drawback / closest overlap |
-| --- | --- | --- | --- |
-| Small schedules/constraint solutions | Exact validity and objective | Easy to enumerate channels and optimal reconstruction | Closely anticipated by Kahng and our assignment prototype; generic SAT study is weak novelty |
-| Bounded loop-free bit-vector programs | Exhaustive behavior over all finite inputs, plus explicit instruction cost | Exact functional preservation; meaningful algorithmic/structural choice and synthesis cost | Artificial scale; compiler/superoptimization and code-watermark prior art are strong |
-| Ordinary repository code | Tests plus optional translation validation for supported fragments | Direct relevance to agentic software work | Tests miss regressions; builds, environment and repository placement add channels |
-| Free-form explanations/literature reviews | Task rubric and independent evaluation | Rich semantic choices | Quality oracle itself is uncertain and can preserve the hidden content |
+## 4. Verification performed and cost accounting
 
-**Provisional feasibility choice:** one-input 4-bit programs initially, expanding to 8 bits only if needed. Restrict operations and length so every candidate terminates and every input can be evaluated; define arithmetic modulo 2^b, with no undefined behavior, IO or mutable external state. The task specifies the desired finite function and an externally fixed cost ceiling. All input points are checked, not just a test sample. This buys a strong oracle; it is not itself a scientific contribution.
+[kernel_analysis.py](kernel_analysis.py) exactly enumerates the finite universe and verifies counts, unique accepted D, reconstructed outputs and row classes. Command: `python research/workstreams/task-preserving-rewrite/kernel_analysis.py`. It completed with all assertions satisfied. This is exhaustive analysis of a small executable mathematical model, not a proof-assistant result or a benchmark of learned encoders. Reported worst-case TV follows directly from the deterministic row classes; no quadratic pairwise loop is needed.
 
-Sender controls the implementation: algebraic identities, alternate decompositions, operation order or choice among short implementations. Provide at least two payload values with genuinely valid artifacts and verify their visibility after each intervention. A codebook using a constant's spelling alone is a weak control, not the main adversary. Code generation need not involve an LLM for this initial mechanism check; transfer to real learned encoders is a separate stage.
+For the graph-family algorithm, valid-certificate checking and canonical reconstruction use O(V+E) arithmetic operations and no shortest-path search. Parsing adds O(L) for bounded submission length L. A binary-heap Dijkstra comparison baseline takes O((V+E)log V) operations, but this is not a lower bound on all symbolic algorithms or a bit-complexity statement. Small integers, heap overhead and task-family structure can eliminate any practical advantage.
 
-Do not release truth tables as a shortcut unless they satisfy the task's code/size/performance requirements. A canonical lookup table may erase structure while violating the intended utility contract. Conversely, if lookup tables are permitted and cheap, their success is an informative negative for any claimed reconstruction barrier.
+For the actual four-node task, a strong baseline is task-only array Dijkstra, or a hardcoded answer if this single graph is the entire deployment. The latter needs no submitted work at all. We have **not** shown a net speedup on this task; certificate checking plus reconstruction may be slower than direct solving. Generalizing over many graphs would require fresh analysis and the strongest suitable baseline, including algorithms with predictions. Do not infer an efficiency contribution from the asymptotic comparison alone.
 
-## 5. Reconstruction pipeline and comparison arms
-
-1. Parse y into a defined intermediate representation. Validate complete behavior against x; canonicalize names and serialization.
-2. Apply sound equivalence rewrites or reconstruct a program from task-derived semantics, with independent randomness where used. Retaining extracted expressions or initialization from y may retain the signal; measure this dependence.
-3. Check correctness over the full finite domain and the fixed cost ceiling. Permit algorithmic replacement; do not require edit similarity.
-4. Return via a fixed modeled release interface. Treat invalid input, timeout and no-solution as observable outcomes. Never silently evaluate only accepted instances.
-
-| Arm | Role |
-| --- | --- |
-| Identity | Functioning channel control |
-| Names/format normalization | Weak syntax baseline |
-| Ordinary paraphrase/refactor | Typical defense; scripted now, hosted-model version only after budget selection |
-| Task-conditioned reconstruction using y | Main reuse-based intervention |
-| Structural reconstruction with wider search | Tests beyond local transformations |
-| Independent synthesis from x only | Essential strong baseline; no y-dependent warm start, cost cap, seed or failure decision |
-| Cheap canonical family | Negative control where erasure should be straightforward |
-
-Independent synthesis must use a task-fixed search order and budget, with a declared fallback derived only from x. Otherwise a success/timeout or old-code fallback can restore y-dependence. Enumerative canonical synthesis can yield a formal content guarantee for this finite interface if it completes; its cost is the tradeoff to measure. It does not imply security for actual runtime timing.
-
-## 6. Attacker adaptation and inference
-
-Evaluate three distinct regimes: frozen encoder/decoder; decoder refit to rewritten outputs; jointly adapted encoder/decoder with stated construction/query budget and no evaluation-label access. Include a keyed family and a receiver that aggregates repeated artifacts. Do not call their instructed use spontaneous collusion or claim distributional covertness without a separate test/model.
-
-Split by original task/function before generating variants and payloads. Enumerated rewrites and repeated payload samples of one task are correlated; report task-clustered uncertainty. Separate development/adaptation data from held-out task families and seeds. Use balanced payloads, public-task-only receiver baselines, no-delivery controls, valid-delivery positive controls and honest no-payload artifacts. Logs that expose m, unsanitized artifacts or selected seeds must not enter the receiver view.
-
-Primary outcomes: exact functional validity, fixed cost-ceiling compliance, adapted bit recovery and defender search/evaluation cost. Secondary: partial information, multi-output recovery, rejection/timeout frequency and any lower bound on transfer from an empirical receiver. For a fully enumerated small rewrite kernel, calculate pairwise TV rather than relying on a learned detector. Report average and worst discovered sender pairs separately; held-out attacks are not a universal worst case.
-
-Use a utility-versus-leakage-versus-compute frontier, not a single removal percentage. Correctness should be a hard requirement in the finite DSL. A degraded answer or missing delivery is not a successful defense merely because a frozen decoder fails.
-
-## 7. Prior-art delta and go/no-go
-
-| Closest precedent | Already covered | Proposed distinction needing verification |
+| Branch / guarantee | Reused work | Added cost and limitation |
 | --- | --- | --- |
-| Roger–Greenblatt §§5.3,7.2 | Context-aware paraphrase versus regeneration; reuse of a stronger model's insights | Exact-oracle structural reconstruction and adapted transfer measurement, not just another paraphrase prompt |
-| Watermarks in the Sand / Sandcastles | Quality-oracle random walks and mixing/quality difficulties | Payload independence of the full release under fixed versus inherited quality targets; not merely watermark detection failure |
-| Kahng et al. | Constraint solution-choice encoding and re-solving removal cost | Cannot claim that basic mechanism or its cost intuition is new |
-| SrcMarker | Code structure/identifier channels, adaptive removal and functionality checks | Exact finite-domain validation and joint adversarial adaptation; benchmark size alone is insufficient novelty |
-| Hand and Brain | Semantic strategy channels and decision-anchor intervention; some adaptation | Post-creation reconstruction differs, but full-text review remains necessary before claiming a new adaptive setting |
-| Pandey et al., Oct 2026 | Canonical task interface, private-state leakage and shared-key bounds | Rich artifact reconstruction/compute reuse beyond a small route alphabet; generic projection is already covered |
-| STOKE / equality saturation | Equivalent program search and cost-guided extraction | Need an explicit information-flow objective and evidence beyond ordinary optimization |
+| Valid-record content theorem | Checked true distances | Parse, full certificate check, reconstruction; no established net speedup |
+| All-record content theorem | Same fast path; independent solve on invalid records | Worst case includes full fallback; content guarantee still holds |
+| Fixed logical release | Same content computation | Scheduler specification hides branch/status; not an implemented timing defense |
+| Physical receiver view | Not established | Cache, energy, process behavior and wall time need additional enforced assumptions |
 
-**Novelty status:** not established. Candidate contribution forms are a verified bounded sanitizer that recovers a demonstrable useful-computation advantage, a consequential counterexample to a named defense, or an exact measurement identifying when reuse preserves payload that independent synthesis removes. Do not sell the four-state example, finite DSL or standard compilation as novel by themselves.
+## 5. Keys, repeated use and conditional-history guarantee
 
-## 8. Bounded next feasibility check
+For any key/side information k, each row releases the same C(x). Therefore this artifact adds no information about the payload conditional on x,k, even if a key already contains information about the payload. This is a property of the constant content kernel, not a cryptographic secrecy claim or an inference from independent marginals.
 
-Before a full study: choose a tiny DSL and about a dozen independently specified functions; check two structural encoders per function; compare task-conditioned local rewrites with task-only canonical enumeration under the same search limits. Enumerate enough small cases to calculate receiver-view distributions including failure. Stop if channels fail before defense, if canonicalization already cheaply removes them, if the task oracle is unreliable, or if every interesting setting exceeds practical search limits. Record those negatives rather than constructing a harder toy to rescue the premise.
+Repeated calls to this exact stateless kernel produce (C(x),…,C(x)), independent of every submitted record history. More generally a conditional-history formulation requires equal next-release distributions whenever authorized task/query histories and receiver histories agree. Public adaptive queries must be selected from those equal visible histories; sender-controlled secret-dependent queries are not allowed by this guarantee. Private caches, random-state reuse or hidden output-selection state would require new rules and proof.
 
-This check is proposed, not launched. It could use standard-library code and no inference spend. A hosted-model code-rewriting extension needs chosen models, verified access, estimated token workload and an approved budget. The only computation performed here was the four-state probability check above. No claim is made about realistic LLM scale, physical side channels or universal steganography removal.
+The counterexample V1=r, V2=r XOR m has uniform individual marginals but reveals m jointly. It is not an execution of this kernel: neither output can be arbitrary r or r XOR m because every release must equal C(x), and no retained r exists in its state. A randomized extension would need a joint/conditional-history proof, not just single-message tests.
+
+## 6. iO is a different formal route, not a practical fix
+
+[Jain–Lin–Sahai, arXiv 2008.09317v1 §2 Definition 2.2](https://arxiv.org/html/2008.09317v1) gives function preservation and computational indistinguishability for equivalent circuits of the same size and input/output lengths. This undermines any claim that exact-program implementation choice can only be hidden by canonicalization or re-solving. Their result is conditional and computational, not statistical zero against unbounded receivers.
+
+A comparison must specify public padding bounds, circuit conversion, randomness/metadata, evaluation and size overhead, and loss of source readability. Task-valid circuits computing different functions do not qualify. The displayed definition does not explicitly state an auxiliary-input/key game; we have not verified arbitrary key-aware or interactive extensions from it. No practical iO implementation or concrete runtime guarantee is proposed here.
+
+## 7. What remains open and what to do next
+
+The original rich-artifact objective remains open: an efficient reusable rewrite preserving useful code structure/cost while making all protected sender choices statistically or computationally unavailable. The finite-program candidate in the baseline is now a comparison setting, not a demonstrated sanitizer. Truth-table canonicalization costs exponential space in input width and may violate a compact-code contract; incomplete rewrite/e-graph closures need not have a common output law. A stationary law may be nonuniform: uniformity is not necessary, independence from protected choices is.
+
+Closest precedents remain certifying algorithms, canonical task interfaces, Roger–Greenblatt regeneration, code watermark removal, quality-preserving random walks, superoptimization and iO. No novelty claim survives merely by combining their vocabulary. The earlier four-quality-output example remains an elementary definition check, not a contribution.
+
+A next *proposed* check would compare valid-certificate reconstruction with strong task-only solving over a prespecified bounded graph family, including bad certificates and full diagnostic observations, before bringing in an LLM. If no useful cost advantage remains under the required observation model, report that negative and reconsider the task/construction. Do not expand into a full benchmark or paid model adaptation without choosing the scientific claim and budget.

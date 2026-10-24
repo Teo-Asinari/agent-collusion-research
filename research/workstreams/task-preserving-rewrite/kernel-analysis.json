@@ -1,0 +1,69 @@
+{
+  "scope": "All 280000 bounded record inputs; fixed public graph; content only.",
+  "input_count": 280000,
+  "valid_count": 14,
+  "invalid_count": 279986,
+  "unique_accepted_distances": [
+    [
+      0,
+      1,
+      1,
+      2
+    ]
+  ],
+  "content_distribution_rows": [
+    {
+      "output": "[0,1,3]",
+      "row_count": 280000,
+      "probability": 1
+    }
+  ],
+  "max_pairwise_content_TV": 0,
+  "diagnostic_outcomes": [
+    {
+      "path": "[0,1,3]",
+      "comment_length": 0,
+      "fallback": false,
+      "row_count": 2
+    },
+    {
+      "path": "[0,1,3]",
+      "comment_length": 0,
+      "fallback": true,
+      "row_count": 39998
+    },
+    {
+      "path": "[0,1,3]",
+      "comment_length": 1,
+      "fallback": false,
+      "row_count": 4
+    },
+    {
+      "path": "[0,1,3]",
+      "comment_length": 1,
+      "fallback": true,
+      "row_count": 79996
+    },
+    {
+      "path": "[0,1,3]",
+      "comment_length": 2,
+      "fallback": false,
+      "row_count": 8
+    },
+    {
+      "path": "[0,1,3]",
+      "comment_length": 2,
+      "fallback": true,
+      "row_count": 159992
+    }
+  ],
+  "max_pairwise_TV_with_diagnostics": 1,
+  "randomness": "none",
+  "independent_solving_on_valid_input": false,
+  "efficiency_advantage_over_strong_symbolic_baseline": "not established",
+  "limitations": [
+    "Not a mechanized proof or a secure running service.",
+    "Observed status/work/duration can reveal fallback and input length.",
+    "No conclusion about arbitrary malformed bytes or physical side channels."
+  ]
+}

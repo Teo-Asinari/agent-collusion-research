@@ -8,6 +8,8 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 
 First delegated research passes are complete: [architecture proposal](research/workstreams/architecture/proposal.md) and [task-preserving reconstruction proposal](research/workstreams/task-preserving-rewrite/proposal.md). Both record limitations and source-reading scope; neither establishes novelty or a general security theorem.
 
+[Adversarial review outcome](research/reviews/outcome.md): two review/revision rounds sharpened both restricted mechanisms and their failure models. Useful efficiency, generality and novelty remain open.
+
 - [Research brief](research/brief.md): enduring context and constraints.
 - [Literature](research/literature.md): source-verified claims, assumptions, and limitations.
 - [Shared-knowledge assumptions](research/shared-knowledge.md): which approaches require pre-shared secrets, and which do not.
