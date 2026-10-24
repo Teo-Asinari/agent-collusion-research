@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+htmlcov/
+.tox/
+.nox/
+.ipynb_checkpoints/
+# Local credentials and secret-bearing configuration
+.env
+.env.*
+!.env.example
+compute.env
+compute.env.*
+*.env
+*.env.*
+!.env.example
+credentials*
+*credentials*.json
+*secrets*
+*.pem
+*.key
+.aws/
+.config/
+# Local state and large/raw experiment artifacts
+.DS_Store
+.idea/
+.vscode/
+*.log
+results/raw/
+references/pdfs/
