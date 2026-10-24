@@ -4,6 +4,8 @@ Private exploratory research workspace for the Apart Research AI Collusion Resea
 
 **Status: no full hackathon study selected.** At the owner's request, a local scripted [anti-steganography prototype](experiments/anti_stego/README.md) now tests task-aware release protocols and an explicit surviving semantic channel. No model inference expenditure has been incurred.
 
+**Current research agenda:** develop two approaches in parallel—[a ground-up learned/verified architecture and task-preserving steganography removal](research/two-approach-agenda.md). Specific theorem, task, full experiment and inference budget remain unselected.
+
 - [Research brief](research/brief.md): enduring context and constraints.
 - [Literature](research/literature.md): source-verified claims, assumptions, and limitations.
 - [Shared-knowledge assumptions](research/shared-knowledge.md): which approaches require pre-shared secrets, and which do not.

@@ -1,5 +1,7 @@
 # Candidate investigations
 
+**Latest owner direction:** the [two-approach agenda](two-approach-agenda.md) is now the active research organization: ground-up learned/verified architecture and task-preserving rewriting. Both have concrete proposed targets and controls; neither has a selected full study or established novelty claim. Historical candidates below remain reference material.
+
 **Current-focus update:** the owner subsequently prioritized practical barriers to secure steganography and active prevention. See [revised candidates](practical-barrier-candidates.md) and [expanded prior art](stego-prior-art.md). The shortlist below is preserved historical exploration, not the current recommendation or a selected project.
 
 **No candidate selected.** These are proposals for discussion, not experimental findings. Novelty remains provisional after an initial selective review. Scientific value should decide selection; setup convenience is secondary.

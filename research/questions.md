@@ -2,6 +2,8 @@
 
 Research question **unselected**. See [literature.md](literature.md) for evidence and [ideas.md](ideas.md) for proposed designs.
 
+**Current agenda:** [two approaches](two-approach-agenda.md), endorsed by the owner: architectural prevention and task-preserving rewriting. Immediate questions are (A) which useful learned primitive admits an invariant preserved for all allowed weights, and (B) which original-task requirements permit replacing sender choices without retaining their payload. Specific theorem, benchmark and budget remain open.
+
 ## Definitions to settle before selection
 
 | Construct | Operational evidence we would want | Insufficient on its own |

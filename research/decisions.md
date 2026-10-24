@@ -91,3 +91,9 @@
 - Owner clarified that the intended system interleaves/restructures transformer computation and verified code from the ground up, rather than monitoring an ordinary LLM with external tooling. Current focus is prevention of steganographic transfer.
 - Recorded proposed architecture-preserved invariants covering inference, training, release, randomness, recurrence and deployment assumptions. Located transformer-level IFC precedent (Tiwari et al., USENIX Security 2024) and adjacent architectural proof/Vehicle work with reading limits.
 - This clarification does not select a full study or establish a new theorem. Future proposals must respect the architectural scope and compare against learned-model IFC, not only agent wrappers.
+
+## 2026-10-24 — two anti-steganography approaches endorsed
+
+- Owner requested developing both a ground-up transformer/verified-code architecture and steganography removal by rewriting with task preservation. This is an active two-approach agenda; neither should displace the other by default.
+- Added design seeds, prospective proof/evaluation targets, baselines, controls, confounders, costs and informative negatives. The architecture approach concerns internal computation/training; rewrite preservation is against the original task, not automatic retention of every submitted choice.
+- Specific task/theorem/full experiment and model budget remain unselected. No inference, training or new experiment launched. Closest precedents continue to constrain novelty claims.
