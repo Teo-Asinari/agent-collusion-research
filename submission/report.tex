@@ -35,9 +35,10 @@ untrusted model emits only a $k$-bit index. A Lean~4 proof, valid for every
 weight setting, shows the receiver's view takes at most $2^{\sum k}$ values.
 In a toy word-denoising task, $k=5$ bits per answer match an unrestricted
 chooser of the same size (29.2\% vs.\ 29.7\% exact match, $n=600$). A scripted
-adversary approaches but never exceeds the cap. Both results are small-scale with scripted adversaries, and neither mechanism is novel in isolation. Our contribution is a concrete account of
-where content rewriting stops and of how a selection interface turns the
-remaining channel into a tunable, machine-checked rate.
+adversary approaches but never exceeds the cap. At the zero-leakage end,
+learned residue networks provably release only authorized information, at the
+cost of all private freedom. All results are small-scale, and no mechanism is novel in isolation. We map where content rewriting stops and how a selection interface turns
+the remaining channel into a tunable, machine-checked rate.
 \end{abstract}
 
 \section{Introduction}
@@ -69,6 +70,9 @@ concrete in two steps:
   candidates produced by a trusted public process. We prove in Lean that this
   caps leakage at $k$ bits per answer for every weight setting. We then
   measure how much task utility $k$ bits buy.
+\item \textbf{Zero leakage (\S\ref{sec:residue}).} Learned residue networks
+  whose released output provably depends only on authorized information
+  occupy the $k=0$ end: no covert channel, and no private freedom.
 \end{enumerate}
 
 We distinguish channel \emph{capacity} from instructed use, independent
@@ -268,13 +272,58 @@ summarize the results.
   This is a single-CPU sanity check, not evidence of side-channel freedom.
 \end{itemize}
 
+\section{Experiment 3: the zero-leakage end}
+\label{sec:residue}
+
+\paragraph{Architecture.} Every computational word is an integer in
+$\mathbb{Z}_9$. Its residue mod~3 is the task-relevant part; adding 3 or 6
+changes an extra part that an adversary may control, including in weights and
+training examples. The network uses only exact addition and multiplication
+mod~9 and releases the output's residue mod~3. Because reduction mod~3 is a
+ring homomorphism $\mathbb{Z}_9\to\mathbb{Z}_3$, the released answer cannot
+depend on the extra parts. We built two learned variants:
+\begin{itemize}
+\item \textbf{Residue network.} One or two squaring hidden units (5 or 9
+  learned parameters) fit all 16 two-input Boolean functions by exhaustive
+  consistent-weight search. Formal finite-ring gradients fit only 10/16 (two
+  units) and 6/16 (one unit).
+\item \textbf{Bilinear network.} Hidden units $h_j=(u_j^\top x)(v_j^\top x)$
+  with learned $U,V$, trained by exact quadratic identification over
+  $\mathbb{F}_3$ from $1+2d+\binom{d}{2}$ chosen queries, then rank
+  factorization; there is no weight search. Over 36 predeclared tasks
+  ($d\in\{4,6,8\}$, ranks $1,2,d$) it predicts all 87{,}396 held-out inputs
+  correctly; affine and lookup controls reach 33--41\%. A cubic target outside
+  the family fails (64--70\%).
+\end{itemize}
+
+\paragraph{Lean.} We prove that equal residues give equal released outputs for
+every expression, input and weight environment at any width and depth, that
+this extends to fixed polynomial update rules and to a deterministic learner
+seeing only observed data, and that the released answer equals direct mod-3
+evaluation. Kernel-checked certificates cover all 16 Boolean models and twelve
+$d=4$ bilinear models on every input. No \texttt{sorry} or added axioms.
+
+\paragraph{Interpretation.} This is complete noninterference for the content
+channel: an adversary controlling the extra parts sends 0 bits. A positive
+control that releases the raw mod-9 output leaks three distinguishable values
+through bias changes. But the guarantee holds \emph{by construction}, and
+\texttt{direct\_projection} shows the extra state adds no expressiveness: the
+network computes exactly what a mod-3 model computes. Like replanning in
+Experiment~1, it removes the channel by leaving the protected computation no
+private degrees of freedom. Direct solvers match its accuracy, learning relies
+on chosen queries over a structured family, and quadratic network recovery by
+matrix factorization is known in the real-valued setting~\citep{soltani2018quadratic}.
+
 \section{Discussion}
 
-The two experiments describe one design space. Content rewriting can remove
+The three experiments describe one design space, ordered by how much private
+freedom the agent keeps: residue networks and replanning (none, 0 bits),
+leak-capped selection ($k$ bits per answer) and projection (the full semantic
+choice, unbounded). Content rewriting can remove
 any degree of freedom the defender is willing to regenerate. Applied to an
 agent's substantive decisions, it either leaves them as a channel (projection)
-or removes the agent's contribution (replanning). The leak-capped interface is
-an intermediate point. The agent keeps a choice whose size is a public
+or removes the agent's contribution (replanning). Residue networks reach the same zero-leakage point
+architecturally. The leak-capped interface is an intermediate point. The agent keeps a choice whose size is a public
 parameter, the channel rate is bounded for every weight setting, and utility
 is an empirical function of $k$ and proposer quality.
 
@@ -296,7 +345,8 @@ A content-erasing broker removes all tested presentation carriers but cannot
 remove the information carried by an agent's substantive choices without also
 removing the agent's role. Restricting that choice to a $k$-bit selection
 among trusted public candidates gives a machine-checked cap that holds for
-every weight setting. In a toy task, five bits per answer recovered
+every weight setting; $k=0$ architectures such as residue networks achieve
+exact noninterference at the cost of all private freedom. In a toy task, five bits per answer recovered
 unrestricted utility. Natural next steps are learned and adaptive adversaries,
 realistic agent tasks with multiple decision points, and measurement of how
 proposer coverage scales.
@@ -331,6 +381,12 @@ Rippin et~al.
 F.~Roger and R.~Greenblatt.
 \newblock Preventing language models from hiding their reasoning.
 \newblock arXiv:2310.18512, 2023.
+
+\bibitem[Soltani and Hegde(2018)]{soltani2018quadratic}
+M.~Soltani and C.~Hegde.
+\newblock Towards provable learning of polynomial neural networks using
+  low-rank matrix estimation.
+\newblock In \emph{AISTATS}, 2018.
 
 \bibitem[Schroeder~de~Witt et~al.(2023)]{dewitt2023mec}
 C.~Schroeder~de~Witt et~al.
@@ -389,7 +445,8 @@ involved. All experiments ran locally on CPU, with no hosted model calls.
 Code, results, source hashes and the Lean development are in the project
 repository (\texttt{experiments/anti\_stego}, \texttt{experiments/leak\_cap},
 \texttt{experiments/leak\_cap/lean/Choice.lean}, \texttt{results/anti\_stego},
-\texttt{results/leak-cap-01}). Broker evaluation:
+\texttt{results/leak-cap-01}, \texttt{experiments/residue\_network},
+\texttt{experiments/bilinear\_network}, \texttt{results/bilinear-network-01}). Broker evaluation:
 \texttt{python -m experiments.anti\_stego.evaluate --episodes 256 --seed 20261024}.
 The broker uses only the Python standard library. Leak-cap requires PyTorch.
 The word list comes from \texttt{first20hours/google-10000-english}; its
