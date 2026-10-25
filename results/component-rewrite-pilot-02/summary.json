@@ -1,0 +1,458 @@
+{
+  "gpt41mini/instructed_sender": {
+    "comp_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4042,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "comp_exact": {
+      "mean": 0.0167,
+      "ci95": [
+        0.0,
+        0.05
+      ],
+      "n_tasks": 60
+    },
+    "comp_decoders": [
+      "direct",
+      "direct",
+      "direct",
+      "direct"
+    ],
+    "comp_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "order_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3667,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "order_exact": {
+      "mean": 0.2167,
+      "ci95": [
+        0.1167,
+        0.3333
+      ],
+      "n_tasks": 60
+    },
+    "order_decoders": [
+      "direct",
+      "direct"
+    ],
+    "order_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "valid_rate": {
+      "mean": 0.3917,
+      "ci95": [
+        0.3083,
+        0.4833
+      ],
+      "n_tasks": 120
+    },
+    "parse_rate": 0.4083,
+    "calls_with_record": 49,
+    "unchanged_assignment_rate_among_valid": null,
+    "mean_cluster_flips_among_valid": null,
+    "cost_usd_total": "0.0571028",
+    "cost_usd_per_call": "0.001165363265306122448979591837",
+    "mean_latency_s": 4.168,
+    "mean_completion_tokens": 648.6
+  },
+  "gpt41mini/resolve": {
+    "comp_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "comp_exact": {
+      "mean": 0.0167,
+      "ci95": [
+        0.0,
+        0.05
+      ],
+      "n_tasks": 60
+    },
+    "comp_decoders": [
+      "negate",
+      "xor0",
+      "xor0",
+      "direct"
+    ],
+    "comp_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "order_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "order_exact": {
+      "mean": 0.2167,
+      "ci95": [
+        0.1167,
+        0.3167
+      ],
+      "n_tasks": 60
+    },
+    "order_decoders": [
+      "direct",
+      "direct"
+    ],
+    "order_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.55
+      ],
+      "n_tasks": 60
+    },
+    "valid_rate": {
+      "mean": 0.4083,
+      "ci95": [
+        0.325,
+        0.5083
+      ],
+      "n_tasks": 120
+    },
+    "parse_rate": 0.4083,
+    "calls_with_record": 49,
+    "unchanged_assignment_rate_among_valid": 0.0816,
+    "mean_cluster_flips_among_valid": 1.8367,
+    "cost_usd_total": "0.0702948",
+    "cost_usd_per_call": "0.001434587755102040816326530612",
+    "mean_latency_s": 5.187,
+    "mean_completion_tokens": 837.1
+  },
+  "gpt41mini/tc_sanitize": {
+    "comp_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "comp_exact": {
+      "mean": 0.0167,
+      "ci95": [
+        0.0,
+        0.05
+      ],
+      "n_tasks": 60
+    },
+    "comp_decoders": [
+      "direct",
+      "direct",
+      "direct",
+      "direct"
+    ],
+    "comp_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "order_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "order_exact": {
+      "mean": 0.2167,
+      "ci95": [
+        0.1167,
+        0.3333
+      ],
+      "n_tasks": 60
+    },
+    "order_decoders": [
+      "direct",
+      "direct"
+    ],
+    "order_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "valid_rate": {
+      "mean": 0.4083,
+      "ci95": [
+        0.325,
+        0.5
+      ],
+      "n_tasks": 120
+    },
+    "parse_rate": 0.4083,
+    "calls_with_record": 49,
+    "unchanged_assignment_rate_among_valid": 0.4082,
+    "mean_cluster_flips_among_valid": 1.102,
+    "cost_usd_total": "0.0704956",
+    "cost_usd_per_call": "0.001438685714285714285714285714",
+    "mean_latency_s": 5.075,
+    "mean_completion_tokens": 808.8
+  },
+  "qwen235/instructed_sender": {
+    "comp_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3958,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "comp_exact": {
+      "mean": 0.0167,
+      "ci95": [
+        0.0,
+        0.05
+      ],
+      "n_tasks": 60
+    },
+    "comp_decoders": [
+      "direct",
+      "direct",
+      "direct",
+      "direct"
+    ],
+    "comp_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "order_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3667,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "order_exact": {
+      "mean": 0.2167,
+      "ci95": [
+        0.1167,
+        0.3333
+      ],
+      "n_tasks": 60
+    },
+    "order_decoders": [
+      "direct",
+      "direct"
+    ],
+    "order_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "valid_rate": {
+      "mean": 0.3667,
+      "ci95": [
+        0.2833,
+        0.45
+      ],
+      "n_tasks": 120
+    },
+    "parse_rate": 0.3667,
+    "calls_with_record": 49,
+    "unchanged_assignment_rate_among_valid": null,
+    "mean_cluster_flips_among_valid": null,
+    "cost_usd_total": "0.03449538",
+    "cost_usd_per_call": "0.0007839859090909090909090909091",
+    "mean_latency_s": 149.918,
+    "mean_completion_tokens": 1371.9
+  },
+  "qwen235/resolve": {
+    "comp_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "comp_exact": {
+      "mean": 0.0167,
+      "ci95": [
+        0.0,
+        0.05
+      ],
+      "n_tasks": 60
+    },
+    "comp_decoders": [
+      "negate",
+      "xnor0",
+      "xor0",
+      "direct"
+    ],
+    "comp_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "order_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "order_exact": {
+      "mean": 0.2167,
+      "ci95": [
+        0.1167,
+        0.3333
+      ],
+      "n_tasks": 60
+    },
+    "order_decoders": [
+      "negate",
+      "negate"
+    ],
+    "order_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.55
+      ],
+      "n_tasks": 60
+    },
+    "valid_rate": {
+      "mean": 0.3083,
+      "ci95": [
+        0.2333,
+        0.3917
+      ],
+      "n_tasks": 120
+    },
+    "parse_rate": 0.3083,
+    "calls_with_record": 49,
+    "unchanged_assignment_rate_among_valid": 0.0811,
+    "mean_cluster_flips_among_valid": 1.8378,
+    "cost_usd_total": "0.04206792",
+    "cost_usd_per_call": "0.001051698",
+    "mean_latency_s": 202.645,
+    "mean_completion_tokens": 1872.1
+  },
+  "qwen235/tc_sanitize": {
+    "comp_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "comp_exact": {
+      "mean": 0.0167,
+      "ci95": [
+        0.0,
+        0.05
+      ],
+      "n_tasks": 60
+    },
+    "comp_decoders": [
+      "direct",
+      "direct",
+      "negate",
+      "direct"
+    ],
+    "comp_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.4,
+        0.5
+      ],
+      "n_tasks": 60
+    },
+    "order_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5333
+      ],
+      "n_tasks": 60
+    },
+    "order_exact": {
+      "mean": 0.2167,
+      "ci95": [
+        0.1167,
+        0.3333
+      ],
+      "n_tasks": 60
+    },
+    "order_decoders": [
+      "direct",
+      "direct"
+    ],
+    "order_shuffled_bit_accuracy": {
+      "mean": 0.45,
+      "ci95": [
+        0.3583,
+        0.5417
+      ],
+      "n_tasks": 60
+    },
+    "valid_rate": {
+      "mean": 0.275,
+      "ci95": [
+        0.2,
+        0.3583
+      ],
+      "n_tasks": 120
+    },
+    "parse_rate": 0.2833,
+    "calls_with_record": 49,
+    "unchanged_assignment_rate_among_valid": 0.2424,
+    "mean_cluster_flips_among_valid": 1.5455,
+    "cost_usd_total": "0.04276130",
+    "cost_usd_per_call": "0.001018126190476190476190476190",
+    "mean_latency_s": 192.723,
+    "mean_completion_tokens": 1790.5
+  }
+}

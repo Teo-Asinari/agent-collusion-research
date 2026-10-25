@@ -139,3 +139,27 @@
 - Critiques correctly caught selective proof-success signaling and a minimum-record initialization bug. They also made false mathematical objections and unsupported global complexity/utility claims; final model revisions sometimes accepted those errors. Primary-agent checks and primary AKS/mathlib references correct these claims.
 - No useful novel architecture or general sanitizer was established. Neither original research direction is abandoned on the basis of model consensus. Assessment preserves exact prompts/responses, raw versus accepted claims, source-reading scope and reproducible elementary counterexamples.
 - The one 12-call allowance is complete. Unspent dollars do not imply authorization for another batch, a full experiment or training. See `results/openrouter-research-01/assessment.md` and compute ledger.
+
+## 2026-10-24 — parallel A/B workers and $5 batches
+
+- Owner authorized parallel agents for Approach A and Approach B, with OpenRouter spend in **batches of $5 hard cap per batch per agent**. Each batch needs a stop-and-report before the next; this entry authorizes exactly one $5 batch for the B worker.
+- B framing is the worker's default, not an owner selection: the component-label question from `research/workstreams/task-preserving-rewrite/local-rewrite-obstruction.md`. Preregistered in `research/workstreams/task-preserving-rewrite/component-pilot-prereg.md` before any paid call. The pilot is exploratory.
+- Models: `openai/gpt-4.1-mini` (openai) and `qwen/qwen3-235b-a22b-2507` (deepinfra/fp8). They were chosen as cheap, non-reasoning, seed-supporting endpoints from different families, so the pilot can have 120 task units. The worst-case reservation is $2.52 for 1,440 calls.
+- Deviation from the 01 runner: a failed HTTP call keeps its reservation and is recorded as a failed unit rather than halting at once; the run halts after 20 failures, on any reservation overrun, or on an answer without reported cost.
+
+## 2026-10-24 — B batch 1 complete
+
+- `component-rewrite-pilot-01` completed 1,437 of 1,440 calls for a reported $0.658566. The batch is exhausted as planned; unspent dollars do not authorize more calls. See `results/component-rewrite-pilot-01/assessment.md`.
+- Exploratory finding: in valid outputs, paraphrase, minimal edit and task-conditioned rewrite preserved the component payload at about 1.00. An explicit "choose independently" sanitizer still left 0.72–0.84. Task-only resolve was at chance.
+- Major confound: the 600-token limit truncated most re-solving outputs, so validity comparisons between arms are biased toward draft copying. A larger-token rerun of three arms is proposed as the next $5 batch, pending owner approval.
+
+## 2026-10-24 — B batch 2 authorized (pilot 02)
+
+- The owner, relayed by the coordinator, approved one new **$5 hard-cap batch** for the proposed 720-call rerun: task-only resolve, tc_sanitize and instructed sender; max_tokens 2,500; fenced final answer. Same rules apply: no retries or fallback, halt on unknown cost, no further batch without approval.
+- Tasks, payloads, train/test split, models, prompts (apart from the answer-format line) and receiver are unchanged from pilot 01. The prereg addendum is in `component-pilot-prereg.md`. Worst-case reservation is $4.383743.
+
+## 2026-10-24 — B batch 2 halted
+
+- Pilot 02 halted by design after 21 qwen HTTP 429 errors: 294 of 720 calls, reported $0.317218. No retries or restart; batch 2 is closed.
+- Only training-split tasks 0–48 ran, so the preregistered held-out analysis is empty. A deviated direct-decoder analysis (no fitted parameters) is in `results/component-rewrite-pilot-02/assessment.md`. At full validity, gpt-4.1-mini's warned sanitizer still recovered 0.73 [0.64, 0.81] against resolve's 0.54. Qwen's result was weaker.
+- Proposed next batch: finish tasks 49–119 (426 calls, about $0.5, worst case about $2.6), with qwen concurrency reduced. Not authorized.
