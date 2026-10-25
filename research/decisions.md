@@ -1,5 +1,22 @@
 # Decision log
 
+## 2026-10-25 — owner-approved local architecture evolution
+
+- Owner requested commit/push plus a different architecture/experiment and Lean
+  verification. Prior-art review committed/pushed as `e08e7ca` first.
+- Pre-execution [bilinear plan](../experiments/bilinear_network/PLAN.md): learn
+  quadratic coefficients from fixed identification queries, then rank-factorize
+  to learn both hidden maps. Existing lifting/decomposition prior art is explicit.
+- One CPU-only exploratory run fit all 36 predeclared quadratic tasks and all
+  87,396 unseen inputs. Direct quadratic solver ties; affine/lookup controls and
+  failed cubic targets retained. This addresses exponential fitting on this
+  family, not novelty, general learning or stronger security.
+- Lean accepted generic information-flow/projection theorems and all twelve d=4
+  learned-model certificates. Independent scalar/provenance audit passed.
+  [Report](workstreams/architecture/bilinear-network/report.md); no paid calls or
+  new full-study commitment. Training algorithm/Python/hardware not formally
+  verified in general.
+
 ## 2026-10-25 — targeted residue-network prior-art check
 
 - Owner requested prior-art comparison. Read primary polynomial-network,

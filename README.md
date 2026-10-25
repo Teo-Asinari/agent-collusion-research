@@ -1,5 +1,12 @@
 # AI Agent Collusion Research
 
+**Latest local experiment:** [bilinear-network report](research/workstreams/architecture/bilinear-network/report.md).
+Exact linear algebra replaces weight search for a structured quadratic task family:
+36 learned networks, all 87,396 held-out inputs correct, generic Lean information-
+flow proof and twelve kernel-checked small-model certificates. Known polynomial/
+factorization ideas; no established novelty or advantage over a direct quadratic
+solver. No new API/cloud spend.
+
 **EOD architecture deliverable:** [finite residue-network report](research/workstreams/architecture/residue-network/report.md).
 The local design loop produced learned nonlinear models for all sixteen two-bit
 Boolean rules, complete declared representation-variation checks and Lean-checked

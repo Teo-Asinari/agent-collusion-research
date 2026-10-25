@@ -1,5 +1,12 @@
 # Compute and expenditure ledger
 
+2026-10-25 bilinear feasibility continuation: one local CPU run, 36 structured
+tasks, exact identification/rank factorization, affine and lookup controls,
+three Lean commands and an independent scalar/provenance audit. Saved under
+`results/bilinear-network-01/`. No APIs/cloud jobs; external experimental spend
+USD 0. Fit-only timings exclude verification and controls; Lean command times
+are recorded in `lean.json` (about 25 seconds total). No further budget implied.
+
 2026-10-25 finite architecture loop: three local CPU runs, exact enumeration,
 formal-gradient attempts, finite weight-search fitting and four Lean checks.
 Results in `results/residue-network-01..03/` and `results/residue-verification-01/`;

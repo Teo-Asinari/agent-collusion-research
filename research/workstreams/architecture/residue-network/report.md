@@ -1,5 +1,9 @@
 # A finite residue network: design, learning and checked information flow
 
+Later local continuation: [bilinear network with algebraic learning](../bilinear-network/report.md)
+replaces exponential fitting on a structured quadratic family and tests unseen
+inputs. The results below preserve the original experiment and its limitations.
+
 2026-10-25. **First bounded architecture deliverable complete.** This is a small
 trainable polynomial network, source code, a Lean proof and exhaustive finite
 checks. It is not an established novel architecture, a language model, scalable

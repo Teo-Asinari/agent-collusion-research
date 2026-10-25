@@ -1,5 +1,11 @@
 # Two approaches to anti-steganography
 
+**Latest exploratory continuation:** [bilinear network](workstreams/architecture/bilinear-network/report.md)
+replaces weight enumeration with exact linear algebra on a structured quadratic
+family, learns hidden maps, tests unseen inputs and checks generic and concrete
+Lean statements. This resolves a bounded learning limitation without establishing
+novelty or stronger security. No full study or paid run selected.
+
 **Current EOD focus, explicitly reaffirmed by owner:** neural architecture design
 and proof on a small set, not a pivot to the rewrite study. The first bounded
 [residue-network design loop and report](workstreams/architecture/residue-network/report.md)

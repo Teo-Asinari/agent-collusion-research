@@ -1,5 +1,10 @@
 # Living literature review
 
+2026-10-25 bilinear follow-up: [report/prior-art scope](workstreams/architecture/bilinear-network/report.md)
+compares the exact finite-field learner with Soltani & Hegde, AISTATS 2018 and
+author extended paper §I-A/B. Quadratic lifting and decomposition into hidden
+weights are already explicit prior art. No upstream code or full proof audit.
+
 2026-10-25: [Residue-network prior-art assessment](workstreams/architecture/residue-network/prior-art.md)
 records polynomial, modular-arithmetic, finite-ring, canonical-interface and IFC
 precedents. No new primitive/theorem is established. Full-text/code limitations

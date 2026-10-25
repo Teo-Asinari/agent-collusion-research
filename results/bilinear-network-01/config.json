@@ -1,0 +1,27 @@
+{
+  "dimensions": [
+    4,
+    6,
+    8
+  ],
+  "ranks": "1,2,d",
+  "seeds": [
+    20261025,
+    20261026,
+    20261027,
+    20261028
+  ],
+  "attack_cases_per_task": 128,
+  "training_attacks_per_task": 32,
+  "source_hashes": {
+    "experiments/bilinear_network/run.py": "a730b81b3d8aef60d72097e5151d6bca683c6a7bac04141fa847a72525f9f1d5",
+    "experiments/bilinear_network/Bilinear.lean": "ae96fc916ed42fb73af5f1e52aee5501dab23737a764f76c816a0621b09b3a0e",
+    "experiments/bilinear_network/PLAN.md": "78ec8af4933ccd74dd1c360dc8ed45ed7ba76a01aba6f7d2862e1ad638b1805a",
+    "experiments/residue_network/Residue.lean": "b7ac23f97397d7bebfdb611a6df3a8b506506ec7b973890c9ffe01665e8f4ae8"
+  },
+  "python": "3.9.12",
+  "numpy": "2.0.2",
+  "model_api_calls": 0,
+  "cloud_jobs": 0,
+  "estimated_external_cost_usd": 0
+}

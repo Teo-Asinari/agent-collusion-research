@@ -1,0 +1,12 @@
+{
+  "status": "independent scalar and artifact checks passed",
+  "full_domain_cases": 88452,
+  "held_out_cases": 87396,
+  "certificates_matched_to_saved_models": 12,
+  "metrics_sha256": "77c817c0d5f8565dd3bd7a4faaf15818c07601cb31988b2cae0bb14cf06d9c4a",
+  "certificate_sha256": "98d39b13482e58ff8f76e71d232282922b17283e92bb8d078b3b012462885b8f",
+  "verifier_sha256": "adbac80aef956f129141ba883f312bb46f855f6bfea4857e42364572f2115696",
+  "lean_checks": "Recorded successful commands; not re-executed by this audit.",
+  "model_api_calls": 0,
+  "cloud_jobs": 0
+}

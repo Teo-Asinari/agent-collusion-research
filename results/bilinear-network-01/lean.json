@@ -1,0 +1,39 @@
+{
+  "version": "Lean (version 4.35.0, x86_64-unknown-linux-gnu, commit eb6cafb7290e8bd5f2937522d8d804f58f02bafc, Release)",
+  "checks": [
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "-o",
+        "/tmp/bilinear-lean-9jkpbq6_/Residue.olean",
+        "/home/tasinari/my_repos/agent-collusion-research/experiments/residue_network/Residue.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 3.320006364985602,
+      "stdout": "'Residue.noninterference' depends on axioms: [propext]\n'Residue.training_noninterference' depends on axioms: [propext]\n'Residue.lifted_correct' depends on axioms: [propext]\n'Residue.network2_lifted_correct' depends on axioms: [propext]\n'Residue.network1_lifted_correct' depends on axioms: [propext]\n'Residue.observed_learner_noninterference' depends on axioms: [Quot.sound]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    },
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "-o",
+        "/tmp/bilinear-lean-9jkpbq6_/Bilinear.olean",
+        "/home/tasinari/my_repos/agent-collusion-research/experiments/bilinear_network/Bilinear.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.3255139809916727,
+      "stdout": "'Bilinear.content_noninterference' depends on axioms: [propext]\n'Bilinear.direct_projection' depends on axioms: [propext]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    },
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "results/bilinear-network-01/Learned.lean"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 21.153764980001142,
+      "stdout": "'LearnedBilinear.correct_0' depends on axioms: [propext]\n'LearnedBilinear.correct_1' depends on axioms: [propext]\n'LearnedBilinear.correct_2' depends on axioms: [propext]\n'LearnedBilinear.correct_3' depends on axioms: [propext]\n'LearnedBilinear.correct_4' depends on axioms: [propext]\n'LearnedBilinear.correct_5' depends on axioms: [propext]\n'LearnedBilinear.correct_6' depends on axioms: [propext]\n'LearnedBilinear.correct_7' depends on axioms: [propext]\n'LearnedBilinear.correct_8' depends on axioms: [propext]\n'LearnedBilinear.correct_9' depends on axioms: [propext]\n'LearnedBilinear.correct_10' depends on axioms: [propext]\n'LearnedBilinear.correct_11' depends on axioms: [propext]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    }
+  ]
+}
