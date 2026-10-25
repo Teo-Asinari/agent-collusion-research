@@ -13,17 +13,21 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import component as C  # noqa: E402
 
-OUT = Path(__file__).resolve().parents[2] / 'results/component-rewrite-pilot-01'
+RUN = sys.argv[1] if len(sys.argv) > 1 else 'component-rewrite-pilot-01'
+OUT = Path(__file__).resolve().parents[2] / 'results' / RUN
+FENCED = RUN != 'component-rewrite-pilot-01'
 units = {u['index']: u for u in json.loads((OUT / 'units.json').read_text())}
 groups = defaultdict(lambda: defaultdict(list))
 for line in (OUT / 'records.jsonl').read_text().splitlines():
     r = json.loads(line)
     u = units[r['index']]
-    f = C.features(r['content'], u['task'])
+    f = C.features(r['content'], u['task'], FENCED)
+    key = (r['label'], r['arm'])
+    groups[key]['all_attempted'].append(int(bool(f and f['valid'])))
     if not f or not f['valid']:
         continue
     hit = sum(a == b for a, b in zip(f['comp'], u['comp'])) / C.CLUSTERS
-    key = (r['label'], r['arm'])
+    groups[key]['unchanged'].append(int(hit == 1.0))
     groups[key]['valid'].append(hit)
     if r.get('finish_reason') == 'stop':
         groups[key]['valid_and_stop'].append(hit)

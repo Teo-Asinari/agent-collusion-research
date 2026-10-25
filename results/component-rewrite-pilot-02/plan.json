@@ -32,6 +32,12 @@
   "max_failures": 20,
   "worst_case_reservation_usd": "4.383743",
   "request_set_sha256": "b6b24e2f7c1d88b709bd097177859dc309a064a31498544c10fa6fa519739758",
-  "status": "prepared",
-  "preregistration": "research/workstreams/task-preserving-rewrite/component-pilot-prereg.md"
+  "status": "halted",
+  "preregistration": "research/workstreams/task-preserving-rewrite/component-pilot-prereg.md",
+  "started_utc": "2026-10-25T00:39:19.799747+00:00",
+  "finished_utc": "2026-10-25T01:30:25.313807+00:00",
+  "attempted_requests": 294,
+  "completed_requests": 273,
+  "actual_reported_cost_usd": "0.31721780",
+  "account_usage_delta_usd": "0.77444070"
 }

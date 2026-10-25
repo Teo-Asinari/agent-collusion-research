@@ -142,3 +142,9 @@
 
 - The owner, relayed by the coordinator, approved one new **$5 hard-cap batch** for the proposed 720-call rerun: task-only resolve, tc_sanitize and instructed sender; max_tokens 2,500; fenced final answer. Same rules apply: no retries or fallback, halt on unknown cost, no further batch without approval.
 - Tasks, payloads, train/test split, models, prompts (apart from the answer-format line) and receiver are unchanged from pilot 01. The prereg addendum is in `component-pilot-prereg.md`. Worst-case reservation is $4.383743.
+
+## 2026-10-24 — B batch 2 halted
+
+- Pilot 02 halted by design after 21 qwen HTTP 429 errors: 294 of 720 calls, reported $0.317218. No retries or restart; batch 2 is closed.
+- Only training-split tasks 0–48 ran, so the preregistered held-out analysis is empty. A deviated direct-decoder analysis (no fitted parameters) is in `results/component-rewrite-pilot-02/assessment.md`. At full validity, gpt-4.1-mini's warned sanitizer still recovered 0.73 [0.64, 0.81] against resolve's 0.54. Qwen's result was weaker.
+- Proposed next batch: finish tasks 49–119 (426 calls, about $0.5, worst case about $2.6), with qwen concurrency reduced. Not authorized.
