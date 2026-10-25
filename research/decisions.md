@@ -131,3 +131,9 @@
 - B framing is the worker's default, not an owner selection: the component-label question from `research/workstreams/task-preserving-rewrite/local-rewrite-obstruction.md`. Preregistered in `research/workstreams/task-preserving-rewrite/component-pilot-prereg.md` before any paid call. The pilot is exploratory.
 - Models: `openai/gpt-4.1-mini` (openai) and `qwen/qwen3-235b-a22b-2507` (deepinfra/fp8). They were chosen as cheap, non-reasoning, seed-supporting endpoints from different families, so the pilot can have 120 task units. The worst-case reservation is $2.52 for 1,440 calls.
 - Deviation from the 01 runner: a failed HTTP call keeps its reservation and is recorded as a failed unit rather than halting at once; the run halts after 20 failures, on any reservation overrun, or on an answer without reported cost.
+
+## 2026-10-24 — B batch 1 complete
+
+- `component-rewrite-pilot-01` completed 1,437 of 1,440 calls for a reported $0.658566. The batch is exhausted as planned; unspent dollars do not authorize more calls. See `results/component-rewrite-pilot-01/assessment.md`.
+- Exploratory finding: in valid outputs, paraphrase, minimal edit and task-conditioned rewrite preserved the component payload at about 1.00. An explicit "choose independently" sanitizer still left 0.72–0.84. Task-only resolve was at chance.
+- Major confound: the 600-token limit truncated most re-solving outputs, so validity comparisons between arms are biased toward draft copying. A larger-token rerun of three arms is proposed as the next $5 batch, pending owner approval.

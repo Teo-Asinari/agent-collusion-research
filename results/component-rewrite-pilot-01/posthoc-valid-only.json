@@ -1,0 +1,210 @@
+{
+  "gpt41mini/instructed_sender": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 55
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 55
+    }
+  },
+  "gpt41mini/minimal_edit": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 119
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 117
+    }
+  },
+  "gpt41mini/paraphrase": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 120
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 120
+    }
+  },
+  "gpt41mini/resolve": {
+    "valid": {
+      "mean": 0.4701,
+      "ci95": [
+        0.4179,
+        0.5224
+      ],
+      "n_tasks": 67
+    },
+    "valid_and_stop": {
+      "mean": 0.4545,
+      "ci95": [
+        0.3523,
+        0.5568
+      ],
+      "n_tasks": 22
+    }
+  },
+  "gpt41mini/tc_rewrite": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 117
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 117
+    }
+  },
+  "gpt41mini/tc_sanitize": {
+    "valid": {
+      "mean": 0.8386,
+      "ci95": [
+        0.7911,
+        0.8829
+      ],
+      "n_tasks": 79
+    },
+    "valid_and_stop": {
+      "mean": 0.8173,
+      "ci95": [
+        0.7019,
+        0.9135
+      ],
+      "n_tasks": 26
+    }
+  },
+  "qwen235/instructed_sender": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 16
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 6
+    }
+  },
+  "qwen235/minimal_edit": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 120
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 118
+    }
+  },
+  "qwen235/paraphrase": {
+    "valid": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 120
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 120
+    }
+  },
+  "qwen235/resolve": {
+    "valid": {
+      "mean": 0.3542,
+      "ci95": [
+        0.2292,
+        0.4792
+      ],
+      "n_tasks": 12
+    },
+    "valid_and_stop": {
+      "mean": 0.75,
+      "ci95": [
+        0.75,
+        0.75
+      ],
+      "n_tasks": 1
+    }
+  },
+  "qwen235/tc_rewrite": {
+    "valid": {
+      "mean": 0.9977,
+      "ci95": [
+        0.993,
+        1.0
+      ],
+      "n_tasks": 107
+    },
+    "valid_and_stop": {
+      "mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "n_tasks": 104
+    }
+  },
+  "qwen235/tc_sanitize": {
+    "valid": {
+      "mean": 0.7222,
+      "ci95": [
+        0.625,
+        0.8194
+      ],
+      "n_tasks": 18
+    }
+  }
+}
