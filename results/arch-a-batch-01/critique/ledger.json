@@ -1,0 +1,43 @@
+{
+  "cap_usd": "5.00",
+  "calls": {
+    "critique-anthropic": {
+      "status": "needs_reconciliation",
+      "reserved_usd": "0.35453880",
+      "started_utc": "2026-10-25T00:31:02.948592+00:00",
+      "model": "anthropic/claude-sonnet-4.6",
+      "provider": "Anthropic",
+      "finish_reason": "length",
+      "prompt_tokens": 15600,
+      "completion_tokens": 6000,
+      "finished_utc": "2026-10-25T00:33:22.334872+00:00",
+      "cost_usd": "0.1368"
+    },
+    "critique-google": {
+      "status": "complete",
+      "reserved_usd": "0.26155920",
+      "started_utc": "2026-10-25T00:31:02.975531+00:00",
+      "model": "google/gemini-3.1-pro-preview",
+      "provider": "Google AI Studio",
+      "finish_reason": "stop",
+      "prompt_tokens": 14684,
+      "completion_tokens": 2998,
+      "finished_utc": "2026-10-25T00:31:32.917392+00:00",
+      "cost_usd": "0.065344"
+    },
+    "critique-openai": {
+      "status": "complete",
+      "reserved_usd": "0.2729643000",
+      "started_utc": "2026-10-25T00:31:03.002419+00:00",
+      "model": "openai/gpt-5.2",
+      "provider": "OpenAI",
+      "finish_reason": "stop",
+      "prompt_tokens": 12943,
+      "completion_tokens": 3057,
+      "finished_utc": "2026-10-25T00:31:46.475078+00:00",
+      "cost_usd": "0.06544825"
+    }
+  },
+  "halted": true,
+  "reservation_note": "UTF-8 byte input bound + 4096 framing tokens; double max output; 5% contingency. Provider price caps; no automatic paid retries."
+}

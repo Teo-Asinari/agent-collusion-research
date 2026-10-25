@@ -124,3 +124,14 @@
 - Critiques correctly caught selective proof-success signaling and a minimum-record initialization bug. They also made false mathematical objections and unsupported global complexity/utility claims; final model revisions sometimes accepted those errors. Primary-agent checks and primary AKS/mathlib references correct these claims.
 - No useful novel architecture or general sanitizer was established. Neither original research direction is abandoned on the basis of model consensus. Assessment preserves exact prompts/responses, raw versus accepted claims, source-reading scope and reproducible elementary counterexamples.
 - The one 12-call allowance is complete. Unspent dollars do not imply authorization for another batch, a full experiment or training. See `results/openrouter-research-01/assessment.md` and compute ledger.
+
+## 2026-10-24 — parallel A/B workers and $5 batch authorization
+
+- Owner approved running Approaches A and B in parallel with separate agents, and OpenRouter spending **in batches of $5 hard cap per batch per agent**. Each agent may spend one $5 batch, then must stop and report before any further batch. Ample key credit is not a standing budget.
+- Approach A worker (branch `worktree-agent-ad39c5a2861e07835`) is scoped to: a small formal model of a compartmentalized learned/verified architecture, at least one composition lemma, invariant-ablation counterexamples, and a non-vacuous useful task. OpenRouter use for A is optional and limited to discriminating critique.
+
+## 2026-10-24 — Approach A batch 1 completed
+
+- Built a labeled SSA dataflow model (parameters/optimizer state as wires; one contracted release edge), an informal noninterference-by-typing proof with a composition lemma, z3 instance checks over every interpretation of learned functions, five single-invariant ablations each with a z3 payload-only counterexample, and 5,000-program fuzzing (0/771 leaky accepted by the full checker). See `research/workstreams/architecture/formal-model.md`.
+- Non-vacuous task: a certified learned index (N=16,384) answered every query exactly, using 3.69 vs 13.76 mean probes. Owner-requested timing analysis: the value guarantee holds for all weights, but visible work does not. Unpadded and radius-padded (sender-chosen parameters) costs leak the payload. Worst-case padding and fixed-slot release remove both the leak and the visible gain. Only a canonical trusted fit keeps a visible 3× gain with no payload flow, at the cost of declaring g(z) and trusting the learner.
+- Spent $0.268 of the $5 cap on three cross-family critiques. Accepted repairs are implemented; no critic found a counterexample. No novelty claimed; the value/work split is standard constant-time practice applied to learned parameters.

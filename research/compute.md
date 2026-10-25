@@ -11,6 +11,7 @@ Before a pilot record model/provider, input/output token estimates, current unit
 | Initial literature work | No inference | — | 0 | 0 | Later credential verification used only the authentication endpoint |
 | anti_stego/local-smoke | Scripted feasibility complete | 0 | 0 | 7,680 local records; no model tokens | Eight tests; no API calls |
 | openrouter-research-01 | Complete: 12/12 calls | Conservative reservation ceiling 4.822524; authorized cap 5 | **0.601760** | 88,602 prompt + 28,061 completion tokens, provider reported | Per-response costs reconciled with key usage; qualitative proposal/critique/revision, not a stego benchmark |
+| arch-a-batch-01 | Complete: 3 calls (1 empty, length-truncated reasoning) | Hard cap 5; reservation 0.889 | **0.26759225** | 43,227 prompt + 12,055 completion tokens, provider reported | Cross-family critique of formal model (Sonnet 4.6, Gemini 3.1 Pro, GPT-5.2); local z3/numpy work $0. See `results/arch-a-batch-01/critique/` |
 
 ## Authorized first hosted research batch
 
@@ -21,3 +22,9 @@ Read-only authentication succeeded. Pre-batch key usage was $0; post-batch recon
 Runner settings: max 5,000 output tokens per request, low reasoning effort, temperature 0.5, no seed, no tools/plugins, no fallback, pinned providers, price ceilings at snapshot rates, concurrency two, no automatic retries. The operational worst-case reservation for 12 requests is **$4.822524**, using a deliberately generous 95,000-byte prompt ceiling plus framing allowance, doubled output allowance and 5% contingency. This is conservative budgeting, not a formal provider-billing guarantee. Actual responses and account snapshots will provide expenditure evidence. An unknown cost or reservation overrun halts subsequent calls. Six local accounting/bound tests passed without network or credentials.
 
 Source packet and output claims remain research suggestions. Hosted models had no source-retrieval tools; additional citations require independent verification. The primary agent independently rejected several invalid reviewer arguments and unsupported final impossibility claims. No new architecture/sanitizer or novelty was validated. See [assessment](../results/openrouter-research-01/assessment.md) and [runner documentation](../experiments/openrouter_research/README.md). The 12-call authorization is exhausted even though expenditure was below its dollar ceiling; no automatic continuation is implied.
+
+## Approach A batch 1 authorization
+
+Owner approved parallel A/B workers with OpenRouter spend in **$5 hard-cap batches per agent** (2026-10-24). This entry covers exactly one A batch. Reservation must stay within $5 before any call; unknown cost halts. No second batch without owner approval.
+
+Status: **complete, $0.26759225 actual** (Anthropic $0.1368 for an empty reasoning-only response; Google $0.065344; OpenAI $0.06544825). Account usage snapshots before/after are in `results/arch-a-batch-01/critique/`; they may include concurrent Approach B spend on the same key. The A batch is exhausted. Further A spending needs a new owner-approved batch.
