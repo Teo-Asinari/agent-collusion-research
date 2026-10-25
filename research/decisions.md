@@ -1,5 +1,14 @@
 # Decision log
 
+## 2026-10-24 — first Modal training estimate approved
+
+- Owner explicitly accepted the prepared $1 reservation for one bounded L4
+  operation-training run, including setup. No larger experiment or continuing
+  cloud/inference budget follows. Existing time/resource limits remain in force.
+- Started Modal browser authentication with credentials directed to a private
+  `/tmp/agent-collusion-modal.toml` file, outside the repository. Authentication is
+  required before cloud launch; no credential values are recorded here.
+
 ## 2026-10-24 — integrate both workers; prepare bounded Modal training
 
 - Owner requested committing everything, confirmed interest in worker branches,

@@ -3,6 +3,10 @@
 Prepared 2026-10-24 at the owner's request. Not launched. This is a small
 exploratory CUDA trainability/portability check, not a full research experiment.
 
+Owner approved the proposed $1 reservation in the next conversation turn.
+Authentication flow is pending; GPU execution has not started. The reservation
+is authorization for this single planned run and setup, not an account-level cap.
+
 ## Research and execution contract
 
 Question: can the explicit split-attention block learn exact public associative
