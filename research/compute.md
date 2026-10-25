@@ -12,6 +12,7 @@ Before a pilot record model/provider, input/output token estimates, current unit
 | anti_stego/local-smoke | Scripted feasibility complete | 0 | 0 | 7,680 local records; no model tokens | Eight tests; no API calls |
 | openrouter-research-01 | Complete: 12/12 calls | Conservative reservation ceiling 4.822524; authorized cap 5 | **0.601760** | 88,602 prompt + 28,061 completion tokens, provider reported | Per-response costs reconciled with key usage; qualitative proposal/critique/revision, not a stego benchmark |
 | arch-a-batch-01 | Complete: 3 calls (1 empty, length-truncated reasoning) | Hard cap 5; reservation 0.889 | **0.26759225** | 43,227 prompt + 12,055 completion tokens, provider reported | Cross-family critique of formal model (Sonnet 4.6, Gemini 3.1 Pro, GPT-5.2); local z3/numpy work $0. See `results/arch-a-batch-01/critique/` |
+| arch-a-batch-02 | Complete: 3/3 calls | Hard cap 5; reservation 1.358 | **0.2218205** | Provider-reported usage in `results/arch-a-batch-02/critique/ledger.json` | Lean-mechanization critique (Sonnet 4.6, Gemini 3.1 Pro, GPT-5.2), 12k output limit, reasoning capped at 3k tokens. Lean toolchain: elan + Lean 4.35.0 under `~/.elan` (3.0 GB), no mathlib |
 
 ## Authorized first hosted research batch
 

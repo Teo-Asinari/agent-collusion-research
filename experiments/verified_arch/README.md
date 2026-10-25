@@ -22,3 +22,14 @@ python3 learned_task.py                    # numpy + scipy; ~3 s
 ```
 
 All scripts are deterministic (fixed seeds) and need no network or credentials, except `critique_batch.py`.
+
+## Lean mechanization (batch 2)
+
+`lean/Arch.lean`: Theorem 1, payload corollary, composition lemma, witness contract for all N, and a concrete well-typed witness architecture. Core Lean 4.35.0, no mathlib, no `sorry`.
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain stable --no-modify-path   # ~3 GB under ~/.elan
+~/.elan/bin/lean experiments/verified_arch/lean/Arch.lean   # silent on success, ~1 s
+```
+
+`critique_batch.py --batch 2` produced `results/arch-a-batch-02/critique/` (complete; do not rerun).

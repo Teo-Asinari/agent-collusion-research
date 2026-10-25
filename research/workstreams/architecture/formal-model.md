@@ -1,6 +1,6 @@
 # Formal model: labeled learned/verified dataflow with contracted release
 
-2026-10-24, Approach A batch 1. **Status: a small formal model with an informal (pen-and-paper) noninterference proof, per-instance z3 checks that quantify over every interpretation of the learned functions, explicit ablation counterexamples, one non-vacuous task, and a timing-channel analysis.** Not a mechanized general proof (no proof assistant was installed: the root disk had <1 GB free), not a trained language model, not a novelty claim. Code: [`experiments/verified_arch/`](../../../experiments/verified_arch/README.md). Results: `results/arch-a-batch-01/`.
+2026-10-24, Approach A batches 1–2. **Status: a small formal model whose core noninterference theorem, payload corollary, composition lemma and witness-cell contract (all N) are machine-checked in Lean 4 (§2a). Also: per-instance z3 checks over every interpretation of the learned functions, explicit ablation counterexamples, one non-vacuous task, and a timing-channel analysis.** Not a trained language model, not a novelty claim. Code: [`experiments/verified_arch/`](../../../experiments/verified_arch/README.md). Results: `results/arch-a-batch-01/`.
 
 ## 1. Model
 
@@ -11,7 +11,7 @@ A program is a straight-line SSA list of nodes (`ir.py`):
 - `Release(w, spec, spec_args, impl, impl_out, cost)`: the only private-to-public edge. `impl` is a sub-program (may contain learned ops and read anything); `spec` is a declared function of `spec_args`.
 - `Observe(w)`: receiver-visible wire.
 
-**Typing rules (full checker).** Label of an `Op` output = join of labels of *all* reads, including `secondary` args and the weight wire. Release-internal wires are private and unobservable. A `Release` output is public iff (R1) its `spec_args` are only `public_task` or `authorized` inputs, and (R2) the pair (spec, impl) has a verified contract `impl_out = spec(spec_args)` for **all** inputs and **all** interpretations of opaque functions. `Observe` requires a public, non-internal wire.
+**Typing rules (full checker).** Label of an `Op` output = join of labels of *all* reads, including `secondary` args and the weight wire. Release-internal wires are private and unobservable. A `Release` is admitted (with a public output) only if (R1) its `spec_args` are only `public_task` or `authorized` inputs, and (R2) the pair (spec, impl) has a verified contract `impl_out = spec(spec_args)` for **all** inputs and **all** interpretations of opaque functions. `Observe` requires a public, non-internal wire.
 
 **Semantics.** Given an input valuation ρ and an interpretation ι of opaque symbols, values are computed in order. Varying private weight wires under a fixed ι covers varying private learned functions (the symbol is uninterpreted and receives the weight as an argument).
 
@@ -24,6 +24,29 @@ Let ⊢ P under verified contracts C. Define ρ₁ ~ ρ₂ iff ρ₁, ρ₂ agre
 **Role of (R1).** Without it the theorem stays formally true but vacuous: a spec may itself read m (ablation `spec_reads_anything`). With (R1), ~ is a condition on public inputs and authorized data only: the declared disclosure cannot mention payload, private weights, private randomness or private state. *Which* function of z is authorized remains the task owner's decision; the checker only enforces that it is a function of z.
 
 **Lemma 2 (sequential/parallel composition and multi-session histories; meta-level).** If P₁ and P₂ are well-typed, and P₂ reads P₁'s outputs with their labels preserved (public outputs as public inputs, private carried state as `private_state`), then the concatenation is well-typed and Theorem 1 applies with ~ over the tuple of all releases. Proof: concatenation of SSA programs with fresh names; each node's typing premise only refers to earlier labels, which are unchanged. Unrolling k sessions gives the history version: equal public history plus equal per-session authorized releases implies equal full transcripts. The lemma constrains how programs are *linked*. `ir.check` checks one program, so linking must happen by concatenation. Re-importing a private or release-internal value as a fresh public `Input` at a session boundary launders it, and nothing in the current tool prevents that; a label-preserving linker is future work (critique, GPT-5.2). The earlier **XOR-history attack** (release private r, later release r⊕m) is rejected statically: releasing r needs a spec reading `private_rand`, and r⊕m needs one reading `payload`, both violating (R1).
+
+## 2a. Lean mechanization (batch 2)
+
+[`experiments/verified_arch/lean/Arch.lean`](../../../experiments/verified_arch/lean/Arch.lean) is core Lean 4.35.0 with no mathlib. It contains no `sorry`, and `#print axioms` reports only `propext` (plus `Quot.sound` for the witness lemma). Check it with `~/.elan/bin/lean experiments/verified_arch/lean/Arch.lean`; it takes about 1 s.
+
+| Lean declaration | Statement |
+| --- | --- |
+| `WT κ Γ p Γ'` | The typing judgment: fresh (SSA) outputs; an op's label is the join over all args, with weights passed as args; a release is public only with (R1) readable spec args and (R2) a **Lean proof** `∀ ι ρ, impl ι ρ = spec (specArgs.map ρ)`; observe requires a public wire |
+| `ni`, `ni_init` | Theorem 1: for every interpretation `ι` of every function symbol, worlds that agree on public inputs and on every declared release value give identical observations |
+| `payload_ni` | Corollary: worlds that agree on public inputs and authorized data give identical observations, whatever the payload, private weights, private randomness and private state |
+| `wt_append`, `releases_append`, `ni_compose` | Lemma 2: concatenation is well-typed, and noninterferent modulo all components' releases. This covers **non-adaptive** unrolled sessions (each session's inputs on its own wires in one κ). Adaptive receiver queries and a label-preserving linker are not modeled |
+| `witnessProg`, `witnessImpl_contract`, `witnessProg_wt`, `witnessProg_payload_ni` | Concrete instance of `full(2)`: private gradient and training step, witness-cell release with the learned predictor via `ι`, public readout. Lean proves it well-typed and payload-noninterferent for every `ι`. Observing the trained parameters is rejected |
+| `witness_contract` | Lemma 3, witness cell, all N: candidate-first evaluation equals `any` for every candidate index j |
+| three `example`s | Necessity: dropping (R1), the contract, or the join rule each gives a concrete payload leak, and the full `WT` rejects each program |
+
+Modeling differences from the Python IR, which make the Lean theorem neither weaker nor easier in the directions we found:
+- *All* function symbols, trusted ones included, are arbitrary in `ι`, so the theorem is uniform over trusted code as well as weights.
+- A release `impl` is an arbitrary Lean function of `ι` and the whole environment. Its internal wires never enter the outer environment, which matches `observe_internal` being forbidden.
+- Values are `Int` and wires `Nat`; overwriting is excluded by the freshness premise.
+- Only R0 observations are modeled: no cost, timing or probabilistic sampling. Public randomness is an input wire.
+- An op can only depend on its listed args, because `ι` sees only `args.map ρ`. A hidden weight dependence is therefore unrepresentable rather than unlabeled, and faithful modeling of a real system remains an obligation.
+- Release-internal isolation holds semantically: `impl` runs in a local scope, and `localImpl` shows that sub-programs fit this form. It is not a typing result over internal wires.
+- Not mechanized: the learned-index contract for general N; the correspondence between the IR node graph in programs.py and `witnessImpl` (z3-checked for N≤8); and the correspondence between Lean `WT` and `ir.check` (a hand translation). Batch-2 critique dispositions: `results/arch-a-batch-02/critique/assessment.md`.
 
 **Lemma 3 (release contracts discharged).**
 
@@ -55,7 +78,7 @@ Each ablation switches off one rule. The program is rejected by the full checker
 
 Learned-index membership on N=16,384 private lognormal keys, 4,000 queries (half present). Model: two-stage regression index (Gaussian-CDF routing on log-key, 1,024 linear leaves, 2,050 parameters), trained on private z. Certified radius e=13. The release value was correct on all queries. Mean probes: **3.69 learned vs 13.76 plain binary search**. Authorized private data affects the output (F is nonconstant in z); the payload cannot affect any R0 observation (paired check: 50/50 sessions identical under opposite payloads).
 
-Honest limits: the learned model is a regression index, not a transformer (the theory treats it as an opaque function, so this is a choice of test vehicle). A 32-unit tanh MLP on raw keys certified only e=10,820, with no saving. Learned indexes with error bounds are prior art (Kraska et al., SIGMOD 2018, cited from memory, not re-read in this pass). Per-query model evaluation, fit and the O(N) certificate are extra costs not counted in probes. No wall-clock comparison is made.
+Honest limits: the learned model is a regression index, not a transformer (the theory treats it as an opaque function, so this is a choice of test vehicle). A 32-unit tanh MLP on raw keys certified only e=10,820, with no saving. Learned indexes with error bounds are prior art (Kraska et al., SIGMOD 2018: §2 and §3.4 primary-checked in batch 2; min/max error over stored keys guarantees that existing keys are found). Per-query model evaluation, fit and the O(N) certificate are extra costs not counted in probes. No wall-clock comparison is made.
 
 ## 5. Timing / work-count channel
 
@@ -73,7 +96,7 @@ Honest limits: the learned model is a regression index, not a transformer (the t
 | Pad to radius of a **canonical trusted fit** of z | 0.53 | 50/50 | 5 | 3.69 | 3× lower visible cost than worst-case padding, zero payload flow. But cost = g(z) discloses the radius bucket of z's fit (≤ ~3.9 bits about z), which must be added to the declared release, and the fit procedure becomes trusted |
 | Batch / fixed-slot release (B answers at slot B·15) | 0.53 | constant by construction | 15 (latency) | 3.69 | no latency or throughput gain visible to the receiver; internal savings only |
 
-**Conclusion.** Exact values are guaranteed for all weights. Visible work is not. Visible learned speedup survives only if the parameters that determine work are not sender-controlled: a trusted, deterministic, sender-independent training procedure whose output depends on z alone, with its cost profile declared as an authorized disclosure. Otherwise padding (worst case or fixed slot) removes the visible benefit, and radius-dependent padding leaves a bounded per-parameter-choice channel. For agent collusion, an untrusted agent's own learned heuristics cannot buy receiver-visible efficiency without opening a channel of that size. This mirrors classical timing-channel mitigation (padding to worst case; leakage bounded by the number of distinct schedules, e.g. Agat 2000; Askarov–Zhang–Myers CCS 2010). Those are cited from memory as **unverified leads**, not re-read in this pass, and the observation is not claimed new.
+**Conclusion.** Exact values are guaranteed for all weights. Visible work is not. Visible learned speedup survives only if the parameters that determine work are not sender-controlled: a trusted, deterministic, sender-independent training procedure whose output depends on z alone, with its cost profile declared as an authorized disclosure. Otherwise padding (worst case or fixed slot) removes the visible benefit, and radius-dependent padding leaves a bounded per-parameter-choice channel. For agent collusion, an untrusted agent's own learned heuristics cannot buy receiver-visible efficiency without opening a channel of that size. This mirrors classical timing-channel mitigation. Askarov–Zhang–Myers (CCS 2010, §2.2–2.3, primary-checked) bound leakage by the log of the number of distinguishable timing outcomes, with O(log²T) for their doubling mitigator, and our per-parameter-choice bound is the same counting argument at a coarser grain. Agat (POPL 2000) removes timing leaks by type-directed padding; only the thesis abstract was read, and the details are unverified. The observation is not claimed new; see `sources.md`.
 
 ## 6. Prior art and novelty status
 
@@ -90,7 +113,7 @@ Three critiques were requested on this document and the code; two returned (Sonn
 
 ## 8. Limitations
 
-- General-N proofs are pen-and-paper. z3 covers instance sizes N≤8 (witness), N≤16 (index), n=3 (sweep counterexample), plus 5,000 random N=2 programs.
+- Theorem 1, the payload corollary, composition and the witness contract are mechanized in Lean for the Lean model (§2a). The learned-index contract for general N and the correspondence between the Lean `WT` and Python `ir.check` are not. z3 covers instance sizes N≤8 (witness), N≤16 (index), n=3 (sweep counterexample), plus 5,000 random N=2 programs.
 - Deterministic semantics only. Public randomness is a public input wire, so the coupling argument is built in, but probabilistic programs with private sampling feeding releases are not modeled.
 - No hardware refinement. R1 uses a deterministic probe proxy.
 - The authorized function is trusted. Sender-chosen queries or falsified z are out of scope.

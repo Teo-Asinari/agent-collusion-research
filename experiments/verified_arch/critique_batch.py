@@ -1,11 +1,15 @@
-"""Approach A batch 1: bounded cross-family critique of formal-model.md and code.
+"""Approach A batches 1-2: bounded cross-family critique runs.
+
+Batch 1 critiqued formal-model.md and the Python code. Batch 2 (--batch 2)
+critiques the Lean mechanization, with a larger output limit and capped
+reasoning so that no call can spend its whole budget on hidden reasoning.
 
 Owner authorization: one $5 hard-cap batch for this agent (2026-10-24). This runner
 reuses the accounting of experiments/openrouter_research/run_batch.py (reservation
 before each call, no retries, no fallback, pinned provider, price caps, halt on
 unknown cost) with its own output directory and a 3-call ceiling.
 
-  python critique_batch.py --preflight   # free endpoint/pricing lookups, writes preflight.json
+  python critique_batch.py [--batch 2] --preflight   # free endpoint/pricing lookups
   python critique_batch.py --prepare     # fixes packet hash, models and reservation; no inference
   python critique_batch.py --run         # performs the calls once
 
@@ -25,6 +29,7 @@ sys.path.insert(0, str(ROOT / 'experiments/openrouter_research'))
 import run_batch as rb  # noqa: E402
 
 OUT = ROOT / 'results/arch-a-batch-01/critique'
+REASONING = {'effort': 'low', 'exclude': True}
 ENV = Path('/home/tasinari/my_repos/agent-collusion-research/.env')
 rb.CAP = Decimal('5.00')
 rb.MAX_CALLS = 3
@@ -51,6 +56,39 @@ For each objection: severity, exact premise, concrete counterexample (program te
 smallest repair. Do not repeat limitations already listed in Section 7. Citations beyond the
 packet are unverified leads. End with: sound-as-stated / sound-with-repairs / unsound, and why.
 Limit your answer to 1200 words.'''
+
+
+TASK2 = '''Adversarially review this Lean 4 mechanization (it compiles with no sorry; axioms
+propext and Quot.sound only). Do NOT re-review the prose design; check whether the
+mechanized STATEMENTS mean what formal-model.md claims. Prioritize, in order:
+1. A gap between Theorem 1 as stated in the doc and `Arch.ni` / `Arch.ni_init` /
+   `Arch.payload_ni` as stated in Lean: vacuous or too-strong hypotheses, a WT rule that
+   is weaker or stronger than the doc's rule, a hypothesis that silently assumes the
+   conclusion, or a semantic choice (e.g. release impl reading the whole environment,
+   functions as arbitrary interpretations, Int values, Nat wires, overwriting via upd)
+   that makes the theorem easier than the Python IR or the intended architecture.
+2. Whether `payload_ni`'s hypotheses are satisfiable for realistic programs and whether
+   it really quantifies over all weights (weights as wires + arbitrary interpretation).
+3. Whether `ni_compose` is the composition lemma claimed (multi-session histories).
+4. Whether `witness_contract` matches the witness cell in programs.py.
+5. What is NOT covered (timing, probabilistic semantics, release-internal state).
+For each finding: severity, the exact Lean declaration, a concrete counterexample or a
+precise description of the mismatch, and the smallest repair (Lean statement if possible).
+End with: statement-faithful / faithful-with-caveats / misleading. Limit your answer to
+1500 words.'''
+
+
+def configure(batch):
+    global OUT, PACKET_FILES, TASK, REASONING
+    if batch == 2:
+        OUT = ROOT / 'results/arch-a-batch-02/critique'
+        rb.MAX_TOKENS = 12000
+        PACKET_FILES = ['research/workstreams/architecture/formal-model.md',
+                        'experiments/verified_arch/lean/Arch.lean',
+                        'experiments/verified_arch/programs.py']
+        TASK = TASK2
+        # Capped reasoning: a hard token budget where the provider supports it.
+        REASONING = {'max_tokens': 3000, 'exclude': True}
 
 
 def credential():
@@ -88,6 +126,8 @@ def build_packet():
         if rb.SECRET.search(text):
             raise RuntimeError('Credential-like text in packet; refusing transmission')
         parts.append(f'\n<source path="{name}">\n{text}\n</source>')
+    if 'experiments/verified_arch/lean/Arch.lean' in PACKET_FILES:
+        return '\n'.join(parts)
     summary = json.loads((ROOT / 'results/arch-a-batch-01/prove.json').read_text())
     keep = {k: summary[k] for k in ('learned_index', 'shortest_path', 'fuzz')}
     keep['witness_n2'] = summary['witness']['2']
@@ -143,7 +183,8 @@ def run():
         m = plan['models'][label]
         body = {'model': m['id'], 'messages': messages, 'stream': False,
                 'max_tokens': rb.MAX_TOKENS, 'temperature': 0.5,
-                'reasoning': {'effort': 'low', 'exclude': True},
+                'reasoning': (dict(REASONING) if not m['id'].startswith('openai/')
+                              else {'effort': 'low', 'exclude': True}),
                 'provider': {'only': [m['provider_tag']], 'allow_fallbacks': False,
                              'require_parameters': True,
                              'max_price': {'prompt': float(Decimal(m['pricing']['prompt']) * 1000000),
@@ -197,10 +238,12 @@ def run():
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
+    p.add_argument('--batch', type=int, default=1, choices=(1, 2))
     g = p.add_mutually_exclusive_group(required=True)
     g.add_argument('--preflight', action='store_true')
     g.add_argument('--prepare', action='store_true')
     g.add_argument('--run', action='store_true')
     a = p.parse_args()
+    configure(a.batch)
     {'preflight': preflight, 'prepare': prepare, 'run': run}[
         'preflight' if a.preflight else 'prepare' if a.prepare else 'run']()
