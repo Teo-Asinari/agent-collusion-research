@@ -475,3 +475,346 @@ example : ¬ ∃ Γ', WT κex (ctx0 κex) leakOp Γ' := by
       simp [setCtx, joinAll, ctx0, κex, Kind.label, Label.join] at hw
 
 end Arch
+
+/-! ## Multi-agent orchestration (batch 3)
+
+An orchestration of LLM agents compiles to a `Prog`:
+* every LLM call (sender, receiver, planner) is an `op` whose function symbol is
+  interpreted by an arbitrary `ι`, so the agents may run ANY policy, including
+  pre-agreed colluding code;
+* tool calls are `op`s too (their semantics is also arbitrary, which is stronger
+  than trusting them); a tool whose result we rely on is a `release` with a
+  contract (verified tool output);
+* shared state (files, memory, tool results, logs) is versioned wires; a write is
+  an op producing the next version;
+* scheduling and slot timing are explicit wires: either an op output (it then
+  carries the label of whatever it depends on) or a release whose spec reads only
+  public data (a declared cost release);
+* sampling randomness is an input wire: `publicRand` (trusted, equal across the
+  compared worlds) or `privateRand` (the agent's own tape);
+* receiver side information, including pre-shared keys and codebooks, is a
+  `publicWeight` wire: it is equal across compared worlds and may be read freely.
+
+`WTa` generalizes `WT` in one way: a release spec may read *public computed*
+wires (e.g. a query the receiver chose adaptively from earlier outputs) as well
+as authorized inputs. Private randomness, payload, private state and private
+weights still cannot feed a release spec. -/
+
+namespace Arch.Agents
+open Arch
+
+inductive WTa (κ : Wire → Option Kind) : Ctx → Prog → Ctx → Prop where
+  | nil (Γ : Ctx) : WTa κ Γ [] Γ
+  | op {Γ Γ' : Ctx} {out : Wire} {fn : String} {args : List Wire} {p : Prog} :
+      Γ out = none →
+      WTa κ (setCtx Γ out (joinAll Γ args)) p Γ' →
+      WTa κ Γ (.op out fn args :: p) Γ'
+  | release {Γ Γ' : Ctx} {out : Wire} {spec : List Val → Val} {specArgs : List Wire}
+      {impl : Interp → Env → Val} {p : Prog} :
+      Γ out = none →
+      (∀ a ∈ specArgs, Γ a = some .pub ∨ κ a = some .authorized) →
+      (∀ ι ρ, impl ι ρ = spec (specArgs.map ρ)) →
+      WTa κ (setCtx Γ out .pub) p Γ' →
+      WTa κ Γ (.release out spec specArgs impl :: p) Γ'
+  | observe {Γ Γ' : Ctx} {w : Wire} {p : Prog} :
+      Γ w = some .pub →
+      WTa κ Γ p Γ' →
+      WTa κ Γ (.observe w :: p) Γ'
+
+theorem setCtx_pub_old {Γ : Ctx} {out w : Wire} {l : Label}
+    (hw : setCtx Γ out l w = some .pub) (hne : w ≠ out) : Γ w = some .pub := by
+  simp only [setCtx, hne, ite_false] at hw; exact hw
+
+/-- Core invariant proof for `WTa`. -/
+theorem nia (κ : Wire → Option Kind) (ι : Interp) {Γ Γ' : Ctx} {p : Prog}
+    (h : WTa κ Γ p Γ') (ρ1₀ ρ2₀ : Env)
+    (hauth : ∀ a, κ a = some .authorized → ρ1₀ a = ρ2₀ a) :
+    ∀ (ρ1 ρ2 : Env),
+      (∀ w, Γ w = some .pub → ρ1 w = ρ2 w) →
+      (∀ a, κ a ≠ none → Γ a ≠ none) →
+      (∀ a, κ a ≠ none → ρ1 a = ρ1₀ a ∧ ρ2 a = ρ2₀ a) →
+      obs ι p ρ1 = obs ι p ρ2 := by
+  induction h with
+  | nil => intro ρ1 ρ2 _ _ _; rfl
+  | @op Γ Γ' out fn args p hfresh _ ih =>
+    intro ρ1 ρ2 hpub hdef hin
+    simp only [obs, run]
+    apply ih
+    · intro w hw
+      simp only [upd]
+      by_cases hwo : w = out
+      · simp only [setCtx, hwo, ite_true] at hw ⊢
+        have hargs := joinAll_pub Γ args (Option.some.inj hw)
+        rw [map_congr' args (fun a ha => hpub a (hargs a ha))]
+      · simp only [hwo, ite_false]
+        exact hpub w (setCtx_pub_old hw hwo)
+    · intro a ha
+      simp only [setCtx]
+      by_cases hao : a = out
+      · simp [hao]
+      · simp only [hao, ite_false]; exact hdef a ha
+    · intro a ha
+      have hne : a ≠ out := fun he => hdef a ha (he ▸ hfresh)
+      simp only [upd, hne, ite_false]
+      exact hin a ha
+  | @release Γ Γ' out spec specArgs impl p hfresh hread hcon _ ih =>
+    intro ρ1 ρ2 hpub hdef hin
+    simp only [obs, run]
+    apply ih
+    · intro w hw
+      simp only [upd]
+      by_cases hwo : w = out
+      · simp only [hwo, ite_true]
+        rw [hcon ι ρ1, hcon ι ρ2]
+        congr 1
+        apply map_congr' specArgs
+        intro a ha
+        rcases hread a ha with hp | hk
+        · exact hpub a hp
+        · have h1 := (hin a (by simp [hk])).1
+          have h2 := (hin a (by simp [hk])).2
+          rw [h1, h2]; exact hauth a hk
+      · simp only [hwo, ite_false]
+        exact hpub w (setCtx_pub_old hw hwo)
+    · intro a ha
+      simp only [setCtx]
+      by_cases hao : a = out
+      · simp [hao]
+      · simp only [hao, ite_false]; exact hdef a ha
+    · intro a ha
+      have hne : a ≠ out := fun he => hdef a ha (he ▸ hfresh)
+      simp only [upd, hne, ite_false]
+      exact hin a ha
+  | @observe Γ Γ' w p hw _ ih =>
+    intro ρ1 ρ2 hpub hdef hin
+    simp only [obs, run]
+    rw [hpub w hw]
+    have := ih ρ1 ρ2 hpub hdef hin
+    simp only [obs] at this
+    rw [this]
+
+/-- **Agent-level payload noninterference.** For every interpretation of every LLM
+and tool (all policies, including colluding ones), two worlds that agree on the
+public inputs (task, public randomness, receiver side information/keys) and on
+authorized data give identical receiver views — whatever the sender's payload,
+private sampling tape, private memory and private weights. -/
+theorem payload_nia (κ : Wire → Option Kind) (ι : Interp) {p : Prog} {Γ' : Ctx}
+    (h : WTa κ (ctx0 κ) p Γ') (ρ1 ρ2 : Env)
+    (hpubin : ∀ a k, κ a = some k → k.label = .pub → ρ1 a = ρ2 a)
+    (hauth : ∀ a, κ a = some .authorized → ρ1 a = ρ2 a) :
+    obs ι p ρ1 = obs ι p ρ2 := by
+  apply nia κ ι h ρ1 ρ2 hauth ρ1 ρ2
+  · intro w hw
+    simp only [ctx0] at hw
+    cases hk : κ w with
+    | none => simp [hk] at hw
+    | some k =>
+      simp only [hk, Option.map_some] at hw
+      exact hpubin w k hk (Option.some.inj hw)
+  · intro a ha
+    simp only [ctx0]
+    cases hk : κ a with
+    | none => exact absurd hk ha
+    | some k => simp
+  · intro a _; exact ⟨rfl, rfl⟩
+
+/-- Every program accepted by the single-agent checker is accepted here. -/
+theorem wt_to_wta (κ : Wire → Option Kind) {Γ Γ' : Ctx} {p : Prog}
+    (h : WT κ Γ p Γ') (hctx : ∀ a k, κ a = some k → Γ a = (some k).map Kind.label) :
+    WTa κ Γ p Γ' := by
+  induction h with
+  | nil => exact WTa.nil _
+  | op hf _ ih =>
+    exact WTa.op hf (ih (fun a k hk => by
+      have := hctx a k hk
+      simp only [setCtx]; split
+      · rename_i he; subst he; rw [hf] at this; simp at this
+      · exact this))
+  | @release Γ Γ' out spec specArgs impl p hf hr hc _ ih =>
+    refine WTa.release hf (fun a ha => ?_) hc (ih (fun a k hk => by
+      have := hctx a k hk
+      simp only [setCtx]; split
+      · rename_i he; subst he; rw [hf] at this; simp at this
+      · exact this))
+    obtain ⟨k, hk, hs⟩ := hr a ha
+    cases k with
+    | publicTask => left; rw [hctx a _ hk]; rfl
+    | authorized => right; exact hk
+    | _ => simp [Kind.specReadable] at hs
+  | observe hw _ ih => exact WTa.observe hw (ih hctx)
+
+/-- **Distributional reading.** The receiver view is a deterministic function of
+the public/authorized projection of the inputs. Hence, for any input
+distribution in which (public inputs, authorized data) is independent of the
+payload, the receiver view is independent of the payload — including when the
+sender samples with a private tape. -/
+def proj (κ : Wire → Option Kind) (ρ : Env) : Env := fun a =>
+  match κ a with
+  | some .publicTask | some .publicRand | some .publicWeight | some .authorized => ρ a
+  | _ => 0
+
+theorem obs_factors (κ : Wire → Option Kind) (ι : Interp) {p : Prog} {Γ' : Ctx}
+    (h : WTa κ (ctx0 κ) p Γ') (ρ : Env) : obs ι p ρ = obs ι p (proj κ ρ) := by
+  apply payload_nia κ ι h ρ (proj κ ρ)
+  · intro a k hk hl
+    cases k <;> simp_all [proj, Kind.label]
+  · intro a hk; simp [proj, hk]
+
+/-! ### Concrete orchestration: receiver, sender, orchestrator, shared state
+
+Inputs: 0 user task (public), 1 public sampling tape, 2 pre-shared key known to
+both agents (receiver side information), 3 sender payload, 4 sender private
+sampling tape, 5 sender private memory, 6 authorized database z.
+
+Steps:
+10 receiver LLM picks a query adaptively (from task, key, public tape);
+11 sender LLM reasons over query, payload, its tape, memory, z, key;
+12 sender writes a shared file (version 1);
+13 orchestrator slot schedule: a cost release whose spec reads only the task;
+14 verified tool output: the sender proposes an answer, the trusted checker
+   accepts it only if it equals the tool spec F(query, z), else recomputes;
+15 receiver LLM reads the tool result and the schedule;
+observations: the receiver's whole view (10, 13, 14, 15). -/
+
+def κo : Wire → Option Kind
+  | 0 => some .publicTask | 1 => some .publicRand | 2 => some .publicWeight
+  | 3 => some .payload | 4 => some .privateRand | 5 => some .privateState
+  | 6 => some .authorized
+  | _ => none
+
+def slotSpec (slot : Val → Val) : List Val → Val := fun l => slot (l.headD 0)
+
+def toolSpec (F : Val → Val → Val) : List Val → Val
+  | q :: z :: _ => F q z
+  | _ => 0
+
+/-- Verify-or-recompute: accept the sender's candidate only if it equals the
+trusted tool's answer; the contract holds for every sender policy. -/
+def toolImpl (F : Val → Val → Val) : Interp → Env → Val := fun ι ρ =>
+  let cand := ι "LLM_S_answer" [ρ 10, ρ 3, ρ 4, ρ 5, ρ 6, ρ 2]
+  if cand = F (ρ 10) (ρ 6) then cand else F (ρ 10) (ρ 6)
+
+def orch (slot : Val → Val) (F : Val → Val → Val) : Prog :=
+  [ .op 10 "LLM_R" [0, 2, 1],
+    .op 11 "LLM_S" [10, 3, 4, 5, 6, 2],
+    .op 12 "write_file" [11],
+    .release 13 (slotSpec slot) [0] (fun _ ρ => slot (ρ 0)),
+    .release 14 (toolSpec F) [10, 6] (toolImpl F),
+    .op 15 "LLM_R" [14, 13, 2, 1],
+    .observe 10, .observe 13, .observe 14, .observe 15 ]
+
+theorem toolImpl_contract (F : Val → Val → Val) :
+    ∀ ι ρ, toolImpl F ι ρ = toolSpec F ([10, 6].map ρ) := by
+  intro ι ρ
+  simp only [toolImpl, toolSpec, List.map]
+  split <;> simp_all
+
+theorem orch_wt (slot : Val → Val) (F : Val → Val → Val) :
+    ∃ Γ', WTa κo (ctx0 κo) (orch slot F) Γ' :=
+  ⟨_, WTa.op (by simp [ctx0, κo])
+    (WTa.op (by simp [setCtx, ctx0, κo])
+    (WTa.op (by simp [setCtx, ctx0, κo])
+    (WTa.release (by simp [setCtx, ctx0, κo])
+        (by intro a ha; simp at ha; subst ha; left; simp [setCtx, ctx0, κo, Kind.label])
+        (by intro ι ρ; rfl)
+    (WTa.release (by simp [setCtx, ctx0, κo])
+        (by intro a ha; simp at ha
+            rcases ha with rfl | rfl
+            · left; simp [setCtx, joinAll, ctx0, κo, Kind.label, Label.join]
+            · right; rfl)
+        (toolImpl_contract F)
+    (WTa.op (by simp [setCtx, ctx0, κo])
+    (WTa.observe (by simp [setCtx, joinAll, ctx0, κo, Kind.label, Label.join])
+    (WTa.observe (by simp [setCtx])
+    (WTa.observe (by simp [setCtx])
+    (WTa.observe (by simp [setCtx, joinAll, ctx0, κo, Kind.label, Label.join])
+    (WTa.nil _))))))))))⟩
+
+/-- For every receiver policy, sender policy, file-system and tool semantics, the
+receiver's entire view is independent of the sender's payload, private tape and
+private memory. -/
+theorem orch_payload_ni (slot : Val → Val) (F : Val → Val → Val) (ι : Interp)
+    (ρ1 ρ2 : Env) (h : ∀ a, a ∈ [0, 1, 2, 6] → ρ1 a = ρ2 a) :
+    obs ι (orch slot F) ρ1 = obs ι (orch slot F) ρ2 := by
+  obtain ⟨Γ', hwt⟩ := orch_wt slot F
+  apply payload_nia κo ι hwt ρ1 ρ2
+  · intro a k hk hl
+    match a, hk with
+    | 0, _ => exact h 0 (by simp)
+    | 1, _ => exact h 1 (by simp)
+    | 2, _ => exact h 2 (by simp)
+    | 3, hk | 4, hk | 5, hk | 6, hk => simp [κo] at hk; subst hk; simp [Kind.label] at hl
+    | n + 7, hk => simp [κo] at hk
+  · intro a hk
+    match a, hk with
+    | 6, _ => exact h 6 (by simp)
+    | 0, hk | 1, hk | 2, hk | 3, hk | 4, hk | 5, hk => simp [κo] at hk
+    | n + 7, hk => simp [κo] at hk
+
+/-! ### Each collusion channel, concretely: it leaks, and `WTa` rejects it
+
+Leak witnesses use the "sum of arguments" interpretation, under which the sender's
+output depends on the payload. Worlds: payload 0 vs 1, everything else 0. -/
+
+def ιsum : Interp := fun _ l => l.foldl (· + ·) 0
+def ρp (m : Val) : Env := fun w => if w = 3 then m else 0
+
+def base : Prog := [.op 10 "LLM_R" [0, 2, 1], .op 11 "LLM_S" [10, 3, 4, 5, 6, 2]]
+
+/-- Shared state: the receiver reads the file the sender wrote. -/
+def chanFile : Prog := base ++ [.op 12 "write_file" [11], .op 13 "LLM_R" [12], .observe 13]
+/-- Tool choice: the orchestrator dispatches the tool the sender picked; the
+receiver sees which tool ran (e.g. in a log or via its side effects). -/
+def chanTool : Prog := base ++ [.op 12 "dispatch" [11], .observe 12]
+/-- Timing: the sender's completion slot depends on its own computation. -/
+def chanTime : Prog := base ++ [.op 12 "clock" [11], .observe 12]
+/-- Private randomness feeding a release: the sender's tape (wire 4) is released
+under a "random-looking" spec; across two releases r and r⊕m this is a one-time-pad
+channel even though each output alone looks uniform. -/
+def chanRand : Prog := [.release 12 (fun l => l.headD 0) [4] (fun _ ρ => ρ 4), .observe 12]
+
+example : obs ιsum chanFile (ρp 0) ≠ obs ιsum chanFile (ρp 1) := by
+  simp [obs, run, chanFile, base, upd, ρp, ιsum]
+example : obs ιsum chanTool (ρp 0) ≠ obs ιsum chanTool (ρp 1) := by
+  simp [obs, run, chanTool, base, upd, ρp, ιsum]
+example : obs ιsum chanTime (ρp 0) ≠ obs ιsum chanTime (ρp 1) := by
+  simp [obs, run, chanTime, base, upd, ρp, ιsum]
+
+/-- The private-tape release leaks the tape itself (here the tape carries the
+payload-dependent pad). -/
+example : obs ιsum chanRand (fun w => if w = 4 then 0 else 0) ≠
+    obs ιsum chanRand (fun w => if w = 4 then 1 else 0) := by
+  simp [obs, run, chanRand, upd]
+
+theorem base_ctx (Γ' : Ctx) (h : WTa κo (ctx0 κo) (base ++ q) Γ') :
+    WTa κo (setCtx (setCtx (ctx0 κo) 10 (joinAll (ctx0 κo) [0, 2, 1])) 11
+      (joinAll (setCtx (ctx0 κo) 10 (joinAll (ctx0 κo) [0, 2, 1])) [10, 3, 4, 5, 6, 2])) q Γ' := by
+  cases h with | op _ h => cases h with | op _ h => exact h
+
+example : ¬ ∃ Γ', WTa κo (ctx0 κo) chanFile Γ' := by
+  rintro ⟨Γ', h⟩
+  have h := base_ctx Γ' h
+  cases h with | op _ h => cases h with | op _ h => cases h with | observe hw _ =>
+  simp [setCtx, joinAll, ctx0, κo, Kind.label, Label.join] at hw
+
+example : ¬ ∃ Γ', WTa κo (ctx0 κo) chanTool Γ' := by
+  rintro ⟨Γ', h⟩
+  have h := base_ctx Γ' h
+  cases h with | op _ h => cases h with | observe hw _ =>
+  simp [setCtx, joinAll, ctx0, κo, Kind.label, Label.join] at hw
+
+example : ¬ ∃ Γ', WTa κo (ctx0 κo) chanTime Γ' := by
+  rintro ⟨Γ', h⟩
+  have h := base_ctx Γ' h
+  cases h with | op _ h => cases h with | observe hw _ =>
+  simp [setCtx, joinAll, ctx0, κo, Kind.label, Label.join] at hw
+
+example : ¬ ∃ Γ', WTa κo (ctx0 κo) chanRand Γ' := by
+  rintro ⟨Γ', h⟩
+  cases h with
+  | release _ hread _ _ =>
+    rcases hread 4 (by simp) with hp | hk
+    · simp [ctx0, κo, Kind.label] at hp
+    · simp [κo] at hk
+
+end Arch.Agents

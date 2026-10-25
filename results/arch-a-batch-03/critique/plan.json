@@ -1,0 +1,129 @@
+{
+  "created_utc": "2026-10-25T01:19:31.939308+00:00",
+  "authorized_cap_usd": "5.00",
+  "max_requests": 3,
+  "max_output_tokens_per_request": 12000,
+  "models": {
+    "anthropic": {
+      "id": "anthropic/claude-sonnet-4.6",
+      "provider_tag": "anthropic",
+      "endpoint_name": "Anthropic | anthropic/claude-4.6-sonnet-20260217",
+      "pricing": {
+        "prompt": "0.000003",
+        "completion": "0.000015",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000003",
+        "input_cache_write": "0.00000375",
+        "input_cache_write_1h": "0.000006",
+        "discount": 0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "google": {
+      "id": "google/gemini-3.1-pro-preview",
+      "provider_tag": "google-ai-studio",
+      "endpoint_name": "Google AI Studio | google/gemini-3.1-pro-preview-20260219",
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.000012",
+        "image": "0.000002",
+        "audio": "0.000002",
+        "input_audio_cache": "0.0000002",
+        "web_search": "0.014",
+        "internal_reasoning": "0.000012",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.000000375",
+        "discount": 0,
+        "overrides": [
+          {
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004",
+            "completion": "0.000018",
+            "audio": "0.000004",
+            "input_audio_cache": "0.0000004",
+            "input_cache_read": "0.0000004"
+          }
+        ]
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "reasoning_effort"
+      ]
+    },
+    "openai": {
+      "id": "openai/gpt-5.2",
+      "provider_tag": "openai",
+      "endpoint_name": "OpenAI | openai/gpt-5.2-20251211",
+      "pricing": {
+        "prompt": "0.00000175",
+        "completion": "0.000014",
+        "web_search": "0.01",
+        "input_cache_read": "0.000000175",
+        "discount": 0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    }
+  },
+  "packet_sha256": "c22d21fb4ac476ed55d604f5610bb33c366253be7d5ef9ed1870552dd8730fa8",
+  "packet_bytes": 42888,
+  "reservations_usd": {
+    "anthropic": "0.53390925",
+    "google": "0.40633950",
+    "openai": "0.4437470625"
+  },
+  "total_reservation_usd": "1.3839958125",
+  "design": "one independent critique per model family; no revision stage",
+  "status": "complete",
+  "results": [
+    [
+      "critique-anthropic",
+      0.097911,
+      "stop"
+    ],
+    [
+      "critique-google",
+      0.074564,
+      "stop"
+    ],
+    [
+      "critique-openai",
+      0.06433525,
+      "stop"
+    ]
+  ],
+  "actual_reported_cost_usd": "0.23681025",
+  "finished_utc": "2026-10-25T01:20:59.504393+00:00"
+}

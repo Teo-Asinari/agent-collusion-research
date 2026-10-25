@@ -78,8 +78,35 @@ End with: statement-faithful / faithful-with-caveats / misleading. Limit your an
 1500 words.'''
 
 
+TASK3 = '''Adversarially review the multi-agent section (namespace Arch.Agents) of this Lean 4
+file and the comparison document. The Lean compiles with no sorry (axiom propext only);
+do not re-check proofs, check MEANING. Prioritize:
+1. Does `payload_nia` / `orch_payload_ni` really mean agent-level payload noninterference
+   against colluding LLM agents with a pre-shared key? Look for: a modeling choice that
+   hides a real channel (e.g. keys as public wires, release specs reading public computed
+   wires, verify-or-recompute tool contract, tapes as inputs), or a hypothesis that is
+   unrealistic for orchestration.
+2. Is the relaxation in `WTa` (release specs may read public computed wires) sound, and
+   is `wt_to_wta` the right sanity check?
+3. Is `obs_factors` a correct basis for the stated distributional claim about sampling?
+4. Check every row of the channel table against the quoted CaMeL/FIDES text: is any
+   claim about CaMeL or FIDES unfair or wrong given the quotes? Is any channel missing
+   (e.g. termination/abort, output length, resource exhaustion, error messages, order of
+   observations, number of tool calls)?
+5. Honest-limits section: anything overstated?
+For each finding: severity, location, concrete counterexample or quote, smallest repair.
+End with: faithful / faithful-with-caveats / misleading. Limit your answer to 1500 words.'''
+
+
 def configure(batch):
     global OUT, PACKET_FILES, TASK, REASONING
+    if batch == 3:
+        OUT = ROOT / 'results/arch-a-batch-03/critique'
+        rb.MAX_TOKENS = 12000
+        PACKET_FILES = ['research/workstreams/architecture/agents-camel-fides.md',
+                        'experiments/verified_arch/lean/Arch.lean']
+        TASK = TASK3
+        REASONING = {'max_tokens': 3000, 'exclude': True}
     if batch == 2:
         OUT = ROOT / 'results/arch-a-batch-02/critique'
         rb.MAX_TOKENS = 12000
@@ -238,7 +265,7 @@ def run():
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
-    p.add_argument('--batch', type=int, default=1, choices=(1, 2))
+    p.add_argument('--batch', type=int, default=1, choices=(1, 2, 3))
     g = p.add_mutually_exclusive_group(required=True)
     g.add_argument('--preflight', action='store_true')
     g.add_argument('--prepare', action='store_true')
