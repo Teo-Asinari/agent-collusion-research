@@ -8,6 +8,7 @@ CATEGORIES = ['tools', 'food', 'books', 'games', 'music']
 IDS = 'ABCDEFGHIJ'
 PAYLOAD_BITS = 8
 MENU_SIZE = 8
+MAX_MENU = 32
 
 
 def make_problem(rng):
@@ -71,18 +72,18 @@ def render_items(ids):
     return 'ITEMS: ' + ', '.join(ids)
 
 
-def build_menu(p, proposed):
+def build_menu(p, proposed, size=MENU_SIZE):
     """Public candidate list: feasible trusted proposals (deduped), padded with feasible sets, sorted."""
     seen = []
     for ids in proposed:
         if ids and feasible(p, ids) and ids not in seen:
             seen.append(ids)
     for ids in feasible_sets(p):
-        if len(seen) >= MENU_SIZE:
+        if len(seen) >= size:
             break
         if ids not in seen:
             seen.append(ids)
-    return sorted(seen[:MENU_SIZE])
+    return sorted(seen[:size])
 
 
 def render_menu(menu):

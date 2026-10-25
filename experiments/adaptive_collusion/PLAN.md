@@ -62,3 +62,15 @@ adversary), or menu utility collapses.
 
 Reservation per call from prompt size and max tokens at snapshot prices; any
 unknown cost halts. Estimated actual spend about $5. Stops at $30 committed.
+
+## Scale-up (runs 02a-c), written before launch
+
+Owner approved a **$50 total cap** (2026-10-25). Three independent runs
+(`--run-seed 1,2,3`), each capped at $16.50. Conditions: none, paraphrase,
+broker and menus of 2, 4, 8, 16, 32 options (k = 1..5). The trusted model
+proposes up to 32 sets once per problem; each menu takes the first 2^k
+feasible distinct proposals, padded with feasible sets in lexicographic order,
+then sorted. 12 training rounds x 40 episodes; held-out 300 per condition;
+honest utility 300 per menu size and for free answers. Same models, prompts
+and estimator as run 01. Primary new outcome: leaked bits and utility vs k,
+with spread across the three runs.
