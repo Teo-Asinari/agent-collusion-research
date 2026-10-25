@@ -1,5 +1,20 @@
 # Decision log
 
+## 2026-10-24 — neural operations and finite-choice baseline jointly endorsed
+
+- Owner requires architecture down to linear algebraic operations, and explicitly
+  endorsed incorporating the candidate-generator/chooser implementation alongside
+  that work and proceeding with both. Rewrite approach remains active.
+- Recovered Claude worktrees; main's earlier status missed additional artifacts
+  and spend. Their ledgers require reconciliation before reporting a current total.
+- Added split attention, separated normalization and private-gradient confinement,
+  with a finite candidate gate. Four operator tests pass. Local Lean accepted the
+  recovered abstract capacity theorem. No PyTorch-refinement or novelty claim.
+- A bounded 64-example CPU evaluation completed using existing checkpoints, with
+  zero model API spend. Results, limitations and next question are recorded in
+  `workstreams/architecture/operator-and-choice.md`. No new training, Modal launch
+  or paid inference occurred. No full experiment has been selected.
+
 ## 2026-10-24 — workspace initialization
 
 - Authorized: new private repository on the authenticated GitHub account; preserve brief and exploratory research process.

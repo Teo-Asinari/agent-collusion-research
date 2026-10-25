@@ -1,5 +1,11 @@
 # AI Agent Collusion Research
 
+**Current local continuation:** [neural operations plus finite-choice release](research/workstreams/architecture/operator-and-choice.md)
+now has explicit split-attention equations, an executable block, four passing
+operator checks and a recovered trained chooser baseline. Earlier Claude worktrees
+contain additional batches not yet integrated or cost-reconciled into the historical
+summary below. Neither novelty nor a full study has been established.
+
 Private exploratory research workspace for the Apart Research AI Collusion Research Sprint, October 23–25, 2026.
 
 **Status: no full hackathon study selected.** A local scripted [anti-steganography prototype](experiments/anti_stego/README.md) tests task-aware release protocols and a surviving semantic channel. The first hosted research batch completed for **$0.601760**; no model-based steganography experiment or training has run.

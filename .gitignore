@@ -42,3 +42,5 @@ credentials*
 results/raw/
 references/pdfs/
 .run.lock
+# Separate worker checkouts are merged through Git, never staged as nested repos.
+.claude/

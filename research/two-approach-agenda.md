@@ -1,5 +1,11 @@
 # Two approaches to anti-steganography
 
+Current A continuation: owner explicitly endorsed both operation-level neural
+design and the candidate-generator/chooser implementation. See
+[equations, prototype and recovery evidence](workstreams/architecture/operator-and-choice.md).
+The chooser is a baseline and possible finite release module; it does not replace
+the requirement to develop the underlying neural computation. B remains active.
+
 2026-10-24. Owner endorsed developing two research approaches: (A) a ground-up learned/verified architecture and (B) post-creation rewriting with task preservation. This is a chosen research agenda, not selection of a particular benchmark, proof theorem, full experiment, model or spending budget. Novelty must be established separately for concrete results.
 
 ## Shared objective and boundary

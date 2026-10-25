@@ -1,5 +1,13 @@
 # Compute and expenditure ledger
 
+Recovery note, 2026-10-24: Claude A/B worktrees contain later paid-batch ledgers
+not yet reconciled here; the historical totals below are not a current account
+total. Current local continuation ran four neural-operator checks, Lean verification
+and a 64-example CPU chooser evaluation with existing checkpoints (model API
+spend USD 0). See `results/leak-cap-recovery/smoke.json` and
+`research/workstreams/architecture/operator-and-choice.md`. No new training/cloud
+run or model API request was made during recovery.
+
 Before the approved batch below, no model inference or cloud compute had been run for this project. Local standard-library scripted feasibility tests have run. Literature browsing and development assistant service costs are outside this experimental ledger.
 
 An OpenRouter credential was supplied by the owner and stored only in the ignored local `.env` with mode 0600. Its value is never recorded in research notes. Initial corrected-credential authentication reported key limit USD 100 and usage USD 0. These are key-level limits, not independent account credit balance. That historical zero-spend status is superseded by the approved completed batch below. The earlier invalid credential was replaced locally. Do not silently treat unknown usage as free.
