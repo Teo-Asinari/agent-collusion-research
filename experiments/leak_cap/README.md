@@ -14,8 +14,8 @@ See [equations and claim boundaries](../../research/workstreams/architecture/ope
 python -m unittest experiments.leak_cap.test_operators -v
 /home/tasinari/.elan/bin/lean experiments/leak_cap/lean/Choice.lean
 python experiments/leak_cap/leakcap.py eval \
-  --checkpoint-dir .claude/worktrees/agent-ad39c5a2861e07835/results/leak-cap-01 \
-  --data .claude/worktrees/agent-ad39c5a2861e07835/experiments/leak_cap/data/google-10000-english-no-swears.txt \
+  --checkpoint-dir results/leak-cap-01 \
+  --data experiments/leak_cap/data/google-10000-english-no-swears.txt \
   --n-test 64 --kmax 4 --output results/leak-cap-recovery/smoke.json
 ```
 
