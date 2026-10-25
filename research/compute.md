@@ -1,5 +1,9 @@
 # Compute and expenditure ledger
 
+2026-10-25 algebraic primitive exploration: local exact enumeration and numerical/
+autograd counterexample checks only (`results/quotient-primitive/`), API/cloud
+experimental spend USD 0. No training or new hosted/cloud job launched.
+
 2026-10-25 Modal update: the approved $1 setup/run reservation produced one
 usable T4 checkpoint (`results/modal-operator-01-t4/assessment.md`). Four app
 attempts occurred, including startup and transport failures and a queued L4

@@ -1,5 +1,11 @@
 # Neural operation and finite-choice feasibility
 
+New exploratory algebraic candidate: [quotient polynomial neuron](../../research/workstreams/architecture/quotient-primitive.md).
+Run `python -m experiments.leak_cap.quotient_primitive --output /tmp/quotient-check.json`
+for exact finite-field checks and numerical/training counterexamples. This is not
+an established novel primitive or secure float implementation; no training/cloud
+run is part of that check.
+
 See [equations and claim boundaries](../../research/workstreams/architecture/operator-and-choice.md).
 `operators.py` implements separate public/private attention and a finite gate.
 `leakcap.py` preserves the Claude worker's trained generator/chooser baseline.

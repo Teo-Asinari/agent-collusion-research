@@ -1,5 +1,10 @@
 # Two approaches to anti-steganography
 
+Operation-level follow-up: [candidate factorization-quotient primitive](workstreams/architecture/quotient-primitive.md)
+now has equations, an exact-arithmetic identity, local checks and explicit floating-
+point/training counterexamples. Close GL-equivariant and polynomial prior art
+means novelty remains unestablished; this is not a selected experiment.
+
 Current A continuation: owner explicitly endorsed both operation-level neural
 design and the candidate-generator/chooser implementation. See
 [equations, prototype and recovery evidence](workstreams/architecture/operator-and-choice.md).

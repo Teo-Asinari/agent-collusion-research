@@ -1,5 +1,22 @@
 # Decision log
 
+## 2026-10-25 — candidate algebraic primitive defined and challenged
+
+- Owner requested a new algebraic neural primitive. Defined a candidate polynomial
+  operation on the quotient of matrix factorizations by equal product; it consumes
+  nonconstant represented information while discarding factorization choice in
+  exact arithmetic. This is not established novelty or a selected study.
+- Added explicit identity, composition/authorization assumptions, differentiable
+  prototype and exact finite-field reference. Final local check covers 6,561 rows
+  and same-product fibers, including singular cases. Hidden activation, protected
+  coefficient, float64 and factor-SGD counterexamples expose real limits.
+- Direct GL-equivariant LoRA and polynomial-filter prior art prevents claiming a
+  new invariant layer from this definition alone. Source versions and incomplete
+  repository/final-paper review are recorded in `workstreams/architecture/quotient-primitive.md`.
+- No training, paid inference or cloud compute; local API/cloud experimental spend
+  USD 0. Further work needs an exact-backend/training/capability delta over named
+  predecessors. The earlier trained split block and finite chooser remain baselines.
+
 ## 2026-10-25 — first usable Modal neural-operation training completed
 
 - Approved $1 setup/run reservation used for the planned synthetic recall

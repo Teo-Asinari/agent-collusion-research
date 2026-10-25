@@ -1,5 +1,11 @@
 # Living literature review
 
+2026-10-25 operation-level follow-up: [factorization-quotient candidate and sources](workstreams/architecture/quotient-primitive.md)
+compares GL-equivariant LoRA processing, polynomial graph filters and Reynolds
+networks. Direct predecessors constrain novelty. The candidate has an exact
+identity and small checks, but its naive float64 backend fails the exact property
+and ordinary factor SGD does not preserve representation equivalence over time.
+
 Initial primary-source review, accessed 2026-10-24. This is a selective landscape, not an exhaustive review of the starter's 234 entries. No novelty claim has been established. Paper results below are author-reported, not reproduced here. Abstract-only readings are marked. Code observations are separate in [starter-map.md](starter-map.md).
 
 Expanded follow-up: [secure steganography prior art](stego-prior-art.md) compares Zamir, SparSamp, Shimmer, Wang–Moulin, asymmetric/keyless schemes and active defenses. It records source-level implementation qualifications and explicit remaining review gaps. [Revised practical-barrier candidates](practical-barrier-candidates.md) supersede any suggestion that simple desynchronization, paraphrasing or numerical artifacts are unexplored ideas.

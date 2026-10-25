@@ -1,0 +1,44 @@
+{
+  "status": "exploratory algebra and counterexample checks complete",
+  "exact_field": "F_3",
+  "dimension": 2,
+  "factor_width": 1,
+  "coefficient_count": 2,
+  "factor_pairs": 81,
+  "exact_rows_checked": 6561,
+  "distinct_authorized_products": 33,
+  "distinct_product_query_coefficient_keys": 2673,
+  "exact_product_equivalence_mismatches": 0,
+  "unsafe_hidden_square_outputs_same_product": [
+    1,
+    2
+  ],
+  "safe_outputs_same_product": [
+    [
+      1
+    ],
+    [
+      1
+    ]
+  ],
+  "protected_coefficient_outputs_same_product": [
+    0,
+    1
+  ],
+  "same_exact_product_float64_outputs": [
+    1.0,
+    0.0
+  ],
+  "shear_direction_derivative": 0.0,
+  "learnable_coefficients_have_nonzero_gradient": true,
+  "python": "3.9.12",
+  "torch": "2.8.0+cu128",
+  "source_sha256": "adc514d78b6cafc0b0a973b634d14accc40a768800660dfd1520822f68673d43",
+  "model_api_cost_usd": 0,
+  "cloud_cost_usd": 0,
+  "limits": [
+    "Finite enumeration is not a general mechanized proof.",
+    "Ordinary float64 is explicitly falsified as an exact backend.",
+    "No training, efficiency, full-model security or novelty established."
+  ]
+}
