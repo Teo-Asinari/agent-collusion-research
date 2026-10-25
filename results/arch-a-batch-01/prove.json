@@ -1,0 +1,511 @@
+{
+  "z3_version": "5.3.1",
+  "meaning": "contract/NI 'unsat' = holds for every interpretation of opaque functions (all weights) at that instance size; 'sat' = counterexample exists",
+  "seconds": {
+    "learned_index": 5.6,
+    "shortest_path": 5.5,
+    "witness": 2.6,
+    "fuzz": 106.3
+  },
+  "learned_index": {
+    "n4": "unsat",
+    "n8": "unsat",
+    "n16": "unsat",
+    "n8_uncertified_window": "sat"
+  },
+  "shortest_path": {
+    "n3_sweeps1": "sat"
+  },
+  "witness": {
+    "1": {
+      "contract": {
+        "exists_1:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat"
+    },
+    "2": {
+      "contract": {
+        "exists_2:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat",
+      "ablations": {
+        "mask_only": {
+          "contracts": {
+            "exists_2:v": "unsat"
+          },
+          "typecheck_full": "rejected: observes private wire y",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "0",
+              "22"
+            ],
+            "world_B_obs": [
+              "0",
+              "24"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "16"
+            ],
+            "world_B_obs": [
+              "1",
+              "22"
+            ],
+            "payload_A_B": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "weights_not_wires": {
+          "contracts": {
+            "exists_2:v": "unsat"
+          },
+          "typecheck_full": "rejected: observes private wire y",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "0",
+              "21"
+            ],
+            "world_B_obs": [
+              "0",
+              "24"
+            ],
+            "payload_A_B": [
+              "1",
+              "1"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "0",
+              "17"
+            ],
+            "world_B_obs": [
+              "0",
+              "22"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          }
+        },
+        "trust_release": {
+          "contracts": {
+            "exists_2:leak": "sat"
+          },
+          "typecheck_full": "rejected: release exists_2 has no verified contract",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "2",
+              "15"
+            ],
+            "world_B_obs": [
+              "1",
+              "16"
+            ],
+            "payload_A_B": [
+              "1",
+              "1"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "11"
+            ],
+            "world_B_obs": [
+              "2",
+              "12"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          }
+        },
+        "spec_reads_anything": {
+          "contracts": {
+            "existsxor_2:vx": "unsat"
+          },
+          "typecheck_full": "rejected: release existsxor_2 spec reads m (payload); only public task and authorized data",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "0"
+            ],
+            "world_B_obs": [
+              "0",
+              "0"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "0"
+            ],
+            "world_B_obs": [
+              "0",
+              "0"
+            ],
+            "payload_A_B": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "observe_internal": {
+          "contracts": {
+            "exists_2:v": "unsat"
+          },
+          "typecheck_full": "rejected: observes release-internal wire cost",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "0",
+              "1"
+            ],
+            "world_B_obs": [
+              "1",
+              "0",
+              "2"
+            ],
+            "payload_A_B": [
+              "0",
+              "1"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "22",
+              "1"
+            ],
+            "world_B_obs": [
+              "1",
+              "22",
+              "2"
+            ],
+            "payload_A_B": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      }
+    },
+    "3": {
+      "contract": {
+        "exists_3:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat"
+    },
+    "4": {
+      "contract": {
+        "exists_4:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat",
+      "ablations": {
+        "mask_only": {
+          "contracts": {
+            "exists_4:v": "unsat"
+          },
+          "typecheck_full": "rejected: observes private wire y",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "0",
+              "31"
+            ],
+            "world_B_obs": [
+              "0",
+              "33"
+            ],
+            "payload_A_B": [
+              "1",
+              "1"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "24"
+            ],
+            "world_B_obs": [
+              "1",
+              "32"
+            ],
+            "payload_A_B": [
+              "0",
+              "1"
+            ]
+          }
+        },
+        "weights_not_wires": {
+          "contracts": {
+            "exists_4:v": "unsat"
+          },
+          "typecheck_full": "rejected: observes private wire y",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "40"
+            ],
+            "world_B_obs": [
+              "1",
+              "43"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "29"
+            ],
+            "world_B_obs": [
+              "1",
+              "32"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          }
+        },
+        "trust_release": {
+          "contracts": {
+            "exists_4:leak": "sat"
+          },
+          "typecheck_full": "rejected: release exists_4 has no verified contract",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "2",
+              "28"
+            ],
+            "world_B_obs": [
+              "4",
+              "29"
+            ],
+            "payload_A_B": [
+              "0",
+              "0"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "2",
+              "14"
+            ],
+            "world_B_obs": [
+              "3",
+              "15"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          }
+        },
+        "spec_reads_anything": {
+          "contracts": {
+            "existsxor_4:vx": "unsat"
+          },
+          "typecheck_full": "rejected: release existsxor_4 spec reads m (payload); only public task and authorized data",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "0",
+              "37"
+            ],
+            "world_B_obs": [
+              "1",
+              "38"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "0",
+              "0"
+            ],
+            "world_B_obs": [
+              "1",
+              "0"
+            ],
+            "payload_A_B": [
+              "1",
+              "0"
+            ]
+          }
+        },
+        "observe_internal": {
+          "contracts": {
+            "exists_4:v": "unsat"
+          },
+          "typecheck_full": "rejected: observes release-internal wire cost",
+          "typecheck_with_this_ablation": "accepted",
+          "ni_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "47",
+              "2"
+            ],
+            "world_B_obs": [
+              "1",
+              "47",
+              "1"
+            ],
+            "payload_A_B": [
+              "0",
+              "0"
+            ]
+          },
+          "payload_only_counterexample": {
+            "result": "sat",
+            "world_A_obs": [
+              "1",
+              "0",
+              "4"
+            ],
+            "world_B_obs": [
+              "1",
+              "0",
+              "1"
+            ],
+            "payload_A_B": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      }
+    },
+    "5": {
+      "contract": {
+        "exists_5:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat"
+    },
+    "6": {
+      "contract": {
+        "exists_6:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat"
+    },
+    "7": {
+      "contract": {
+        "exists_7:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat"
+    },
+    "8": {
+      "contract": {
+        "exists_8:v": "unsat"
+      },
+      "typecheck_full": "accepted",
+      "direct_ni": "unsat",
+      "direct_ni_payload_only": "unsat"
+    }
+  },
+  "fuzz": {
+    "trials": 5000,
+    "n": 2,
+    "seed": 1,
+    "stats": {
+      "full": {
+        "accepted": 771,
+        "accepted_and_leaky": 0,
+        "accepted_and_payload_leaky": 0
+      },
+      "mask_only": {
+        "accepted": 949,
+        "accepted_and_leaky": 178,
+        "accepted_and_payload_leaky": 39
+      },
+      "weights_not_wires": {
+        "accepted": 1219,
+        "accepted_and_leaky": 448,
+        "accepted_and_payload_leaky": 4
+      },
+      "trust_release": {
+        "accepted": 1031,
+        "accepted_and_leaky": 200,
+        "accepted_and_payload_leaky": 200
+      },
+      "spec_reads_anything": {
+        "accepted": 1019,
+        "accepted_and_leaky": 188,
+        "accepted_and_payload_leaky": 188
+      },
+      "observe_internal": {
+        "accepted": 1052,
+        "accepted_and_leaky": 281,
+        "accepted_and_payload_leaky": 281
+      }
+    },
+    "first_leaky_example": {
+      "weights_not_wires": "[Release(out='a', spec='exists_2', spec_args=['q', 'z1', 'z2'], impl=[Op(out='j', fn='NetPred', args=['q', 'c', 'm'], kind='neural', weight='theta', secondary=[]), Op(out='jc', fn='clamp1_2', args=['j'], kind='trusted', weight=None, secondary=[]), Op(out='p1', fn='P', args=['q', 'z1'], kind='trusted', weight=None, secondary=[]), Op(out='p2', fn='P', args=['q', 'z2'], kind='trusted', weight=None, secondary=[]), Op(out='v0', fn='select_2', args=['jc', 'p1', 'p2'], kind='trusted', weight=None, secondary=[]), Op(out='k0', fn='one', args=[], kind='trusted', weight=None, secondary=[]), Op(out='ji1',",
+      "trust_release": "[Op(out='w0', fn='Net1w', args=['phi'], kind='neural', weight='theta', secondary=['phi']), Op(out='u1', fn='Net1w', args=['theta'], kind='neural', weight='w0', secondary=['theta']), Release(out='a', spec='exists_2', spec_args=['q', 'z1', 'z2'], impl=[Op(out='j', fn='NetPred', args=['q', 'c', 'm'], kind='neural', weight='theta', secondary=[]), Op(out='jc', fn='clamp1_2', args=['j'], kind='trusted', weight=None, secondary=[]), Op(out='p1', fn='P', args=['q', 'z1'], kind='trusted', weight=None, secondary=[]), Op(out='p2', fn='P', args=['q', 'z2'], kind='trusted', weight=None, secondary=[]), Op(ou",
+      "spec_reads_anything": "[Op(out='u0', fn='Net2w', args=['q', 'r'], kind='neural', weight='phi', secondary=['q', 'r']), Op(out='u1', fn='Net1w', args=['u0'], kind='neural', weight='phi', secondary=['u0']), Op(out='u2', fn='Net1', args=['u0'], kind='neural', weight=None, secondary=[]), Release(out='a', spec='existsxor_2', spec_args=['q', 'z1', 'z2', 'm'], impl=[Op(out='j', fn='NetPred', args=['q', 'c', 'm'], kind='neural', weight='theta', secondary=[]), Op(out='jc', fn='clamp1_2', args=['j'], kind='trusted', weight=None, secondary=[]), Op(out='p1', fn='P', args=['q', 'z1'], kind='trusted', weight=None, secondary=[]), O",
+      "mask_only": "[Release(out='a', spec='exists_2', spec_args=['q', 'z1', 'z2'], impl=[Op(out='j', fn='NetPred', args=['q', 'c', 'm'], kind='neural', weight='theta', secondary=[]), Op(out='jc', fn='clamp1_2', args=['j'], kind='trusted', weight=None, secondary=[]), Op(out='p1', fn='P', args=['q', 'z1'], kind='trusted', weight=None, secondary=[]), Op(out='p2', fn='P', args=['q', 'z2'], kind='trusted', weight=None, secondary=[]), Op(out='v0', fn='select_2', args=['jc', 'p1', 'p2'], kind='trusted', weight=None, secondary=[]), Op(out='k0', fn='one', args=[], kind='trusted', weight=None, secondary=[]), Op(out='ji1',",
+      "observe_internal": "[Op(out='u0', fn='Net2w', args=['phi', 'r'], kind='neural', weight='phi', secondary=[]), Op(out='w1', fn='Net1w', args=['q'], kind='neural', weight='phi', secondary=[]), Op(out='u2', fn='Net2w', args=['phi', 'q'], kind='neural', weight='w1', secondary=[]), Op(out='u3', fn='Net3w', args=['w1', 'z2', 'r'], kind='neural', weight='w1', secondary=['z2']), Op(out='w4', fn='Net2w', args=['w1', 'phi'], kind='neural', weight='w1', secondary=[]), Release(out='a', spec='exists_2', spec_args=['q', 'z1', 'z2'], impl=[Op(out='j', fn='NetPred', args=['q', 'c', 'm'], kind='neural', weight='theta', secondary=["
+    }
+  }
+}

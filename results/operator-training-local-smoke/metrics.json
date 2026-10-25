@@ -1,0 +1,53 @@
+{
+  "status": "complete",
+  "analysis": "Exploratory trainability check; not confirmatory or a novelty claim",
+  "task": "8-item, 16-key/value synthetic associative recall; exact task-only oracle",
+  "private_input": "independent random bit; no private task information",
+  "seed": 20261024,
+  "train_seed": 20261025,
+  "test_seed": 20261026,
+  "requested_steps": 20,
+  "completed_steps": 20,
+  "batch_size": 128,
+  "test_examples": 1024,
+  "seconds": 0.4578574920014944,
+  "width": 64,
+  "depth": 2,
+  "parameters": 137696,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "device": "cpu",
+  "torch": "2.8.0+cu128",
+  "gpu": null,
+  "public_only_accuracy": 0.2255859375,
+  "unrestricted_private_head_accuracy": 0.169921875,
+  "symbolic_oracle_accuracy": 1.0,
+  "gated_accuracy": {
+    "0": 0.2255859375,
+    "1": 0.208984375,
+    "2": 0.1787109375,
+    "4": 0.169921875
+  },
+  "public_logits_equal_under_payload_flip": true,
+  "losses": [
+    {
+      "step": 1,
+      "loss": 6.216317176818848
+    },
+    {
+      "step": 20,
+      "loss": 5.282778263092041
+    }
+  ],
+  "source_sha256": {
+    "train_recall.py": "0cf4263502704298c1a75f34db63b2ecc08e362677a1fd557c972a41e16b1d50",
+    "operators.py": "b2941ec9b8a55a82ed4d5dedea3ac6ad9e6b807c633b5249e90d1b55f8760c52"
+  },
+  "limits": [
+    "Single training seed; fresh synthetic tests may repeat training tasks.",
+    "Not compute-matched to a separate conventional transformer baseline.",
+    "Finite gate bound is abstract content-only; no physical side-channel proof.",
+    "No end-to-end checkpoint reproducibility across hardware is asserted."
+  ]
+}

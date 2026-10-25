@@ -13,9 +13,17 @@ python experiments/leak_cap/leakcap.py eval \
   --n-test 64 --kmax 4 --output results/leak-cap-recovery/smoke.json
 ```
 
-Requires the already installed PyTorch. Output refuses overwrites; choose a new
-path to repeat. Checkpoints and external corpus are referenced in place: this is
-not yet a portable artifact. Corpus redistribution permissions need review before
-vendoring. Evaluation resamples corruptions of training words. The new operation
-block has not been trained. Lean covers an abstract content channel, not a proof
-of Python refinement or timing isolation. No cloud or model API calls are used.
+Requires PyTorch. Output refuses overwrites; choose a new path to repeat. The
+merged worker checkpoints and corpus are also available under `results/leak-cap-01`
+and `experiments/leak_cap/data`. Use `--proposer prop2 --kmax 8` for its larger
+proposer. Evaluation resamples corruptions of training words. Lean covers an
+abstract content channel, not Python refinement or timing isolation.
+
+The corpus was supplied by the A worker from first20hours/google-10000-english.
+Its upstream README describes provenance but does not itself contain the blanket
+research-use license claimed by the worker's original README. Redistribution
+terms remain incompletely reviewed; do not infer a common upstream code license.
+
+Operation training and Modal preparation: [concrete plan](PLAN.md). A 20-step
+local smoke run of `train_recall.py` completed; the prepared Modal launcher has
+not been run. This synthetic task uses no external corpus.

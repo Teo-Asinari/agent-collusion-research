@@ -1,0 +1,92 @@
+{
+  "utility": {
+    "n_keys": 16384,
+    "queries": 4000,
+    "present_fraction": 0.5,
+    "leaves": 1024,
+    "certified_radius_e": 13,
+    "certificate_passed": true,
+    "release_value_correct_all_queries": true,
+    "mean_internal_probes_learned": 3.686,
+    "mean_probes_plain_binary_search": 13.75725,
+    "mean_visible_cost_by_defense": {
+      "unpadded": 3.686,
+      "pad_worst": 15.0,
+      "pad_radius": 5.0,
+      "canonical": 5.0,
+      "batch_slot": 15.0
+    },
+    "per_query_model_cost": "one normal-CDF evaluation, one leaf lookup, one multiply-add (constant)",
+    "one_time_cost": {
+      "fit": "least squares per leaf",
+      "certificate_model_evals": 16384,
+      "model_parameters": 2050
+    },
+    "note": "Probes are trusted-primitive reads. Model evaluation is a constant per-query cost not included in probe counts. No wall-clock or hardware comparison is claimed. A 32-unit tanh MLP on raw keys was tried first and certified only e=10820 (no useful saving)."
+  },
+  "payload_channels": {
+    "n_keys": 16384,
+    "sessions": 200,
+    "queries_per_session": 16,
+    "adversary": "m=0 honest fit; m=1 leaf intercepts shifted by up to +/-60 (still certified)",
+    "certified_radius": {
+      "m0_honest": [
+        7
+      ],
+      "m1_range": [
+        62,
+        67
+      ]
+    },
+    "decoders": {
+      "R0_full": {
+        "decoder_train_acc": 0.57,
+        "decoder_test_acc": 0.53
+      },
+      "R1_unpadded": {
+        "decoder_train_acc": 1.0,
+        "decoder_test_acc": 0.97
+      },
+      "R1_pad_worst": {
+        "decoder_train_acc": 0.57,
+        "decoder_test_acc": 0.53
+      },
+      "R1_pad_radius": {
+        "decoder_train_acc": 1.0,
+        "decoder_test_acc": 1.0
+      },
+      "R1_canonical": {
+        "decoder_train_acc": 0.57,
+        "decoder_test_acc": 0.53
+      },
+      "R1_batch_slot": {
+        "decoder_train_acc": 0.57,
+        "decoder_test_acc": 0.53
+      },
+      "value_trust_release": {
+        "decoder_train_acc": 1.0,
+        "decoder_test_acc": 1.0
+      },
+      "value_weights_not_wires": {
+        "decoder_train_acc": 0.97,
+        "decoder_test_acc": 0.96
+      },
+      "value_mask_only": {
+        "decoder_train_acc": 1.0,
+        "decoder_test_acc": 1.0
+      }
+    },
+    "note": "Single-threshold decoder on session means. Failure of this decoder is not a security argument; zero-leak rows rely on the cost being a constant (pad_worst, batch_slot) or a function of z alone (canonical)."
+  },
+  "paired_exact": {
+    "R0_values": "50/50 identical",
+    "unpadded": "0/50 identical",
+    "pad_worst": "50/50 identical",
+    "pad_radius": "0/50 identical",
+    "canonical": "50/50 identical",
+    "radii": {
+      "honest": 2,
+      "adversarial": 61
+    }
+  }
+}

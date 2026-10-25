@@ -1,12 +1,19 @@
 # Compute and expenditure ledger
 
-Recovery note, 2026-10-24: Claude A/B worktrees contain later paid-batch ledgers
-not yet reconciled here; the historical totals below are not a current account
-total. Current local continuation ran four neural-operator checks, Lean verification
-and a 64-example CPU chooser evaluation with existing checkpoints (model API
-spend USD 0). See `results/leak-cap-recovery/smoke.json` and
-`research/workstreams/architecture/operator-and-choice.md`. No new training/cloud
-run or model API request was made during recovery.
+Recorded per-response charge sum across the six hosted batches: **USD 2.30376687**.
+This sums `cost_usd` entries, including the paid empty A response; it is not an
+independent invoice reconciliation or a claim that failed calls have known costs.
+Concurrent workers shared one key, so account-usage deltas are not summed.
+
+Integration note, 2026-10-24: both Claude worker histories and their batch ledgers
+are now integrated below. Per-response costs are available, but shared-account
+snapshots should not be added as independent expenditures. Current local work ran
+operator checks, Lean verification, a 64-example CPU chooser evaluation, and a
+20-step CPU training smoke test with model API/cloud spend USD 0. First Modal
+operation-training plan: `experiments/leak_cap/PLAN.md` (not launched; approximately
+$0.154 requested execution resources at the 600-second timeout, with a proposed
+$1 reservation including setup). Authentication and explicit estimate approval
+remain pending. No actual Modal charge is recorded.
 
 Before the approved batch below, no model inference or cloud compute had been run for this project. Local standard-library scripted feasibility tests have run. Literature browsing and development assistant service costs are outside this experimental ledger.
 
@@ -22,6 +29,9 @@ Before a pilot record model/provider, input/output token estimates, current unit
 | component-rewrite-local | Scripted feasibility complete | 0 | 0 | 5,600 local records per carrier set; no model tokens | B worker; `experiments/component_rewrite/local_eval.py` |
 | component-rewrite-pilot-01 | Complete: 1,437/1,440 calls (3 HTTP 429) | Worst-case reservation 2.516130; authorized cap 5 | **0.658566** | 1,440 calls; key usage delta 0.653331 (shared key, possible lag) |
 | component-rewrite-pilot-02 | Halted: 294/720 attempted, 273 complete (21 HTTP 429) | Worst-case reservation 4.383743; authorized cap 5 | **0.317218** | Key usage delta 0.774441 includes concurrent A-worker spend; not attributable | Owner-approved B batch 2; rerun of 3 re-solving arms | Owner $5-per-batch authorization, B worker; exploratory pilot, preregistered |
+| arch-a-batch-01 | Complete: 3 calls (1 empty, length-truncated reasoning) | Hard cap 5; reservation 0.889 | **0.26759225** | 43,227 prompt + 12,055 completion tokens, provider reported | Cross-family critique of formal model (Sonnet 4.6, Gemini 3.1 Pro, GPT-5.2); local z3/numpy work $0. See `results/arch-a-batch-01/critique/` |
+| arch-a-batch-02 | Complete: 3/3 calls | Hard cap 5; reservation 1.358 | **0.2218205** | Provider-reported usage in `results/arch-a-batch-02/critique/ledger.json` | Lean-mechanization critique (Sonnet 4.6, Gemini 3.1 Pro, GPT-5.2), 12k output limit, reasoning capped at 3k tokens. Lean toolchain: elan + Lean 4.35.0 under `~/.elan` (3.0 GB), no mathlib |
+| arch-a-batch-03 | **Stopped by owner** after 3/3 critique calls (outputs unassessed) | Hard cap 5; reservation 1.384 | **0.23681025** | see `results/arch-a-batch-03/critique/ledger.json` | Multi-agent Lean lift (WIP). Remaining ≈ $4.76 is reassigned by the owner to the leak-capped neural-architecture work |
 
 ## Authorized first hosted research batch
 
@@ -36,3 +46,8 @@ Source packet and output claims remain research suggestions. Hosted models had n
 ## B worker batch 1 (component-rewrite-pilot-01)
 
 Owner authorized $5-per-batch spending for parallel A/B workers on 2026-10-24; this is the B worker's single batch. Endpoint pricing snapshot 2026-10-24: `openai/gpt-4.1-mini`/openai $0.40 input, $1.60 output per million tokens; `qwen/qwen3-235b-a22b-2507`/deepinfra/fp8 $0.09/$0.55. Max 600 output tokens, temperature 0.7, per-job seed, concurrency 8, no retries or fallback, provider price caps. Reservation = (UTF-8 prompt bytes + 512) × input price + 1,200 × output price, + 5%. Execution details are in `results/component-rewrite-pilot-01/`.
+## Approach A batch 1 authorization
+
+Owner approved parallel A/B workers with OpenRouter spend in **$5 hard-cap batches per agent** (2026-10-24). This entry covers exactly one A batch. Reservation must stay within $5 before any call; unknown cost halts. No second batch without owner approval.
+
+Status: **complete, $0.26759225 actual** (Anthropic $0.1368 for an empty reasoning-only response; Google $0.065344; OpenAI $0.06544825). Account usage snapshots before/after are in `results/arch-a-batch-01/critique/`; they may include concurrent Approach B spend on the same key. The A batch is exhausted. Further A spending needs a new owner-approved batch.

@@ -1,5 +1,24 @@
 # Decision log
 
+## 2026-10-24 — integrate both workers; prepare bounded Modal training
+
+- Owner requested committing everything, confirmed interest in worker branches,
+  and asked for a Modal training run. Both branches are merged with original
+  histories preserved; conflicts combine both ledgers and keep the larger proposer
+  plus the recovery evaluation controls. Worker branches/worktrees are retained.
+- Corrected the imported zero-leakage/zero-freedom assertion and README corpus
+  licensing overstatement. Original worker outputs remain evidence, not endorsed
+  conclusions. Recorded response costs across all six batches sum to $2.30376687;
+  this is not a separately reconciled account invoice.
+- Prepared `experiments/leak_cap/PLAN.md` and launcher: one L4, 1,000 steps,
+  no retries, 600-second timeout, requested execution resources approximately
+  $0.154 with proposed $1 reservation including setup. Installed SDK 1.2.6 in an
+  isolated /tmp environment; no authentication, image build or remote run occurred.
+- A 20-step CPU operation-training smoke run completed. All 25 local tests pass;
+  Lean accepts the abstract choice bound. No new paid API requests or cloud cost.
+- Next required actions for Modal: owner approval of this concrete estimate and
+  local authentication. Earlier scale-up estimate of $15–17 remains separate.
+
 ## 2026-10-24 — neural operations and finite-choice baseline jointly endorsed
 
 - Owner requires architecture down to linear algebraic operations, and explicitly
@@ -163,3 +182,39 @@
 - Pilot 02 halted by design after 21 qwen HTTP 429 errors: 294 of 720 calls, reported $0.317218. No retries or restart; batch 2 is closed.
 - Only training-split tasks 0–48 ran, so the preregistered held-out analysis is empty. A deviated direct-decoder analysis (no fitted parameters) is in `results/component-rewrite-pilot-02/assessment.md`. At full validity, gpt-4.1-mini's warned sanitizer still recovered 0.73 [0.64, 0.81] against resolve's 0.54. Qwen's result was weaker.
 - Proposed next batch: finish tasks 49–119 (426 calls, about $0.5, worst case about $2.6), with qwen concurrency reduced. Not authorized.
+## 2026-10-24 — parallel A/B workers and $5 batch authorization
+
+- Owner approved running Approaches A and B in parallel with separate agents, and OpenRouter spending **in batches of $5 hard cap per batch per agent**. Each agent may spend one $5 batch, then must stop and report before any further batch. Ample key credit is not a standing budget.
+- Approach A worker (branch `worktree-agent-ad39c5a2861e07835`) is scoped to: a small formal model of a compartmentalized learned/verified architecture, at least one composition lemma, invariant-ablation counterexamples, and a non-vacuous useful task. OpenRouter use for A is optional and limited to discriminating critique.
+
+## 2026-10-24 — Approach A batch 1 completed
+
+- Built a labeled SSA dataflow model (parameters/optimizer state as wires; one contracted release edge), an informal noninterference-by-typing proof with a composition lemma, z3 instance checks over every interpretation of learned functions, five single-invariant ablations each with a z3 payload-only counterexample, and 5,000-program fuzzing (0/771 leaky accepted by the full checker). See `research/workstreams/architecture/formal-model.md`.
+- Non-vacuous task: a certified learned index (N=16,384) answered every query exactly, using 3.69 vs 13.76 mean probes. Owner-requested timing analysis: the value guarantee holds for all weights, but visible work does not. Unpadded and radius-padded (sender-chosen parameters) costs leak the payload. Worst-case padding and fixed-slot release remove both the leak and the visible gain. Only a canonical trusted fit keeps a visible 3× gain with no payload flow, at the cost of declaring g(z) and trusting the learner.
+- Spent $0.268 of the $5 cap on three cross-family critiques. Accepted repairs are implemented; no critic found a counterexample. No novelty claimed; the value/work split is standard constant-time practice applied to learned parameters.
+
+## 2026-10-24 — Approach A batch 2 authorized
+
+- Owner approved one new **$5 hard-cap** OpenRouter batch for Approach A: mechanize Theorem 1 (composition lemma if time permits) in Lean, primary-source check of timing-mitigation and learned-systems references, and 2–3 cross-family critique calls on the mechanized statement with a larger output limit and capped reasoning. Lean toolchain installed under `~` (core Lean, no mathlib unless needed; under ~3 GB).
+- Batch 2 complete. Lean 4.35.0 core (elan under `~/.elan`, 3.0 GB, no mathlib) checks Theorem 1 (`ni`, `ni_init`), the payload corollary (`payload_ni`), composition (`ni_compose`), the witness contract for all N, a concrete well-typed witness architecture with a payload-noninterference proof, and necessity examples. No `sorry`; axioms are `propext` and `Quot.sound` only. Primary sources checked: Askarov–Zhang–Myers CCS 2010 §2.2–2.3 and Kraska et al. §2/§3.4; Agat 2000 abstract only. Three critiques ($0.222) all returned faithful-with-caveats with no soundness error. Scope narrowed (non-adaptive sessions; semantic release isolation) and the concrete instance added. Not mechanized: the timing analysis, the learned-index contract for general N, and the IR-to-Lean correspondence.
+
+## 2026-10-24 — Approach A batch 3 authorized
+
+- Owner approved one new **$5 hard-cap** OpenRouter batch (same rules) to lift the Lean model to multi-agent orchestration. LLM calls are opaque ops; tool calls are trusted ops; verified tool outputs are releases; scheduling and slot timing are a cost release. The model needs at least a sender, a receiver and an orchestrator with shared state as labeled wires. Deliverables: a primary-source comparison with CaMeL and FIDES, a Lean proof of agent-level payload noninterference, and private randomness handled where feasible.
+- **Batch 3 stopped (2026-10-24) by owner instruction.** Committed as WIP: the Lean multi-agent section (`Arch.Agents`, compiles, no `sorry`) and the CaMeL/FIDES comparison (`research/workstreams/architecture/agents-camel-fides.md`). The three critique calls had already completed when the stop arrived ($0.23681025). Their outputs are saved **unassessed** in `results/arch-a-batch-03/critique/outputs/`. No further paid calls for this work.
+
+## 2026-10-24 — Owner correction: new neural architecture with a provable leak cap
+
+- Historical worker framing: the brief asked for a **new neural architecture**
+  (ground-up transformer + verified computation), not a rules framework with a
+  stand-in regressor. Its additional assertion that zero leakage forces zero
+  freedom is rejected: trusted randomness and public task computation can vary
+  without protected influence. Bounded leakage remains an endorsed design target,
+  alongside operation-level architectural work, not an established necessity.
+- New goal: design, implement and train (CPU, toy scale) a transformer architecture with real freedom and a **provable cap of k bits per answer**. Seed: every receiver-visible output is TrustedDecoder(public input, public randomness, c), where c is a k-bit code from the untrusted network. Prove in Lean that c is the only private-to-public path, plus the capacity bound. Measure utility versus k against an unrestricted transformer of matched size; show a scripted adversary gets about k bits and no more; check prior art first. Budget: the remainder of the batch-3 $5 (≈ $4.76). No Modal; write a Modal plan with a cost estimate.
+- Delivered, with no paid calls (≈ $4.76 unspent).
+  - Lean `Choice.view_count`: for every weight setting, the receiver's view has at most 2^(Σk) values.
+  - CPU toy run on word denoising, trained from scratch: with a 105k-parameter public proposer, k = 5 bits per answer matches the unrestricted 605k model (29.2% vs 29.7%), and k = 8 reaches 35%.
+  - The scripted adversary received ≤ k bits.
+  - Modal plan (≈ $15–17) is written and not executed.
+  - See `research/workstreams/architecture/leak-cap.md`.

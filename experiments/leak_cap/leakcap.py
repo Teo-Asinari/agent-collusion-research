@@ -180,6 +180,7 @@ def public_gen(seed, idx):
 # ---------------- experiment ----------------
 
 PROPOSER = dict(d=32, layers=1, heads=2)
+PROPOSER2 = dict(d=64, layers=2, heads=4)
 CHOOSER = dict(d=128, layers=3, heads=4)
 
 
@@ -205,20 +206,34 @@ def cmd_train():
     print(json.dumps(meta, indent=2))
 
 
+def cmd_train_prop2():
+    words = load_words()
+    torch.manual_seed(2)
+    prop = TinyLM(**PROPOSER2)
+    print('proposer2 params', prop.params())
+    t0 = time.time()
+    train_model(prop, words, 3000, seed=3, lr=2e-3)
+    torch.save(prop.state_dict(), OUT / 'proposer2.pt')
+    (OUT / 'train_prop2.json').write_text(json.dumps(
+        {'proposer2': PROPOSER2 | {'params': prop.params()}, 'train_steps': 3000,
+         'train_seconds': round(time.time() - t0, 1)}, indent=2) + '\n')
+
+
 def entropy(counts):
     n = sum(counts)
     return -sum(c / n * math.log2(c / n) for c in counts if c)
 
 
-def cmd_eval(n_test=600, kmax=6, seed=7, output=None):
-    output = output or OUT / 'eval.json'
-    if n_test < 1 or not 0 <= kmax <= 6:
-        raise ValueError('Require n_test >= 1 and 0 <= kmax <= 6')
+def cmd_eval(n_test=600, kmax=6, seed=7, output=None, proposer="prop1"):
+    cfg, checkpoint = (PROPOSER, "proposer.pt") if proposer == "prop1" else (PROPOSER2, "proposer2.pt")
+    output = output or OUT / ('eval.json' if proposer == 'prop1' else 'eval_prop2.json')
+    if n_test < 1 or not 0 <= kmax <= 8:
+        raise ValueError('Require n_test >= 1 and 0 <= kmax <= 8')
     if output.exists():
         raise FileExistsError(output)
     words = load_words()
-    prop = TinyLM(**PROPOSER)
-    prop.load_state_dict(torch.load(OUT / 'proposer.pt'))
+    prop = TinyLM(**cfg)
+    prop.load_state_dict(torch.load(OUT / checkpoint))
     prop.eval()
     ch = TinyLM(**CHOOSER)
     ch.load_state_dict(torch.load(OUT / 'chooser.pt'))
@@ -278,9 +293,9 @@ def cmd_eval(n_test=600, kmax=6, seed=7, output=None):
         'torch': torch.__version__,
         'source_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         'checkpoint_sha256': {name: hashlib.sha256((OUT / name).read_bytes()).hexdigest()
-                              for name in ('proposer.pt', 'chooser.pt')},
+                              for name in (checkpoint, 'chooser.pt')},
         'data_sha256': hashlib.sha256(WORDS.read_bytes()).hexdigest(),
-        'n_test': n, 'public_seed': seed,
+        'n_test': n, 'public_seed': seed, 'proposer': cfg,
         'unrestricted_chooser_greedy_acc': unres / n,
         'proposer_greedy_acc': prop_only / n,
         'leak_capped': {k: {'acc': acc[k] / n, 'oracle_coverage': cover[k] / n,
@@ -304,16 +319,19 @@ def cmd_eval(n_test=600, kmax=6, seed=7, output=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('action', choices=['train', 'eval'])
+    parser.add_argument('action', choices=['train', 'train_prop2', 'eval'])
     parser.add_argument('--checkpoint-dir', type=Path, default=OUT)
     parser.add_argument('--data', type=Path, default=WORDS)
     parser.add_argument('--n-test', type=int, default=600)
     parser.add_argument('--kmax', type=int, default=6)
     parser.add_argument('--seed', type=int, default=7)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--proposer', choices=['prop1', 'prop2'], default='prop1')
     args = parser.parse_args()
     OUT, WORDS = args.checkpoint_dir.resolve(), args.data.resolve()
     if args.action == 'train':
         cmd_train()
+    elif args.action == 'train_prop2':
+        cmd_train_prop2()
     else:
-        cmd_eval(args.n_test, args.kmax, args.seed, args.output)
+        cmd_eval(args.n_test, args.kmax, args.seed, args.output, args.proposer)

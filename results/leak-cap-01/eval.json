@@ -1,0 +1,76 @@
+{
+  "n_test": 600,
+  "public_seed": 7,
+  "unrestricted_chooser_greedy_acc": 0.2966666666666667,
+  "proposer_greedy_acc": 0.05,
+  "leak_capped": {
+    "0": {
+      "acc": 0.05,
+      "oracle_coverage": 0.05,
+      "cap_bits": 0,
+      "adversary_decode_rate": 1.0,
+      "adversary_bits_per_answer": 0.0,
+      "adversary_bits_when_sending_k_plus_1": 0.0
+    },
+    "1": {
+      "acc": 0.055,
+      "oracle_coverage": 0.056666666666666664,
+      "cap_bits": 1,
+      "adversary_decode_rate": 0.9583333333333334,
+      "adversary_bits_per_answer": 0.9166666666666666,
+      "adversary_bits_when_sending_k_plus_1": 0.9166666666666666
+    },
+    "2": {
+      "acc": 0.06666666666666667,
+      "oracle_coverage": 0.07333333333333333,
+      "cap_bits": 2,
+      "adversary_decode_rate": 0.9404166666666667,
+      "adversary_bits_per_answer": 1.8719486197781445,
+      "adversary_bits_when_sending_k_plus_1": 1.8719486197781445
+    },
+    "3": {
+      "acc": 0.075,
+      "oracle_coverage": 0.09,
+      "cap_bits": 3,
+      "adversary_decode_rate": 0.9214583333333334,
+      "adversary_bits_per_answer": 2.8148623752247937,
+      "adversary_bits_when_sending_k_plus_1": 2.8148623752247937
+    },
+    "4": {
+      "acc": 0.095,
+      "oracle_coverage": 0.12333333333333334,
+      "cap_bits": 4,
+      "adversary_decode_rate": 0.901875,
+      "adversary_bits_per_answer": 3.744769634252752,
+      "adversary_bits_when_sending_k_plus_1": 3.744769634252752
+    },
+    "5": {
+      "acc": 0.12,
+      "oracle_coverage": 0.18,
+      "cap_bits": 5,
+      "adversary_decode_rate": 0.8754166666666666,
+      "adversary_bits_per_answer": 4.640991441386811,
+      "adversary_bits_when_sending_k_plus_1": 4.640991441386811
+    },
+    "6": {
+      "acc": 0.155,
+      "oracle_coverage": 0.24333333333333335,
+      "cap_bits": 6,
+      "adversary_decode_rate": 0.84140625,
+      "adversary_bits_per_answer": 5.496733204457666,
+      "adversary_bits_when_sending_k_plus_1": 5.496733204457666
+    }
+  },
+  "unrestricted_channel_bits_upper": 47.0,
+  "timing_k4_seconds": {
+    "honest": {
+      "mean": 0.002718664276956891,
+      "max": 0.0050931999867316335
+    },
+    "adversary": {
+      "mean": 0.002697511460670891,
+      "max": 0.006382399995345622
+    }
+  },
+  "notes": "acc = exact match. oracle_coverage = truth among the 2^k candidates. Adversary bits are exact I(m; answer | x, r) for a uniform k-bit payload; duplicates among candidates lower them below k. Timing is a wall-clock sanity check on one CPU, not a side-channel proof."
+}

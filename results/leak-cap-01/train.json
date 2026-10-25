@@ -1,0 +1,21 @@
+{
+  "words": 8076,
+  "proposer": {
+    "d": 32,
+    "layers": 1,
+    "heads": 2,
+    "params": 15357
+  },
+  "chooser": {
+    "d": 128,
+    "layers": 3,
+    "heads": 4,
+    "params": 605341
+  },
+  "train_steps": 3000,
+  "batch": 256,
+  "corruption_p": 0.3,
+  "train_seconds": 556.8,
+  "device": "cpu",
+  "torch": "2.8.0+cu128"
+}
