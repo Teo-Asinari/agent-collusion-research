@@ -1,0 +1,2375 @@
+{
+  "status": "finite architecture loop complete",
+  "tasks": [
+    {
+      "task": 0,
+      "truth_table": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "consistent_networks": 41,
+      "selected_index": 0,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            1,
+            1,
+            0,
+            6,
+            3
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            1,
+            1,
+            6,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 3,
+          "weights": [
+            7,
+            7,
+            1,
+            0,
+            6
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            4,
+            2
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            6,
+            8,
+            6
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 3,
+          "weights": [
+            3,
+            3,
+            3,
+            5,
+            7
+          ]
+        }
+      ],
+      "gradient_any_fit": true,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 4,
+      "one_hidden_unit_solutions": 41,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "10598cb7d1b4eb5876e07b30916c80970353a384705df2595c3df9e10152fd01",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 1,
+      "truth_table": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "consistent_networks": 2,
+      "selected_index": 124,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            6,
+            6,
+            4,
+            6,
+            1
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            6,
+            6,
+            6,
+            8,
+            0
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            6,
+            7
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            1,
+            1,
+            7,
+            8,
+            4
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 3,
+          "weights": [
+            3,
+            3,
+            0,
+            5,
+            3
+          ]
+        }
+      ],
+      "gradient_any_fit": true,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "9e7dc4272277c539d103ca40ce200a921764ef4480a2701537d05e294f864b48",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 2,
+      "truth_table": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        2,
+        1
+      ],
+      "consistent_networks": 2,
+      "selected_index": 160,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            6,
+            3,
+            0,
+            3,
+            7
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            1,
+            0,
+            1,
+            3,
+            1
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            6,
+            7
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 3,
+          "weights": [
+            1,
+            8,
+            8,
+            2,
+            7
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            8,
+            6,
+            5,
+            7,
+            3
+          ]
+        }
+      ],
+      "gradient_any_fit": true,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "a31d6158f86c59c4ddc798c66e4f68c79803a178c2c3090ab1555120bd20239e",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 3,
+      "truth_table": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "weights": [
+        1,
+        0,
+        0,
+        1,
+        0
+      ],
+      "consistent_networks": 4,
+      "selected_index": 84,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 12,
+          "weights": [
+            6,
+            5,
+            8,
+            8,
+            6
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            0,
+            7,
+            4,
+            1,
+            7
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 9,
+          "weights": [
+            8,
+            7,
+            7,
+            7,
+            5
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 17,
+          "weights": [
+            3,
+            2,
+            8,
+            1,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 5,
+          "weights": [
+            0,
+            1,
+            7,
+            2,
+            3
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 13,
+          "weights": [
+            3,
+            1,
+            1,
+            4,
+            7
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 4,
+      "one_hidden_unit_solutions": 4,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "ccdcf553a1d70ad13de8bdaf9b6d24ba1f98b7634c99d8485636b483c2880650",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 4,
+      "truth_table": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        2,
+        1
+      ],
+      "consistent_networks": 2,
+      "selected_index": 151,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            3,
+            6,
+            0,
+            3,
+            7
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            0,
+            1,
+            1,
+            3,
+            1
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            6,
+            7
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 3,
+          "weights": [
+            8,
+            1,
+            8,
+            2,
+            7
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            6,
+            8,
+            5,
+            7,
+            3
+          ]
+        }
+      ],
+      "gradient_any_fit": true,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "a62ca7628e50666cab9134e6103dd59e34a0772f2595906fb1b952a7ce20027e",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 5,
+      "truth_table": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "weights": [
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "consistent_networks": 4,
+      "selected_index": 30,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 12,
+          "weights": [
+            5,
+            6,
+            8,
+            8,
+            6
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            7,
+            0,
+            4,
+            1,
+            7
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 9,
+          "weights": [
+            7,
+            8,
+            7,
+            7,
+            5
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 17,
+          "weights": [
+            2,
+            3,
+            8,
+            1,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 5,
+          "weights": [
+            1,
+            0,
+            7,
+            2,
+            3
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 13,
+          "weights": [
+            1,
+            3,
+            1,
+            4,
+            7
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 4,
+      "one_hidden_unit_solutions": 4,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "8a0bd1809ba912606584054ee3a5207dd6faef137edabcfc50d0a099284cdc11",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 6,
+      "truth_table": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "consistent_networks": 4,
+      "selected_index": 133,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 5,
+          "weights": [
+            2,
+            2,
+            7,
+            1,
+            5
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            5,
+            5,
+            5,
+            2,
+            2
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            3,
+            3,
+            4,
+            0,
+            2
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 3,
+          "weights": [
+            3,
+            3,
+            2,
+            3,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            8,
+            8,
+            8,
+            5,
+            8
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 4,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "f4528e71cd9b87cbb73008b0718c11bacb86cc1efa8c8f6d29f3f0bbff318068",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 7,
+      "truth_table": [
+        0,
+        1,
+        1,
+        1
+      ],
+      "weights": [
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "consistent_networks": 2,
+      "selected_index": 111,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            1,
+            1,
+            6,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            1,
+            1,
+            0,
+            6,
+            8
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            6,
+            6,
+            0,
+            8,
+            3
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            2,
+            2,
+            0,
+            3,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            8,
+            8,
+            3,
+            4,
+            6
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            1,
+            1,
+            3,
+            6,
+            0
+          ]
+        }
+      ],
+      "gradient_any_fit": true,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "0d1a12d1c28945a8b707e568bb7b5db359327720331ecd4b1560e5358824204d",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 8,
+      "truth_table": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "weights": [
+        1,
+        1,
+        0,
+        2,
+        1
+      ],
+      "consistent_networks": 2,
+      "selected_index": 115,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            1,
+            1,
+            6,
+            0,
+            7
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            1,
+            1,
+            0,
+            3,
+            5
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            6,
+            7
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            4,
+            4,
+            3,
+            6,
+            7
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 5,
+          "weights": [
+            5,
+            5,
+            0,
+            3,
+            8
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "8b8d8d97fb215ab1df3b6ea7c58b9d98e7479dc6663f20a634ae90698640edf2",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 9,
+      "truth_table": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "weights": [
+        1,
+        1,
+        2,
+        1,
+        0
+      ],
+      "consistent_networks": 4,
+      "selected_index": 129,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 5,
+          "weights": [
+            2,
+            2,
+            7,
+            8,
+            5
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            2,
+            2,
+            2,
+            1,
+            8
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            0,
+            0,
+            4,
+            6,
+            2
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            2,
+            2,
+            6
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            8,
+            8,
+            7,
+            2,
+            5
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 6,
+          "weights": [
+            3,
+            3,
+            3,
+            6,
+            6
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 4,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "95551661a3bbe3a54f42c84811ef0f45040c38460696fe9bd500cc171eeb1deb",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 10,
+      "truth_table": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "weights": [
+        0,
+        1,
+        0,
+        2,
+        1
+      ],
+      "consistent_networks": 4,
+      "selected_index": 34,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 12,
+          "weights": [
+            5,
+            6,
+            8,
+            1,
+            4
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            1,
+            3,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 17,
+          "weights": [
+            8,
+            3,
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            4,
+            0,
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            5,
+            3,
+            2,
+            4,
+            1
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            2,
+            6,
+            3,
+            0,
+            2
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 4,
+      "one_hidden_unit_solutions": 4,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "1a6fb8a110d271c355e061ac5ea564405132f72a7c47e84fc411bac1199de4a6",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 11,
+      "truth_table": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "weights": [
+        1,
+        2,
+        1,
+        1,
+        0
+      ],
+      "consistent_networks": 2,
+      "selected_index": 147,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            3,
+            6,
+            0,
+            6,
+            3
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            0,
+            7,
+            1,
+            6,
+            0
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 15,
+          "weights": [
+            3,
+            0,
+            3,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            3,
+            4,
+            3,
+            5,
+            1
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 11,
+          "weights": [
+            3,
+            0,
+            6,
+            3,
+            3
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 9,
+          "weights": [
+            0,
+            7,
+            7,
+            3,
+            0
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "a01e825bd65f4c4ad0f674a065f8c302a7dcfe1c5851449e52a66c7ce1b08d49",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 12,
+      "truth_table": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "weights": [
+        1,
+        0,
+        0,
+        2,
+        1
+      ],
+      "consistent_networks": 4,
+      "selected_index": 88,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 12,
+          "weights": [
+            6,
+            5,
+            8,
+            1,
+            4
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            3,
+            1,
+            1,
+            2,
+            6
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 17,
+          "weights": [
+            3,
+            8,
+            5,
+            1,
+            1
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            0,
+            4,
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            3,
+            5,
+            2,
+            4,
+            1
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            6,
+            2,
+            3,
+            0,
+            2
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 4,
+      "one_hidden_unit_solutions": 4,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "b6e50006cf8fc843373ef65c4bf849944e56270e59a94477c387bb9ffc1b3425",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 13,
+      "truth_table": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "weights": [
+        1,
+        2,
+        2,
+        1,
+        0
+      ],
+      "consistent_networks": 2,
+      "selected_index": 156,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 10,
+          "weights": [
+            6,
+            3,
+            0,
+            6,
+            3
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            7,
+            0,
+            1,
+            6,
+            0
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 15,
+          "weights": [
+            0,
+            3,
+            3,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            4,
+            3,
+            3,
+            5,
+            1
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 11,
+          "weights": [
+            0,
+            3,
+            6,
+            3,
+            3
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 9,
+          "weights": [
+            7,
+            0,
+            7,
+            3,
+            0
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "0c7a7a827fcac694f6f01d695079104267d16c2a48fbc35fa4678dfe5b6db5cd",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 14,
+      "truth_table": [
+        1,
+        1,
+        1,
+        0
+      ],
+      "weights": [
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "consistent_networks": 2,
+      "selected_index": 120,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            6,
+            6,
+            4,
+            3,
+            0
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 8,
+          "weights": [
+            0,
+            0,
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            0,
+            0,
+            8,
+            6,
+            4
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 5,
+          "weights": [
+            0,
+            0,
+            3,
+            7,
+            1
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 3,
+          "weights": [
+            5,
+            5,
+            8,
+            2,
+            0
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            5,
+            5,
+            8,
+            5,
+            5
+          ]
+        }
+      ],
+      "gradient_any_fit": false,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 3,
+      "one_hidden_unit_solutions": 2,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "dacb572dd90a0f7ddcc0611e6c531d3bd842a59748cbb5d05272230065a65cd3",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    },
+    {
+      "task": 15,
+      "truth_table": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "weights": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "consistent_networks": 41,
+      "selected_index": 1,
+      "hidden_units": 1,
+      "formal_gradient_attempts": [
+        {
+          "seed": 20261025,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            1,
+            1,
+            0,
+            3,
+            7
+          ]
+        },
+        {
+          "seed": 20261025,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            1,
+            1,
+            6,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 0,
+          "weights": [
+            0,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "seed": 20261026,
+          "rate": 2,
+          "fit": true,
+          "stop": "fit",
+          "steps": 0,
+          "weights": [
+            0,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 1,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            7
+          ]
+        },
+        {
+          "seed": 20261027,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 1,
+          "fit": true,
+          "stop": "fit",
+          "steps": 2,
+          "weights": [
+            0,
+            0,
+            3,
+            8,
+            7
+          ]
+        },
+        {
+          "seed": 20261028,
+          "rate": 2,
+          "fit": false,
+          "stop": "cycle",
+          "steps": 4,
+          "weights": [
+            6,
+            6,
+            6,
+            8,
+            5
+          ]
+        }
+      ],
+      "gradient_any_fit": true,
+      "finite_search_fit": true,
+      "correct_inputs": 4,
+      "affine_best_correct": 4,
+      "one_hidden_unit_solutions": 41,
+      "weight_lifts": 243,
+      "lifted_inputs": 36,
+      "forward_cases": 8748,
+      "forward_mismatches": 0,
+      "output_sha256": "cfd2c3738910ce6aa1852120366b380c9b5bfd09c9304398167e5ea052d1d276",
+      "training_label_lifts_checked": 81,
+      "training_input_lifts_checked": 6561,
+      "joint_training_cases": 256
+    }
+  ],
+  "formal_gradient_tasks_fitted": 6,
+  "finite_search_tasks_fitted": 16,
+  "affine_tasks_perfect": 6,
+  "one_hidden_unit_tasks_representable": 16,
+  "forward_cases": 139968,
+  "forward_mismatches": 0,
+  "training_label_lift_checks": 1296,
+  "training_input_lift_checks": 104976,
+  "joint_training_checks": 4096,
+  "raw_positive_control": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      6
+    ]
+  ],
+  "unsafe_high_digit_counterexample": [
+    0,
+    3
+  ],
+  "seconds": 0.8448772840201855,
+  "limits": [
+    "Finite truth tables are training data, not held-out generalization.",
+    "Exact finite search is exponential in the number of learned weights.",
+    "Security conditions on permitted semantic remainders; only canonical content observed.",
+    "No hardware timing/implementation refinement or novelty established."
+  ]
+}

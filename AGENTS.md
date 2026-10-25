@@ -1,5 +1,15 @@
 # Research collaboration instructions
 
+- Latest owner direction (2026-10-25): explicitly insists on a neural architecture
+  with proof on a small set by EOD and intelligent design iteration; rejects the
+  proposed pivot to rewriting. First finite residue-network loop is complete:
+  `research/workstreams/architecture/residue-network/report.md`. Learned hidden
+  weights, all 16 two-bit Boolean functions, exact declared finite checks and
+  Lean certificates. Gradient attempts fit only 10/16 (two units) and 6/16 (one);
+  exhaustive weight search fits 16/16. This is a restricted content/encoding
+  guarantee, not scalable training, a language model or established originality.
+  No new API/cloud budget follows. Keep this EOD focus while preserving B notes.
+
 Read `research/brief.md`, `research/decisions.md`, and the current literature/candidate notes before continuing.
 
 - Current owner-endorsed agenda: develop both approaches in `research/two-approach-agenda.md`. Architectural prevention includes neural operations down to linear algebra, alongside the endorsed candidate-generator/chooser baseline. The second approach is post-creation task-preserving rewriting. Both Claude worker branches have been integrated. No full study selected or continuing inference/cloud budget. Six batches' recorded response costs sum to $2.30376687, excluding unknown Modal costs. The approved $1 Modal setup/run reservation produced one usable T4 checkpoint after manual corrections; all four attempted apps are stopped. See `results/modal-operator-01-t4/assessment.md`, `experiments/leak_cap/PLAN.md` and `research/compute.md`. The trained 137k-parameter split-attention model solves an easy synthetic public lookup task; no useful private-computation advantage or novel language architecture is established. Model critiques contain independently corrected errors; do not adopt their impossibility claims as established facts.

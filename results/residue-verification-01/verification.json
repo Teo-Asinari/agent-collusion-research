@@ -1,0 +1,76 @@
+{
+  "status": "all artifact and proof checks passed",
+  "proof_source_sha256": "b7ac23f97397d7bebfdb611a6df3a8b506506ec7b973890c9ffe01665e8f4ae8",
+  "artifact_checks": [
+    {
+      "run": "residue-network-01",
+      "source_hash_matches": true,
+      "certificate_weights_match": true,
+      "forward_cases": 11337408,
+      "protected_gradient_states_checked": 1495,
+      "metrics_sha256": "32876cc22224be23042de734215c96ffdd30a68e5fc3825c82b74f12efc08903",
+      "certificate_sha256": "b21833705e221d15c85506b00fc04053ae21e578c86e1442f99a968695f50aa8"
+    },
+    {
+      "run": "residue-network-02",
+      "source_hash_matches": true,
+      "certificate_weights_match": true,
+      "forward_cases": 11337408,
+      "protected_gradient_states_checked": 1495,
+      "metrics_sha256": "53bbc1c167c0849b86f789c3758bfd9faad2bcf53ebfd95d54c43db96b2d41ef",
+      "certificate_sha256": "b21833705e221d15c85506b00fc04053ae21e578c86e1442f99a968695f50aa8"
+    },
+    {
+      "run": "residue-network-03",
+      "source_hash_matches": true,
+      "certificate_weights_match": true,
+      "forward_cases": 139968,
+      "protected_gradient_states_checked": 756,
+      "metrics_sha256": "e42ca78dd9ecff872dfba24f4c1104bcdd9daeb6b87ac450d562396dcb02cd5a",
+      "certificate_sha256": "ede54552bb375bb2d8740ec17bb1ceb0f1263d18f9d14ac95e9e3f1496faad28"
+    }
+  ],
+  "lean_commands": [
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "-o",
+        "/tmp/residue-proof-zz2tt6nz/Residue.olean",
+        "/home/tasinari/my_repos/agent-collusion-research/experiments/residue_network/Residue.lean"
+      ],
+      "exit_code": 0,
+      "stdout": "'Residue.noninterference' depends on axioms: [propext]\n'Residue.training_noninterference' depends on axioms: [propext]\n'Residue.lifted_correct' depends on axioms: [propext]\n'Residue.network2_lifted_correct' depends on axioms: [propext]\n'Residue.network1_lifted_correct' depends on axioms: [propext]\n'Residue.observed_learner_noninterference' depends on axioms: [Quot.sound]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    },
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "/home/tasinari/my_repos/agent-collusion-research/results/residue-network-01/Learned.lean"
+      ],
+      "exit_code": 0,
+      "stdout": "'Learned.task_6_correct' depends on axioms: [propext]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    },
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "/home/tasinari/my_repos/agent-collusion-research/results/residue-network-02/Learned.lean"
+      ],
+      "exit_code": 0,
+      "stdout": "'Learned.task_6_correct' depends on axioms: [propext]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    },
+    {
+      "command": [
+        "/home/tasinari/.elan/bin/lean",
+        "/home/tasinari/my_repos/agent-collusion-research/results/residue-network-03/Learned.lean"
+      ],
+      "exit_code": 0,
+      "stdout": "'Learned.task_6_correct' depends on axioms: [propext]\n",
+      "stderr": "warning: failed to query latest release, using existing version 'leanprover/lean4:v4.35.0'\n"
+    }
+  ],
+  "model_api_calls": 0,
+  "cloud_jobs": 0,
+  "limits": "Abstract algebra and finite model certificates, not Python/hardware refinement."
+}

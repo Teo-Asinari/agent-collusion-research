@@ -1,5 +1,31 @@
 # Decision log
 
+## 2026-10-25 — owner reaffirms architecture; first finite design loop completed
+
+- Owner rejected the suggested EOD pivot to rewriting and explicitly insists on
+  a neural architecture with proof on a small set and intelligent design iteration.
+  The current EOD work is architecture. The independently run B pilot audit is
+  preparatory only and does not select or launch a rewrite experiment.
+- Built an exact residue-polynomial neural family with learned hidden weights,
+  using modulo-9 arithmetic and a modulo-3 observer. Two hidden units/nine weights
+  and a pruned one-unit/five-weight model each fit all sixteen two-bit Boolean
+  functions. The formal-gradient attempts fit 10/16 and 6/16 respectively;
+  exhaustive weight search fits 16/16 and is explicitly unscalable.
+- Two-unit forward family: 11,337,408 cases, zero wrong answers. Pruned family:
+  139,968 cases, zero wrong answers. Same-family repeats are not independent data.
+  Final training-input checks call the actual learner on observed data, with
+  separately exhaustive input/label lifts plus sampled joint combinations.
+- Lean accepts arithmetic/composition, update-state and observed-learner
+  noninterference properties, plus all learned finite truth-table certificates.
+  Abstract semantics, not Python/hardware refinement. Axioms printed and retained.
+- Plain-English report: `workstreams/architecture/residue-network/report.md`.
+  This is a bounded verified candidate, not an established novel/general language
+  architecture. The required encoding/release policy, unique-answer task, training
+  search cost and direct modular/p-adic prior art remain material limits.
+- Local CPU only; no new API/cloud spend or continuing budget. No additional paid
+  experiment selected. Preserve both original approaches without switching back
+  to B merely because its existing pipeline is convenient.
+
 ## 2026-10-25 — candidate algebraic primitive defined and challenged
 
 - Owner requested a new algebraic neural primitive. Defined a candidate polynomial

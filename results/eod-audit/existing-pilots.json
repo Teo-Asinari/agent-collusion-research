@@ -1,0 +1,1463 @@
+{
+  "source_sha256": "536d798313ce7be3f2d5d182c1dd1bf5e2467a08aaf13d983c4f56d0e6f4b89a",
+  "new_api_calls": 0,
+  "new_api_cost_usd": 0,
+  "reports": {
+    "component-rewrite-pilot-01": {
+      "analysis": "Post-hoc audit, direct known decoder, validity selection reported explicitly",
+      "input_hashes": {
+        "records.jsonl": "f2d9b206839b6e54c8e39d3e0608e23b8158a5a2ac9158308c1478261d4dc7c3",
+        "units.json": "edbe66dd5ed841b56950bd78835dfad4af272379a95370e308fc6c86256aef15"
+      },
+      "records": 1440,
+      "groups": {
+        "gpt41mini/instructed_sender": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 1,
+            "valid_under_existing_checker": 55,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.4583333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 55
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 55
+            },
+            "recorded_cost_usd": "0.0707184",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 1,
+            "valid_under_existing_checker": 23,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.38333333333333336,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 23
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 23
+            },
+            "recorded_cost_usd": "0.0355432",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 32,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.5333333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 32
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 32
+            },
+            "recorded_cost_usd": "0.0351752",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/minimal_edit": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 3,
+            "valid_under_existing_checker": 119,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.9916666666666667,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 119
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 117
+            },
+            "recorded_cost_usd": "0.0905272",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 2,
+            "valid_under_existing_checker": 59,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.9833333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 59
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 58
+            },
+            "recorded_cost_usd": "0.0453404",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 1,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 59
+            },
+            "recorded_cost_usd": "0.0451868",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/paraphrase": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 120,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 120
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 120
+            },
+            "recorded_cost_usd": "0.0230864",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "recorded_cost_usd": "0.0115536",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "recorded_cost_usd": "0.0115328",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/resolve": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 98,
+            "valid_under_existing_checker": 67,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.5583333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 0.4701,
+              "ci95": [
+                0.4179,
+                0.5224
+              ],
+              "n_tasks": 67
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.4545,
+              "ci95": [
+                0.3523,
+                0.5568
+              ],
+              "n_tasks": 22
+            },
+            "recorded_cost_usd": "0.1229784",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 45,
+            "valid_under_existing_checker": 36,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.6,
+            "direct_accuracy_among_valid": {
+              "mean": 0.4861,
+              "ci95": [
+                0.4167,
+                0.5625
+              ],
+              "n_tasks": 36
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.4833,
+              "ci95": [
+                0.35,
+                0.6167
+              ],
+              "n_tasks": 15
+            },
+            "recorded_cost_usd": "0.0608844",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 53,
+            "valid_under_existing_checker": 31,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.5166666666666667,
+            "direct_accuracy_among_valid": {
+              "mean": 0.4516,
+              "ci95": [
+                0.371,
+                0.5242
+              ],
+              "n_tasks": 31
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.3929,
+              "ci95": [
+                0.2857,
+                0.4643
+              ],
+              "n_tasks": 7
+            },
+            "recorded_cost_usd": "0.0620940",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/tc_rewrite": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 117,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.975,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 117
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 117
+            },
+            "recorded_cost_usd": "0.0592920",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 58,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.9666666666666667,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 58
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 58
+            },
+            "recorded_cost_usd": "0.0292476",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 59,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.9833333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 59
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 59
+            },
+            "recorded_cost_usd": "0.0300444",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/tc_sanitize": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 92,
+            "valid_under_existing_checker": 79,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.6583333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 0.8386,
+              "ci95": [
+                0.7911,
+                0.8829
+              ],
+              "n_tasks": 79
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.8173,
+              "ci95": [
+                0.7019,
+                0.9135
+              ],
+              "n_tasks": 26
+            },
+            "recorded_cost_usd": "0.1286520",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 43,
+            "valid_under_existing_checker": 40,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.6666666666666666,
+            "direct_accuracy_among_valid": {
+              "mean": 0.8125,
+              "ci95": [
+                0.7375,
+                0.8812
+              ],
+              "n_tasks": 40
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.7667,
+              "ci95": [
+                0.6,
+                0.9167
+              ],
+              "n_tasks": 15
+            },
+            "recorded_cost_usd": "0.0640972",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 49,
+            "valid_under_existing_checker": 39,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.65,
+            "direct_accuracy_among_valid": {
+              "mean": 0.8654,
+              "ci95": [
+                0.8077,
+                0.9167
+              ],
+              "n_tasks": 39
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.8864,
+              "ci95": [
+                0.7955,
+                0.9773
+              ],
+              "n_tasks": 11
+            },
+            "recorded_cost_usd": "0.0645548",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/instructed_sender": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 25,
+            "valid_under_existing_checker": 16,
+            "duplicate_rosters_accepted_by_existing_checker": 2,
+            "valid_fraction_of_attempted": 0.13333333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 16
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 6
+            },
+            "recorded_cost_usd": "0.01917893",
+            "records_missing_cost": 1
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 11,
+            "valid_under_existing_checker": 9,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.15,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 9
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 3
+            },
+            "recorded_cost_usd": "0.00928623",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 14,
+            "valid_under_existing_checker": 7,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.11666666666666667,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 7
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 3
+            },
+            "recorded_cost_usd": "0.00989270",
+            "records_missing_cost": 1
+          }
+        },
+        "qwen235/minimal_edit": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 2,
+            "valid_under_existing_checker": 120,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 120
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 118
+            },
+            "recorded_cost_usd": "0.03045982",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 1,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 59
+            },
+            "recorded_cost_usd": "0.01534649",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 1,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 59
+            },
+            "recorded_cost_usd": "0.01511333",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/paraphrase": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 120,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 120
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 120
+            },
+            "recorded_cost_usd": "0.00647015",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "recorded_cost_usd": "0.00319799",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 60,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 60
+            },
+            "recorded_cost_usd": "0.00327216",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/resolve": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 119,
+            "valid_under_existing_checker": 12,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.1,
+            "direct_accuracy_among_valid": {
+              "mean": 0.3542,
+              "ci95": [
+                0.2292,
+                0.4792
+              ],
+              "n_tasks": 12
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.75,
+              "ci95": [
+                0.75,
+                0.75
+              ],
+              "n_tasks": 1
+            },
+            "recorded_cost_usd": "0.04211497",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 60,
+            "valid_under_existing_checker": 5,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.08333333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 0.4,
+              "ci95": [
+                0.15,
+                0.6
+              ],
+              "n_tasks": 5
+            },
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0.02106045",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 59,
+            "valid_under_existing_checker": 7,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.11666666666666667,
+            "direct_accuracy_among_valid": {
+              "mean": 0.3214,
+              "ci95": [
+                0.1786,
+                0.5
+              ],
+              "n_tasks": 7
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.75,
+              "ci95": [
+                0.75,
+                0.75
+              ],
+              "n_tasks": 1
+            },
+            "recorded_cost_usd": "0.02105452",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/tc_rewrite": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 12,
+            "valid_under_existing_checker": 107,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.8916666666666667,
+            "direct_accuracy_among_valid": {
+              "mean": 0.9977,
+              "ci95": [
+                0.993,
+                1.0
+              ],
+              "n_tasks": 107
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 104
+            },
+            "recorded_cost_usd": "0.02465059",
+            "records_missing_cost": 1
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 6,
+            "valid_under_existing_checker": 53,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.8833333333333333,
+            "direct_accuracy_among_valid": {
+              "mean": 0.9953,
+              "ci95": [
+                0.9858,
+                1.0
+              ],
+              "n_tasks": 53
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 51
+            },
+            "recorded_cost_usd": "0.01184854",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 6,
+            "valid_under_existing_checker": 54,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.9,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 54
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 53
+            },
+            "recorded_cost_usd": "0.01280205",
+            "records_missing_cost": 1
+          }
+        },
+        "qwen235/tc_sanitize": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 120,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 109,
+            "valid_under_existing_checker": 18,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.15,
+            "direct_accuracy_among_valid": {
+              "mean": 0.7222,
+              "ci95": [
+                0.625,
+                0.8194
+              ],
+              "n_tasks": 18
+            },
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0.04043721",
+            "records_missing_cost": 1
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 57,
+            "valid_under_existing_checker": 9,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.15,
+            "direct_accuracy_among_valid": {
+              "mean": 0.75,
+              "ci95": [
+                0.5833,
+                0.8889
+              ],
+              "n_tasks": 9
+            },
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0.02085679",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 60,
+            "unattempted_tasks": 0,
+            "error_records": 0,
+            "truncated_records": 52,
+            "valid_under_existing_checker": 9,
+            "duplicate_rosters_accepted_by_existing_checker": 1,
+            "valid_fraction_of_attempted": 0.15,
+            "direct_accuracy_among_valid": {
+              "mean": 0.6944,
+              "ci95": [
+                0.5833,
+                0.8056
+              ],
+              "n_tasks": 9
+            },
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0.01958042",
+            "records_missing_cost": 1
+          }
+        }
+      }
+    },
+    "component-rewrite-pilot-02": {
+      "analysis": "Post-hoc audit, direct known decoder, validity selection reported explicitly",
+      "input_hashes": {
+        "records.jsonl": "7eb20deaa55b09917e84d65f673787709233687e0bab7b6d4b29fb208cda3d9a",
+        "units.json": "edbe66dd5ed841b56950bd78835dfad4af272379a95370e308fc6c86256aef15"
+      },
+      "records": 294,
+      "groups": {
+        "gpt41mini/instructed_sender": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 71,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 47,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.9591836734693877,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 47
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 47
+            },
+            "recorded_cost_usd": "0.0571028",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 11,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 47,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.9591836734693877,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 47
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 47
+            },
+            "recorded_cost_usd": "0.0571028",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 0,
+            "unattempted_tasks": 60,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 0,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": null,
+            "direct_accuracy_among_valid": null,
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/resolve": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 71,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 49,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 0.5408,
+              "ci95": [
+                0.4694,
+                0.6122
+              ],
+              "n_tasks": 49
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.5408,
+              "ci95": [
+                0.4694,
+                0.6122
+              ],
+              "n_tasks": 49
+            },
+            "recorded_cost_usd": "0.0702948",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 11,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 49,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 0.5408,
+              "ci95": [
+                0.4694,
+                0.6122
+              ],
+              "n_tasks": 49
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.5408,
+              "ci95": [
+                0.4694,
+                0.6122
+              ],
+              "n_tasks": 49
+            },
+            "recorded_cost_usd": "0.0702948",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 0,
+            "unattempted_tasks": 60,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 0,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": null,
+            "direct_accuracy_among_valid": null,
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0",
+            "records_missing_cost": 0
+          }
+        },
+        "gpt41mini/tc_sanitize": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 71,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 49,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 0.7245,
+              "ci95": [
+                0.6378,
+                0.8061
+              ],
+              "n_tasks": 49
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.7245,
+              "ci95": [
+                0.6378,
+                0.8061
+              ],
+              "n_tasks": 49
+            },
+            "recorded_cost_usd": "0.0704956",
+            "records_missing_cost": 0
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 11,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 49,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 1.0,
+            "direct_accuracy_among_valid": {
+              "mean": 0.7245,
+              "ci95": [
+                0.6378,
+                0.8061
+              ],
+              "n_tasks": 49
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.7245,
+              "ci95": [
+                0.6378,
+                0.8061
+              ],
+              "n_tasks": 49
+            },
+            "recorded_cost_usd": "0.0704956",
+            "records_missing_cost": 0
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 0,
+            "unattempted_tasks": 60,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 0,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": null,
+            "direct_accuracy_among_valid": null,
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/instructed_sender": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 71,
+            "error_records": 0,
+            "truncated_records": 2,
+            "valid_under_existing_checker": 44,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.8979591836734694,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 44
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 42
+            },
+            "recorded_cost_usd": "0.03449538",
+            "records_missing_cost": 5
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 11,
+            "error_records": 0,
+            "truncated_records": 2,
+            "valid_under_existing_checker": 44,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.8979591836734694,
+            "direct_accuracy_among_valid": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 44
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 1.0,
+              "ci95": [
+                1.0,
+                1.0
+              ],
+              "n_tasks": 42
+            },
+            "recorded_cost_usd": "0.03449538",
+            "records_missing_cost": 5
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 0,
+            "unattempted_tasks": 60,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 0,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": null,
+            "direct_accuracy_among_valid": null,
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/resolve": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 71,
+            "error_records": 0,
+            "truncated_records": 10,
+            "valid_under_existing_checker": 37,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.7551020408163265,
+            "direct_accuracy_among_valid": {
+              "mean": 0.5405,
+              "ci95": [
+                0.4662,
+                0.6149
+              ],
+              "n_tasks": 37
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.5583,
+              "ci95": [
+                0.4833,
+                0.6417
+              ],
+              "n_tasks": 30
+            },
+            "recorded_cost_usd": "0.04206792",
+            "records_missing_cost": 9
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 11,
+            "error_records": 0,
+            "truncated_records": 10,
+            "valid_under_existing_checker": 37,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.7551020408163265,
+            "direct_accuracy_among_valid": {
+              "mean": 0.5405,
+              "ci95": [
+                0.4662,
+                0.6149
+              ],
+              "n_tasks": 37
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.5583,
+              "ci95": [
+                0.4833,
+                0.6417
+              ],
+              "n_tasks": 30
+            },
+            "recorded_cost_usd": "0.04206792",
+            "records_missing_cost": 9
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 0,
+            "unattempted_tasks": 60,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 0,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": null,
+            "direct_accuracy_among_valid": null,
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0",
+            "records_missing_cost": 0
+          }
+        },
+        "qwen235/tc_sanitize": {
+          "all": {
+            "planned_tasks": 120,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 71,
+            "error_records": 0,
+            "truncated_records": 13,
+            "valid_under_existing_checker": 33,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.673469387755102,
+            "direct_accuracy_among_valid": {
+              "mean": 0.6136,
+              "ci95": [
+                0.5152,
+                0.7121
+              ],
+              "n_tasks": 33
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.6207,
+              "ci95": [
+                0.5086,
+                0.7328
+              ],
+              "n_tasks": 29
+            },
+            "recorded_cost_usd": "0.04276130",
+            "records_missing_cost": 7
+          },
+          "train": {
+            "planned_tasks": 60,
+            "attempted_tasks": 49,
+            "unattempted_tasks": 11,
+            "error_records": 0,
+            "truncated_records": 13,
+            "valid_under_existing_checker": 33,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": 0.673469387755102,
+            "direct_accuracy_among_valid": {
+              "mean": 0.6136,
+              "ci95": [
+                0.5152,
+                0.7121
+              ],
+              "n_tasks": 33
+            },
+            "direct_accuracy_among_valid_stop": {
+              "mean": 0.6207,
+              "ci95": [
+                0.5086,
+                0.7328
+              ],
+              "n_tasks": 29
+            },
+            "recorded_cost_usd": "0.04276130",
+            "records_missing_cost": 7
+          },
+          "test": {
+            "planned_tasks": 60,
+            "attempted_tasks": 0,
+            "unattempted_tasks": 60,
+            "error_records": 0,
+            "truncated_records": 0,
+            "valid_under_existing_checker": 0,
+            "duplicate_rosters_accepted_by_existing_checker": 0,
+            "valid_fraction_of_attempted": null,
+            "direct_accuracy_among_valid": null,
+            "direct_accuracy_among_valid_stop": null,
+            "recorded_cost_usd": "0",
+            "records_missing_cost": 0
+          }
+        }
+      }
+    }
+  }
+}

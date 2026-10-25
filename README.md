@@ -1,5 +1,12 @@
 # AI Agent Collusion Research
 
+**EOD architecture deliverable:** [finite residue-network report](research/workstreams/architecture/residue-network/report.md).
+The local design loop produced learned nonlinear models for all sixteen two-bit
+Boolean rules, complete declared representation-variation checks and Lean-checked
+properties/certificates. Finite search repairs failed gradient attempts; scalable
+learning and originality are not established. Owner explicitly reaffirmed this
+architecture focus instead of the proposed rewrite pivot.
+
 **Current status:** both Claude worker branches are integrated. [Neural operations
 plus finite-choice release](research/workstreams/architecture/operator-and-choice.md)
 has explicit split-attention equations, structural checks and a completed

@@ -1,5 +1,11 @@
 # Compute and expenditure ledger
 
+2026-10-25 finite architecture loop: three local CPU runs, exact enumeration,
+formal-gradient attempts, finite weight-search fitting and four Lean checks.
+Results in `results/residue-network-01..03/` and `results/residue-verification-01/`;
+API/cloud experimental spend USD 0. The B pilot audit reused existing records
+with zero API calls; owner then explicitly reaffirmed architecture as EOD focus.
+
 2026-10-25 algebraic primitive exploration: local exact enumeration and numerical/
 autograd counterexample checks only (`results/quotient-primitive/`), API/cloud
 experimental spend USD 0. No training or new hosted/cloud job launched.

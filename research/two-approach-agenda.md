@@ -1,5 +1,11 @@
 # Two approaches to anti-steganography
 
+**Current EOD focus, explicitly reaffirmed by owner:** neural architecture design
+and proof on a small set, not a pivot to the rewrite study. The first bounded
+[residue-network design loop and report](workstreams/architecture/residue-network/report.md)
+are complete, with learned hidden weights, finite checks and Lean certificates.
+Scalable learning, utility beyond tiny truth tables and novelty remain open.
+
 Operation-level follow-up: [candidate factorization-quotient primitive](workstreams/architecture/quotient-primitive.md)
 now has equations, an exact-arithmetic identity, local checks and explicit floating-
 point/training counterexamples. Close GL-equivariant and polynomial prior art

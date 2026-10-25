@@ -1,0 +1,145 @@
+{
+  "tasks": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "inputs": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "modulus": 9,
+  "observation_modulus": 3,
+  "initial_seeds": [
+    20261025,
+    20261026,
+    20261027,
+    20261028
+  ],
+  "gradient_rates": [
+    1,
+    2
+  ],
+  "gradient_limit": 64,
+  "joint_training_cases_per_task": 256,
+  "joint_seed": 20261025,
+  "parameters": 9,
+  "hidden_units": 2,
+  "hidden_activation": "square",
+  "training": "formal modular gradient, then finite weight search if needed",
+  "cost_usd_api": 0,
+  "cost_usd_cloud": 0,
+  "plan_sha256": "6810ce92082d58d30033726f89c54a12765cbe52859dcc60ac35fada93b3213a",
+  "source_sha256": "9510c8574098adc83ac1c30ebc0e3757fdd8d1d9abdb19daf17a15f0477e36f1",
+  "python": "3.9.12",
+  "torch": "2.8.0+cu128",
+  "device": "cpu",
+  "threads": 1
+}
