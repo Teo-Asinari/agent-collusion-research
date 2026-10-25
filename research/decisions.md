@@ -150,3 +150,9 @@
 
 - The brief asked for a **new neural architecture** (ground-up transformer + verified computation), not a rules framework with a stand-in regressor. Zero leakage forces zero freedom and is useless for real tasks.
 - New goal: design, implement and train (CPU, toy scale) a transformer architecture with real freedom and a **provable cap of k bits per answer**. Seed: every receiver-visible output is TrustedDecoder(public input, public randomness, c), where c is a k-bit code from the untrusted network. Prove in Lean that c is the only private-to-public path, plus the capacity bound. Measure utility versus k against an unrestricted transformer of matched size; show a scripted adversary gets about k bits and no more; check prior art first. Budget: the remainder of the batch-3 $5 (≈ $4.76). No Modal; write a Modal plan with a cost estimate.
+- Delivered, with no paid calls (≈ $4.76 unspent).
+  - Lean `Choice.view_count`: for every weight setting, the receiver's view has at most 2^(Σk) values.
+  - CPU toy run on word denoising, trained from scratch: with a 105k-parameter public proposer, k = 5 bits per answer matches the unrestricted 605k model (29.2% vs 29.7%), and k = 8 reaches 35%.
+  - The scripted adversary received ≤ k bits.
+  - Modal plan (≈ $15–17) is written and not executed.
+  - See `research/workstreams/architecture/leak-cap.md`.

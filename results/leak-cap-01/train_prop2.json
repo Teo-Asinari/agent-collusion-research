@@ -1,0 +1,10 @@
+{
+  "proposer2": {
+    "d": 64,
+    "layers": 2,
+    "heads": 4,
+    "params": 105245
+  },
+  "train_steps": 3000,
+  "train_seconds": 148.2
+}
