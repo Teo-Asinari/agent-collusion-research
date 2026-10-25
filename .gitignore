@@ -44,3 +44,8 @@ references/pdfs/
 .run.lock
 # Separate worker checkouts are merged through Git, never staged as nested repos.
 .claude/
+submission/*.aux
+submission/*.log
+submission/*.out
+submission/*.fls
+submission/*.fdb_latexmk

@@ -322,3 +322,12 @@
   - The scripted adversary received ≤ k bits.
   - Modal plan (≈ $15–17) is written and not executed.
   - See `research/workstreams/architecture/leak-cap.md`.
+
+## 2026-10-25 — submission report and public repository
+
+- Owner asked to consolidate leak-cap and anti-stego work into the sprint
+  submission: `submission/report.tex` / `report.pdf` (7 pages incl. appendices).
+  Tables come from saved `results/leak-cap-01` and `results/anti_stego` JSON.
+- Owner approved making the repository public. History scanned for keys/tokens
+  before the change; only placeholder `.env.example` values and OpenRouter
+  usage/limit snapshots were found.
