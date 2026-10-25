@@ -1,0 +1,17 @@
+{
+  "status": "launching",
+  "gpu": "L4",
+  "timeout_seconds": 600,
+  "training_seconds": 480,
+  "retries": 0,
+  "max_containers": 1,
+  "estimated_execution_ceiling_usd": 0.16,
+  "approved_reservation_usd": 1,
+  "started_utc": "2026-10-25T04:12:42.676689+00:00",
+  "git_commit": "443517b98fb8830cabc60b8b0ac61624cdffada6",
+  "working_tree_status": " M experiments/leak_cap/modal_train.py\n?? results/modal-operator-01/\n",
+  "modal_client_version": "1.2.6",
+  "modal_app_id": "ap-Xygu0wW5nkOoNGVdmT2iX6",
+  "launcher_sha256": "a6a6f0d86dc362a37e854cf591d63cc84072c93fe27bc7df069c86e1d7413a09",
+  "billing_note": "Build/startup/egress not included; actual invoice cost not known."
+}

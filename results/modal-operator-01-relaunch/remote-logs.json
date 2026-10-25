@@ -1,0 +1,77 @@
+[
+  {
+    "timestamp": 1792901629.3940098,
+    "data": "Function 'train' (fu-wIfHbo7vrvg5fNz32aKq3H) is waiting to be scheduled on a GPU_L4 worker. We are actively working on acquiring more capacity for your workload.\n",
+    "function_call_id": ""
+  },
+  {
+    "timestamp": 1792901676.3608637,
+    "data": "Function 'train' (fu-wIfHbo7vrvg5fNz32aKq3H) is waiting to be scheduled on a GPU_L4 worker. We are actively working on acquiring more capacity for your workload.\n",
+    "function_call_id": ""
+  },
+  {
+    "timestamp": 1792901845.7417548,
+    "data": "/usr/local/lib/python3.11/site-packages/torch/_subclasses/functional_tensor.py:279: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:81.)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901849.1290407,
+    "data": "{\"step\": 1, \"loss\": 6.2163166999816895}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901850.176619,
+    "data": "{\"step\": 101, \"loss\": 0.05156250670552254}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901851.2145135,
+    "data": "{\"step\": 201, \"loss\": 0.0017273377161473036}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901852.2590878,
+    "data": "{\"step\": 301, \"loss\": 0.0011726836673915386}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901853.2978036,
+    "data": "{\"step\": 401, \"loss\": 0.0007221949053928256}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901854.3427007,
+    "data": "{\"step\": 501, \"loss\": 0.0003212104784324765}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901855.394692,
+    "data": "{\"step\": 601, \"loss\": 0.00398164801299572}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901856.4504545,
+    "data": "{\"step\": 701, \"loss\": 0.00020398537162691355}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901857.4906762,
+    "data": "{\"step\": 801, \"loss\": 0.00019373033137526363}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901858.5305958,
+    "data": "{\"step\": 901, \"loss\": 0.00013918260810896754}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901859.5652194,
+    "data": "{\"step\": 1000, \"loss\": 0.00010003838542615995}\n",
+    "function_call_id": "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  },
+  {
+    "timestamp": 1792901860.037549,
+    "data": "Stopping app - uncaught exception raised locally: DeserializationError(\"Deserialization failed because the 'torch' module is not available in the local environment.\").\n",
+    "function_call_id": ""
+  }
+]

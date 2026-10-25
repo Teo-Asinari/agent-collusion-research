@@ -1,27 +1,29 @@
-"""One bounded Modal L4 training invocation; no secrets or datasets mounted."""
+"""One bounded Modal T4 training invocation; no secrets or datasets mounted."""
 from pathlib import Path
 
 import modal
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[2] if modal.is_local() else Path('/root')
 app = modal.App('agent-collusion-operator-feasibility')
-image = (modal.Image.debian_slim(python_version='3.11')
-         .pip_install('torch==2.8.0')
-         .add_local_file(ROOT / 'experiments/leak_cap/operators.py', '/root/experiments/leak_cap/operators.py')
-         .add_local_file(ROOT / 'experiments/leak_cap/train_recall.py', '/root/experiments/leak_cap/train_recall.py'))
+image = modal.Image.debian_slim(python_version='3.11').pip_install('torch==2.8.0')
+if modal.is_local():
+    image = (image
+             .add_local_file(ROOT / 'experiments/leak_cap/operators.py', '/root/experiments/leak_cap/operators.py')
+             .add_local_file(ROOT / 'experiments/leak_cap/train_recall.py', '/root/experiments/leak_cap/train_recall.py'))
 
 
-@app.function(image=image, gpu='L4', cpu=2, memory=4096, timeout=600,
+@app.function(image=image, gpu='T4', cpu=2, memory=4096, timeout=600, startup_timeout=60,
               retries=0, max_containers=1, min_containers=0,
               scaledown_window=2)
 def train():
     import io
+    import json
     import torch
     from experiments.leak_cap.train_recall import run
     metrics, state = run(steps=1000, device='cuda', seconds=480)
     buffer = io.BytesIO()
     torch.save(state, buffer)
-    return metrics, buffer.getvalue()
+    return json.dumps(metrics), buffer.getvalue()
 
 
 @app.local_entrypoint()
@@ -35,9 +37,10 @@ def main(output: str = 'results/modal-operator-01', approve_estimated_cost: bool
     target = Path(output)
     target.mkdir(parents=True, exist_ok=False)
     (target / 'launch.json').write_text(json.dumps({
-        'status': 'launching', 'gpu': 'L4', 'timeout_seconds': 600,
+        'status': 'launching', 'gpu': 'T4', 'timeout_seconds': 600,
+        'whole_call_wait_timeout_seconds': 600,
         'training_seconds': 480, 'retries': 0, 'max_containers': 1,
-        'estimated_execution_ceiling_usd': 0.16,
+        'estimated_execution_ceiling_usd': 0.12,
         'approved_reservation_usd': 1,
         'started_utc': datetime.now(timezone.utc).isoformat(),
         'git_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
@@ -48,7 +51,12 @@ def main(output: str = 'results/modal-operator-01', approve_estimated_cost: bool
         'billing_note': 'Build/startup/egress not included; actual invoice cost not known.'
     }, indent=2) + '\n')
     try:
-        metrics, checkpoint = train.remote()
+        call = train.spawn()
+        (target / 'call.json').write_text(json.dumps({
+            'function_call_id': call.object_id
+        }, indent=2) + '\n')
+        metrics_json, checkpoint = call.get(timeout=600)
+        metrics = json.loads(metrics_json)
     except Exception as error:
         (target / 'failure.json').write_text(json.dumps({
             'error_type': type(error).__name__, 'status': 'failed',

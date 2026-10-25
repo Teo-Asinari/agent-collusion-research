@@ -1,0 +1,18 @@
+{
+  "status": "launching",
+  "gpu": "T4",
+  "timeout_seconds": 600,
+  "whole_call_wait_timeout_seconds": 600,
+  "training_seconds": 480,
+  "retries": 0,
+  "max_containers": 1,
+  "estimated_execution_ceiling_usd": 0.12,
+  "approved_reservation_usd": 1,
+  "started_utc": "2026-10-25T04:36:54.290606+00:00",
+  "git_commit": "443517b98fb8830cabc60b8b0ac61624cdffada6",
+  "working_tree_status": " M experiments/leak_cap/modal_train.py\n M experiments/leak_cap/train_recall.py\n?? experiments/leak_cap/recover_modal_result.py\n?? results/modal-operator-01-final/\n?? results/modal-operator-01-relaunch/\n?? results/modal-operator-01/\n",
+  "modal_client_version": "1.2.6",
+  "modal_app_id": "ap-egQtLaiGwfQ1iZWdbX1q8L",
+  "launcher_sha256": "1311da48b520694327572a7a4cc7a9adc0ea7881eadd458aa23489c7e3f0a42e",
+  "billing_note": "Build/startup/egress not included; actual invoice cost not known."
+}

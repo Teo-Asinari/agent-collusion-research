@@ -1,0 +1,6 @@
+{
+  "error_type": "RemoteError",
+  "status": "failed",
+  "actual_cost_usd": null,
+  "automatic_retry": false
+}

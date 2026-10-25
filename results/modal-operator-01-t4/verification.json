@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "ccab274e41db2ddc96ea2c5dbc932da19ad735565857c971d5f1e12abef7caaa",
+  "checkpoint_bytes": 569766,
+  "parameter_count": 137696,
+  "all_parameters_finite": true,
+  "source_hashes_match": true,
+  "cpu_reload_test_examples": 1024,
+  "cpu_reload_public_accuracy": 1.0,
+  "cloud_api_calls_in_verification": 0
+}

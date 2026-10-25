@@ -1,0 +1,14 @@
+{
+  "status": "training_completed_output_lost",
+  "app_id": "ap-Xygu0wW5nkOoNGVdmT2iX6",
+  "training_steps_completed": 1000,
+  "training_start_from_remote_log_utc": "2026-10-25T04:17:29.129041+00:00",
+  "last_step_from_remote_log_utc": "2026-10-25T04:17:39.565219+00:00",
+  "error": "Client DeserializationError: torch unavailable in isolated Modal-client environment; torch.__version__ was a TorchVersion object.",
+  "recovery_attempts": "AppGetObjects and FunctionCallList unavailable; recovered function-call ID from logs, but FunctionCall.get returned NotFoundError after output cleanup.",
+  "evaluation_metrics_available": false,
+  "checkpoint_available": false,
+  "actual_cost_usd": null,
+  "correction": "Return JSON text plus checkpoint bytes; normalize torch version to str. Dependency-free local pickle/JSON test and remote-context import passed.",
+  "budget": "Manual corrective rerun within existing $1 reservation; not additional authorization or automatic training retries."
+}

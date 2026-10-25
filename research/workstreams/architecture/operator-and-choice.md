@@ -1,5 +1,11 @@
 # Neural operations and bounded choice
 
+Update 2026-10-25: [first usable CUDA training run](../../../results/modal-operator-01-t4/assessment.md)
+completed. Both branches solve the synthetic lookup task, so this is trainability
+evidence, not a useful private-branch advantage. All attempted apps are stopped;
+actual Modal cost remains unknown. The original pre-training specification below
+is retained as historical context.
+
 2026-10-24. Owner endorsed developing neural operations alongside the existing
 generator/chooser. Local feasibility proceeds; no paid inference, Modal launch or
 full study is selected. Post-creation rewriting remains a separate active approach.

@@ -1,0 +1,9 @@
+{
+  "status": "recovery_failed",
+  "app_id": "ap-Xygu0wW5nkOoNGVdmT2iX6",
+  "function_call_ids": [
+    "fc-01M5RM5GGVZANHP9M1QFKRBAXV"
+  ],
+  "error_type": "NotFoundError",
+  "new_training_invocations": 0
+}

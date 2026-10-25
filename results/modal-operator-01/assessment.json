@@ -1,0 +1,14 @@
+{
+  "status": "stopped_after_container_import_failure",
+  "app_id": "ap-hmMPDmTRpV5yL4bOU4FW39",
+  "image_id": "im-PHPAUhUED0sTTbRf8aJFXO",
+  "image_build_seconds_reported": 47.6,
+  "error": "IndexError: 2 at ROOT = Path(__file__).resolve().parents[2]; remote launcher was /root/modal_train.py",
+  "training_steps_completed": 0,
+  "response": "Explicitly stopped app to stop repeated container startup failures; guarded local paths with modal.is_local().",
+  "preflight_check": "Patched modal.is_local to False and imported launcher from shallow /tmp path; passed.",
+  "manual_relaunch_app_id": "ap-Xygu0wW5nkOoNGVdmT2iX6",
+  "budget": "Same approved $1 reservation covers setup and corrected launch; no new budget assumed.",
+  "actual_cost_usd": null,
+  "billing_note": "Provider startup replacement occurred despite function retries=0; no claim of zero cost."
+}

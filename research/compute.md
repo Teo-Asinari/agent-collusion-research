@@ -1,11 +1,20 @@
 # Compute and expenditure ledger
 
+2026-10-25 Modal update: the approved $1 setup/run reservation produced one
+usable T4 checkpoint (`results/modal-operator-01-t4/assessment.md`). Four app
+attempts occurred, including startup and transport failures and a queued L4
+cancellation race. All four are stopped. **Actual combined Modal billing remains
+unknown**; the provider invoice has not been independently retrieved. The L4
+600-second requested-resource estimate was $0.154248; the T4 equivalent is
+$0.119448. These are per-attempt estimates, not actual charges or a dollar cap.
+No new hosted-model API requests occurred. No further cloud budget follows.
+
 Recorded per-response charge sum across the six hosted batches: **USD 2.30376687**.
 This sums `cost_usd` entries, including the paid empty A response; it is not an
 independent invoice reconciliation or a claim that failed calls have known costs.
 Concurrent workers shared one key, so account-usage deltas are not summed.
 
-Integration note, 2026-10-24: both Claude worker histories and their batch ledgers
+Historical integration note, 2026-10-24 (superseded for Modal by the entry above): both Claude worker histories and their batch ledgers
 are now integrated below. Per-response costs are available, but shared-account
 snapshots should not be added as independent expenditures. Current local work ran
 operator checks, Lean verification, a 64-example CPU chooser evaluation, and a

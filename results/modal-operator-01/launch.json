@@ -1,0 +1,17 @@
+{
+  "status": "launching",
+  "gpu": "L4",
+  "timeout_seconds": 600,
+  "training_seconds": 480,
+  "retries": 0,
+  "max_containers": 1,
+  "estimated_execution_ceiling_usd": 0.16,
+  "approved_reservation_usd": 1,
+  "started_utc": "2026-10-25T04:07:25.366186+00:00",
+  "git_commit": "443517b98fb8830cabc60b8b0ac61624cdffada6",
+  "working_tree_status": "",
+  "modal_client_version": "1.2.6",
+  "modal_app_id": "ap-hmMPDmTRpV5yL4bOU4FW39",
+  "launcher_sha256": "bab5aa0624cb87f7516919c91fbf4f6042a32c396cf846c02e8d0cd3660c5121",
+  "billing_note": "Build/startup/egress not included; actual invoice cost not known."
+}

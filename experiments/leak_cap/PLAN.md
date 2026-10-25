@@ -1,11 +1,14 @@
 # First Modal operation-training run
 
-Prepared 2026-10-24 at the owner's request. Not launched. This is a small
-exploratory CUDA trainability/portability check, not a full research experiment.
+Prepared 2026-10-24; usable training result completed 2026-10-25 on T4 after L4
+startup/transport/queue problems. See [execution assessment](../../results/modal-operator-01-t4/assessment.md).
+This is an exploratory CUDA trainability/portability check, not a full study.
 
 Owner approved the proposed $1 reservation in the next conversation turn.
-Authentication flow is pending; GPU execution has not started. The reservation
-is authorization for this single planned run and setup, not an account-level cap.
+Authentication succeeded. All four attempted apps are now stopped. The reservation
+covered this run and corrective setup; it is not an account-level cap. Actual
+invoice cost remains unknown. The original L4 execution contract below is preserved
+as the plan, with the T4 fallback and other deviations recorded in the assessment.
 
 ## Research and execution contract
 
@@ -49,16 +52,17 @@ No retries are configured. Actual invoice cost remains unknown until inspected;
 do not relabel the estimate as actual cost. Prior worker's $15–17 scale-up proposal
 is separate and is not being launched.
 
-Owner must approve this concrete estimate and authenticate Modal before launch.
+Owner approved this estimate and authenticated Modal before launch.
 This follows the preserved worker instruction to present a Modal estimate before
 using it, recorded in `research/decisions.md` under the leak-cap correction.
 Client 1.2.6 is installed in `/tmp/agent-collusion-modal-venv`. Authentication is
-absent; never paste tokens in chat. Authenticate in a terminal using `modal setup`
-or supply credentials through the normal local Modal configuration.
+stored only in `/tmp/agent-collusion-modal.toml` (0600), outside the repo. Never
+paste tokens in chat. For the existing local session use `MODAL_CONFIG_PATH` as
+shown below; a new environment needs local authentication.
 
 ```bash
-/tmp/agent-collusion-modal-venv/bin/python -m modal setup
-/tmp/agent-collusion-modal-venv/bin/python -m modal run \
+MODAL_CONFIG_PATH=/tmp/agent-collusion-modal.toml \
+  /tmp/agent-collusion-modal-venv/bin/python -m modal run \
   experiments/leak_cap/modal_train.py --approve-estimated-cost \
   --output results/modal-operator-01
 ```
@@ -73,4 +77,5 @@ Before launch, record the Git commit and confirm no secrets enter the image.
 payload flips held; symbolic oracle scored 100%. Public accuracy was 22.56% and
 private-head accuracy 16.99%; these are smoke results, not converged comparisons.
 Metrics and the checkpoint are in `results/operator-training-local-smoke/`.
-Modal launcher CLI help parses with SDK 1.2.6; no remote execution has occurred.
+Modal launcher CLI help parses with SDK 1.2.6. Subsequent remote execution and
+failures are recorded in the assessment linked above; this authorization is spent.

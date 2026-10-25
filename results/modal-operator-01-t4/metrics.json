@@ -1,0 +1,93 @@
+{
+  "status": "complete",
+  "analysis": "Exploratory trainability check; not confirmatory or a novelty claim",
+  "task": "8-item, 16-key/value synthetic associative recall; exact task-only oracle",
+  "private_input": "independent random bit; no private task information",
+  "seed": 20261024,
+  "train_seed": 20261025,
+  "test_seed": 20261026,
+  "requested_steps": 1000,
+  "completed_steps": 1000,
+  "batch_size": 128,
+  "test_examples": 1024,
+  "seconds": 9.129604561999999,
+  "width": 64,
+  "depth": 2,
+  "parameters": 137696,
+  "optimizer": "AdamW",
+  "lr": 0.001,
+  "weight_decay": 0.01,
+  "device": "cuda",
+  "torch": "2.8.0+cu128",
+  "cuda_version": "12.8",
+  "cudnn_version": 91002,
+  "cuda_matmul_allow_tf32": false,
+  "deterministic_algorithms": false,
+  "gpu": "Tesla T4",
+  "public_only_accuracy": 1.0,
+  "unrestricted_private_head_accuracy": 1.0,
+  "symbolic_oracle_accuracy": 1.0,
+  "gated_accuracy": {
+    "0": 1.0,
+    "1": 1.0,
+    "2": 1.0,
+    "4": 1.0
+  },
+  "public_logits_equal_under_payload_flip": true,
+  "losses": [
+    {
+      "step": 1,
+      "loss": 6.2163166999816895
+    },
+    {
+      "step": 101,
+      "loss": 0.05156218633055687
+    },
+    {
+      "step": 201,
+      "loss": 0.0017273294506594539
+    },
+    {
+      "step": 301,
+      "loss": 0.0011726892553269863
+    },
+    {
+      "step": 401,
+      "loss": 0.0007222003769129515
+    },
+    {
+      "step": 501,
+      "loss": 0.000321202096529305
+    },
+    {
+      "step": 601,
+      "loss": 0.003990215249359608
+    },
+    {
+      "step": 701,
+      "loss": 0.0002039946848526597
+    },
+    {
+      "step": 801,
+      "loss": 0.00019372196402400732
+    },
+    {
+      "step": 901,
+      "loss": 0.00013919375487603247
+    },
+    {
+      "step": 1000,
+      "loss": 0.00010003838542615995
+    }
+  ],
+  "source_sha256": {
+    "train_recall.py": "0590e05e3abb5106dae3c8b30bcd2e6f8509620ce23086fca6a821b17e2b98c8",
+    "operators.py": "b2941ec9b8a55a82ed4d5dedea3ac6ad9e6b807c633b5249e90d1b55f8760c52"
+  },
+  "limits": [
+    "Single training seed; fresh synthetic tests may repeat training tasks.",
+    "Not compute-matched to a separate conventional transformer baseline.",
+    "Finite gate bound is abstract content-only; no physical side-channel proof.",
+    "No end-to-end checkpoint reproducibility across hardware is asserted."
+  ]
+}

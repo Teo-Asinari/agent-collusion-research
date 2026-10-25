@@ -1,5 +1,28 @@
 # Decision log
 
+## 2026-10-25 — first usable Modal neural-operation training completed
+
+- Approved $1 setup/run reservation used for the planned synthetic recall
+  feasibility check, with manual fixes and a cheaper T4 fallback. Four app attempts
+  occurred: import failure; completed L4 training with lost output; L4 queue/stop
+  race with no recovered output; successful T4 training. These are not four
+  independent replications. No more cloud/inference spending is authorized here.
+- Usable result: 137,696-parameter two-block model, 1,000 steps, batch 128,
+  9.13 seconds inside training/evaluation, 1,024 synthetic test draws. Public and
+  private heads, all finite gates and exact symbolic lookup score 100%. Private
+  bit flips leave public logits equal. CPU checkpoint reload reproduces the result.
+- This trains conventional attention/affine/normalization operations with separate
+  public/private connectivity. It is not a language model or established new
+  primitive. The easy public-only task provides no evidence that private neural
+  computation or the bottleneck adds useful capability.
+- Fixed remote-path handling and TorchVersion serialization; return JSON text and
+  checkpoint bytes. Record call IDs with spawn and bound the entire wait at 600
+  seconds. All four apps confirmed stopped with zero tasks. Actual Modal charges
+  remain unknown; estimates are not relabeled as actual costs.
+- Assessment, failures, metrics and checkpoint: `results/modal-operator-01-t4/`.
+  Further work needs a discriminating capability/task contract, not more runs of
+  this solved toy. Both architectural and rewriting research directions remain open.
+
 ## 2026-10-24 — first Modal training estimate approved
 
 - Owner explicitly accepted the prepared $1 reservation for one bounded L4

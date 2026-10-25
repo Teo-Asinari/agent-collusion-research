@@ -24,6 +24,9 @@ Its upstream README describes provenance but does not itself contain the blanket
 research-use license claimed by the worker's original README. Redistribution
 terms remain incompletely reviewed; do not infer a common upstream code license.
 
-Operation training and Modal preparation: [concrete plan](PLAN.md). A 20-step
-local smoke run of `train_recall.py` completed; the prepared Modal launcher has
-not been run. This synthetic task uses no external corpus.
+Operation training: [plan and execution contract](PLAN.md),
+[completed Modal assessment](../../results/modal-operator-01-t4/assessment.md).
+A 20-step local smoke run and a usable 1,000-step T4 run completed. The synthetic
+task uses no external corpus. The Modal launcher now returns plain JSON plus
+checkpoint bytes, records the spawned call ID and bounds the whole wait at 600
+seconds. The successful run does not establish a private-computation advantage.

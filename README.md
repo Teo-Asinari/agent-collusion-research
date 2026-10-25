@@ -2,15 +2,17 @@
 
 **Current status:** both Claude worker branches are integrated. [Neural operations
 plus finite-choice release](research/workstreams/architecture/operator-and-choice.md)
-has explicit split-attention equations, structural checks and a 20-step local
-training smoke run. The trained [generator/chooser](research/workstreams/architecture/leak-cap.md)
+has explicit split-attention equations, structural checks and a completed
+[1,000-step Modal feasibility run](results/modal-operator-01-t4/assessment.md).
+The trained [generator/chooser](research/workstreams/architecture/leak-cap.md)
 and [partial rewrite pilot](results/component-rewrite-pilot-02/assessment.md) are
-preserved. A [bounded Modal training run](experiments/leak_cap/PLAN.md) is prepared,
-awaiting authentication and estimate approval. No novelty or full study established.
+preserved. The synthetic lookup task was solved by both public and private heads;
+it demonstrates trainability, not a private-computation advantage. All apps stopped;
+actual Modal billing remains unknown. No novelty or full study established.
 
 Private exploratory research workspace for the Apart Research AI Collusion Research Sprint, October 23–25, 2026.
 
-**Status: no full hackathon study selected.** The local [anti-steganography prototype](experiments/anti_stego/README.md), exploratory model rewrite pilots and CPU neural training have run. Recorded hosted-response charges sum to **$2.30376687** across six batches; see the [compute ledger](research/compute.md) for accounting limits. No Modal run has launched.
+**Status: no full hackathon study selected.** The local [anti-steganography prototype](experiments/anti_stego/README.md), exploratory rewrite pilots, CPU training and Modal feasibility training have run. Recorded hosted-response charges sum to **$2.30376687** across six batches, excluding unknown Modal charges; see the [compute ledger](research/compute.md).
 
 **Current research agenda:** develop two approaches in parallel—[a ground-up learned/verified architecture and task-preserving steganography removal](research/two-approach-agenda.md). Specific theorem, task and full experiment remain unselected; the one approved 12-call inference batch is complete, with no continuing budget.
 

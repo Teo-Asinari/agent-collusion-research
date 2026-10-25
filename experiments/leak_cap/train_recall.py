@@ -103,7 +103,7 @@ def run(steps=1000, seed=20261024, device='cpu', seconds=480):
         'batch_size': 128, 'test_examples': 1024, 'seconds': elapsed,
         'width': 64, 'depth': 2, 'parameters': sum(p.numel() for p in model.parameters()),
         'optimizer': 'AdamW', 'lr': 1e-3, 'weight_decay': 0.01,
-        'device': device, 'torch': torch.__version__,
+        'device': device, 'torch': str(torch.__version__),
         'cuda_version': torch.version.cuda,
         'cudnn_version': torch.backends.cudnn.version(),
         'cuda_matmul_allow_tf32': torch.backends.cuda.matmul.allow_tf32,
