@@ -77,3 +77,10 @@ Owner authorized $5-per-batch spending for parallel A/B workers on 2026-10-24; t
 Owner approved parallel A/B workers with OpenRouter spend in **$5 hard-cap batches per agent** (2026-10-24). This entry covers exactly one A batch. Reservation must stay within $5 before any call; unknown cost halts. No second batch without owner approval.
 
 Status: **complete, $0.26759225 actual** (Anthropic $0.1368 for an empty reasoning-only response; Google $0.065344; OpenAI $0.06544825). Account usage snapshots before/after are in `results/arch-a-batch-01/critique/`; they may include concurrent Approach B spend on the same key. The A batch is exhausted. Further A spending needs a new owner-approved batch.
+
+## Adaptive-collusion run 01 (2026-10-25)
+
+Owner approved a $30 hard cap. 3,045 calls: `openai/gpt-4.1-mini`/openai,
+`anthropic/claude-sonnet-4.6`/anthropic, `meta-llama/llama-3.1-8b-instruct`/deepinfra/fp8.
+Provider-reported cost **$2.58466186** (plus ~$0.32 for two smoke runs before
+the full run). No unknown-cost calls. Details in `results/adaptive-collusion-01/`.

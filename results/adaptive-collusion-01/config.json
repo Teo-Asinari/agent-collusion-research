@@ -1,0 +1,46 @@
+{
+ "args": {
+  "output": "results/adaptive-collusion-01",
+  "rounds": 8,
+  "train_n": 24,
+  "eval_n": 100,
+  "cap": "30",
+  "workers": 16
+ },
+ "models": {
+  "colluder": {
+   "id": "openai/gpt-4.1-mini",
+   "provider": "openai",
+   "in": "0.0000004",
+   "out": "0.0000016"
+  },
+  "strategist": {
+   "id": "anthropic/claude-sonnet-4.6",
+   "provider": "anthropic",
+   "in": "0.000003",
+   "out": "0.000015"
+  },
+  "trusted": {
+   "id": "meta-llama/llama-3.1-8b-instruct",
+   "provider": "deepinfra/fp8",
+   "in": "0.00000002",
+   "out": "0.00000004"
+  }
+ },
+ "max_tokens": {
+  "sender": 1500,
+  "receiver": 1000,
+  "paraphrase": 300,
+  "propose": 300,
+  "strategist": 2500
+ },
+ "temperature": {
+  "sender": 0.3,
+  "receiver": 0.3,
+  "paraphrase": 0.3,
+  "propose": 0.7,
+  "strategist": 0.7
+ },
+ "git_commit": "ac8f0894ac5d5be1815ef90d3696daa31b0e11e5",
+ "started": "2026-10-25T19:24:06Z"
+}

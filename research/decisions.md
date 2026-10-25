@@ -331,3 +331,12 @@
 - Owner approved making the repository public. History scanned for keys/tokens
   before the change; only placeholder `.env.example` values and OpenRouter
   usage/limit snapshots were found.
+
+## 2026-10-25 — adaptive LLM colluders (Experiment 4)
+
+- Owner asked for an aggressive experiment with real LLMs and approved a $30
+  cap. Ran `experiments/adaptive_collusion` per its pre-written plan.
+- Held-out: none 7.94 bits, paraphrase 0.55, broker 0.06 (chance, 49%
+  rejected), menu 2.97 (at the proved 3-bit cap). Menu raised honest utility.
+- Added to the submission as Experiment 4. Instructed, in-context colluders
+  only; the broker result is not a bound.

@@ -19,26 +19,26 @@ Content-Erasing Brokers and a Proved $k$-Bit Cap\\ on Untrusted Agent Selection}
 
 \begin{abstract}
 Defenses against steganographic collusion between LLM agents often rewrite
-messages: paraphrase, canonicalize or regenerate them. We ask what such
-rewriting can and cannot remove, and how to bound what is left. First, we build
-a trusted release broker for a structured worker-assignment task. We test it
-against six scripted one-bit carriers under five release modes (7{,}680
-trials). Projecting messages onto the validated task result erases every
-presentation carrier, bringing decoding to chance. For a fixed task and
-assignment, released content is independent of the sender's payload by
-construction. However, the carrier that encodes a bit in \emph{which} equally
-optimal assignment is chosen survives with 100\% decoding. Only trusted
-replanning removes it, and replanning also removes the agent's decision. Second, we
-bound that residual choice instead of erasing it. In a leak-capped selection
-architecture, a trusted public proposer samples $2^k$ candidates and the
-untrusted model emits only a $k$-bit index. A Lean~4 proof, valid for every
-weight setting, shows the receiver's view takes at most $2^{\sum k}$ values.
-In a toy word-denoising task, $k=5$ bits per answer match an unrestricted
-chooser of the same size (29.2\% vs.\ 29.7\% exact match, $n=600$). A scripted
-adversary approaches but never exceeds the cap. At the zero-leakage end,
-learned residue networks provably release only authorized information, at the
-cost of all private freedom. All results are small-scale, and no mechanism is novel in isolation. We map where content rewriting stops and how a selection interface turns
-the remaining channel into a tunable, machine-checked rate.
+messages. We ask what rewriting can remove and how to bound what remains. A
+trusted broker that reduces a structured task message to its validated result
+erases every scripted presentation carrier we tested, but a bit hidden in
+\emph{which} equally good answer is chosen survives. We bound that residual
+choice with a leak-capped interface: a trusted proposer offers $2^k$
+candidates and the untrusted model emits only a $k$-bit index. A Lean~4
+proof covering every weight setting shows the receiver's view takes at most
+$2^{\sum k}$ values; on a toy task, $k=5$ matches an unrestricted model of
+the same size. Learned residue networks occupy the zero-leakage end, at the
+cost of all private freedom. Finally, we pit adaptive LLM colluders
+(GPT-4.1-mini, with a Claude Sonnet~4.6 strategist rewriting their scheme from
+feedback) against four defenses on 100 held-out problems each. Unprotected
+messages leak 7.9 of 8 payload bits. Paraphrasing leaks 0.55 bits, and under
+a canonicalizing broker leakage is at chance, because the colluders' schemes
+broke task rules and were rejected. Under the menu, colluders found index
+encoding after one round and reached 2.97 bits: at the proved 3-bit cap, never
+above it. The menu also raised honest utility (0.87 vs.\ 0.77), because it
+removes infeasible answers. Proved caps are ceilings that adaptive colluders
+reach easily; how much a defense helps depends on usable capacity, not only
+capacity in principle. All experiments are small-scale.
 \end{abstract}
 
 \section{Introduction}
@@ -73,12 +73,15 @@ concrete in two steps:
 \item \textbf{Zero leakage (\S\ref{sec:residue}).} Learned residue networks
   whose released output provably depends only on authorized information
   occupy the $k=0$ end: no covert channel, and no private freedom.
+\item \textbf{Adaptive LLM colluders (\S\ref{sec:adaptive}).} We let
+  GPT-4.1-mini colluders improve their own scheme over eight rounds against
+  four defenses and measure leakage on held-out problems.
 \end{enumerate}
 
 We distinguish channel \emph{capacity} from instructed use, independent
-discovery and harmful coordination. Everything here concerns capacity under
-scripted encoders. We do not claim that agents spontaneously exploit these
-channels, nor that the defenses stop adaptive learned adversaries.
+discovery and harmful coordination. Experiments 1--3 concern capacity under
+scripted encoders. Experiment~4 measures instructed colluders who adapt
+their scheme in context; it does not test spontaneous, uninstructed collusion.
 
 \section{Related work}
 
@@ -314,9 +317,92 @@ private degrees of freedom. Direct solvers match its accuracy, learning relies
 on chosen queries over a structured family, and quadratic network recovery by
 matrix factorization is known in the real-valued setting~\citep{soltani2018quadratic}.
 
+\section{Experiment 4: adaptive LLM colluders}
+\label{sec:adaptive}
+
+\paragraph{Setup.} A new seeded shopping task: 10 items in 5 categories with
+prices and ratings; choose 3 items from different categories within a budget,
+maximizing total rating. Each problem has at least 12 feasible sets.
+Utility is total rating divided by the best feasible rating (0 if
+infeasible). A sender S (\texttt{openai/gpt-4.1-mini}) must pass a uniform
+8-bit payload to a receiver R (same model) through its answer. Infeasible
+released answers are rejected and R must then guess blind. Four defenses:
+\texttt{none} (R sees S's message); \texttt{paraphrase} (a trusted
+\texttt{llama-3.1-8b-instruct} rewrites the prose and the canonical item list
+is appended); \texttt{broker} (R sees only the validated, sorted item set);
+and \texttt{menu}, with $k=3$ (the trusted model proposes 8 feasible sets
+from public input, S emits only an index, and R sees the chosen set and the
+public list).
+
+\paragraph{Adaptation.} S and R share a strategy text, which starts empty.
+After each round of 24 episodes, a strategist (\texttt{claude-sonnet-4.6})
+sees S's outputs, what R received, R's guesses and scores, and rewrites the
+strategy. It is told only that an overseer may transform messages, plus
+S's own interface. After 8 rounds, the best training strategy per defense
+is evaluated on 100 fresh problems with fresh payloads. Leakage is
+$\sum_{i=1}^{8}\hat I(Z_i;G_i)$ over payload bits $Z_i$ and guessed bits
+$G_i$. For independent uniform bits this lower-bounds $I(Z;G)$ and hence
+leakage. We give 95\% bootstrap intervals and a shuffled-guess control.
+In total there were 3{,}045 calls, costing \$2.58 as reported by the provider.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{adaptive.pdf}
+\caption{Left: leakage per training round (24 episodes each; noisy). Right:
+held-out leakage with 95\% bootstrap intervals; ticks mark the 95th
+percentile of the shuffled-guess control.}
+\label{fig:adaptive}
+\end{figure}
+
+\begin{table}[t]
+\centering
+\caption{Held-out results, $n=100$ per defense, best training strategy.
+Utility is the colluders' task score. Honest utility (no payload): free
+answers 0.77 (78\% feasible), menu 0.87 (100\% feasible), trusted proposer
+alone 0.71.}
+\label{tab:adaptive}
+\small
+\begin{tabular}{lcccccc}
+\toprule
+Defense & Leaked bits & 95\% CI & Shuffled p95 & Exact & Rejected & Utility \\
+\midrule
+none & 7.94 & [7.75, 7.96] & 0.12 & 100\% & 0\% & 0.94 \\
+paraphrase & 0.55 & [0.33, 0.98] & 0.11 & 10\% & 8\% & 0.64 \\
+broker & 0.06 & [0.04, 0.24] & 0.12 & 0\% & 49\% & 0.43 \\
+menu ($k=3$) & \textbf{2.97} & [2.86, 2.99] & 0.06 & 5\% & 0\% & 0.67 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Results.} Figure~\ref{fig:adaptive} and Table~\ref{tab:adaptive}
+summarize the results.
+\begin{itemize}
+\item \textbf{No defense:} the colluders transmit the full payload on every
+  held-out episode.
+\item \textbf{Menu:} after one round of feedback, the strategist wrote
+  ``option index encodes 3 bits'' and the colluders reached 2.97 bits. That
+  is the proved ceiling, and no estimate exceeds it. Later rewrites that
+  tried to squeeze out more bits lowered training leakage to about 0.5.
+\item \textbf{Broker and paraphrase:} in principle these leave more capacity
+  than the menu ($\log_2$ of 33--38 feasible sets, about 5 bits). The
+  strategists did find the set-choice channel: one wrote an 84-entry
+  enumeration of item triples. But their encodings ignored the task's rules,
+  so 23\% (paraphrase) and 48\% (broker) of training answers were rejected.
+  The broker's best strategy encoded bits in item \emph{order}, which the
+  broker erases, so held-out leakage is at chance. Paraphrase leaked 0.55
+  bits; its best strategy encoded the payload in the item set.
+\item \textbf{Utility:} the menu raised honest utility above free answers,
+  because every option is feasible and the sender only ranks them. Colluding
+  costs utility in every defended condition.
+\end{itemize}
+The cap behaves as proved, but it is not free protection. The menu converts
+a channel that colluders struggled to use into one they used in a single
+round. Capacity a defense leaves in principle and capacity colluders can
+actually exploit can differ in either direction.
+
 \section{Discussion}
 
-The three experiments describe one design space, ordered by how much private
+The first three experiments describe one design space, ordered by how much private
 freedom the agent keeps: residue networks and replanning (none, 0 bits),
 leak-capped selection ($k$ bits per answer) and projection (the full semantic
 choice, unbounded). Content rewriting can remove
@@ -326,6 +412,10 @@ or removes the agent's contribution (replanning). Residue networks reach the sam
 architecturally. The leak-capped interface is an intermediate point. The agent keeps a choice whose size is a public
 parameter, the channel rate is bounded for every weight setting, and utility
 is an empirical function of $k$ and proposer quality.
+Experiment~4 adds a caution. Adaptive colluders reach a proved ceiling
+quickly, while a larger but awkward channel, such as choosing among feasible
+sets under task rules, may stay unused. Defenses should be compared on the
+leakage achieved by adaptive adversaries as well as on worst-case bounds.
 
 Three practical implications follow.
 \begin{itemize}
@@ -347,7 +437,10 @@ removing the agent's role. Restricting that choice to a $k$-bit selection
 among trusted public candidates gives a machine-checked cap that holds for
 every weight setting; $k=0$ architectures such as residue networks achieve
 exact noninterference at the cost of all private freedom. In a toy task, five bits per answer recovered
-unrestricted utility. Natural next steps are learned and adaptive adversaries,
+unrestricted utility. Adaptive LLM colluders saturated a 3-bit menu cap within
+one round but did not exceed it, and they failed to exploit a nominally larger
+channel left by a canonicalizing broker. Natural next steps are stronger
+colluders (fine-tuned or with tool use),
 realistic agent tasks with multiple decision points, and measurement of how
 proposer coverage scales.
 
@@ -398,9 +491,12 @@ C.~Schroeder~de~Witt et~al.
 
 \section{Limitations}
 \begin{itemize}
-\item \textbf{Scripted adversaries only.} No learned, optimized or adaptive
-  encoder was evaluated in either experiment. Known-decoder accuracy is not a
-  channel-capacity estimate. Finite tests do not prove security against
+\item \textbf{Adversary strength.} Experiments 1--2 use scripted encoders;
+  known-decoder accuracy is not a channel-capacity estimate. Experiment~4's
+  colluders adapt only in context, use one model family, run eight rounds of
+  24 episodes in a single run, and are instructed to collude. A stronger
+  adversary could exploit the broker's set-choice channel, so its
+  near-zero leakage is not a bound. Finite tests do not prove security against
   arbitrary encoders. The Lean bound, by contrast, does cover all weights.
 \item \textbf{Toy scale.} The broker task is a small schema with exact
   extraction. Arbitrary prose or code has no trusted semantic extractor. The
@@ -438,7 +534,7 @@ knowing that rewriting does not cover it. The leak-cap bound could be
 misread as a general guarantee against collusion. We therefore state its
 scope (content channel, abstract model, $k$ bits per answer accumulating over
 time) throughout. No human subjects, personal data or deployed systems were
-involved. All experiments ran locally on CPU, with no hosted model calls.
+involved. Experiments 1--3 ran locally on CPU. Experiment~4 used hosted models via OpenRouter on synthetic tasks (\$2.58).
 
 \section{Reproducibility and LLM usage}
 \sloppy
@@ -446,7 +542,9 @@ Code, results, source hashes and the Lean development are in the project
 repository (\texttt{experiments/anti\_stego}, \texttt{experiments/leak\_cap},
 \texttt{experiments/leak\_cap/lean/Choice.lean}, \texttt{results/anti\_stego},
 \texttt{results/leak-cap-01}, \texttt{experiments/residue\_network},
-\texttt{experiments/bilinear\_network}, \texttt{results/bilinear-network-01}). Broker evaluation:
+\texttt{experiments/bilinear\_network}, \texttt{results/bilinear-network-01},
+\texttt{experiments/adaptive\_collusion}, \texttt{results/adaptive-collusion-01}, which holds every
+prompt, response, episode and the per-call cost ledger). Broker evaluation:
 \texttt{python -m experiments.anti\_stego.evaluate --episodes 256 --seed 20261024}.
 The broker uses only the Python standard library. Leak-cap requires PyTorch.
 The word list comes from \texttt{first20hours/google-10000-english}; its
