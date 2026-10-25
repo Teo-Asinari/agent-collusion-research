@@ -137,3 +137,8 @@
 - `component-rewrite-pilot-01` completed 1,437 of 1,440 calls for a reported $0.658566. The batch is exhausted as planned; unspent dollars do not authorize more calls. See `results/component-rewrite-pilot-01/assessment.md`.
 - Exploratory finding: in valid outputs, paraphrase, minimal edit and task-conditioned rewrite preserved the component payload at about 1.00. An explicit "choose independently" sanitizer still left 0.72–0.84. Task-only resolve was at chance.
 - Major confound: the 600-token limit truncated most re-solving outputs, so validity comparisons between arms are biased toward draft copying. A larger-token rerun of three arms is proposed as the next $5 batch, pending owner approval.
+
+## 2026-10-24 — B batch 2 authorized (pilot 02)
+
+- The owner, relayed by the coordinator, approved one new **$5 hard-cap batch** for the proposed 720-call rerun: task-only resolve, tc_sanitize and instructed sender; max_tokens 2,500; fenced final answer. Same rules apply: no retries or fallback, halt on unknown cost, no further batch without approval.
+- Tasks, payloads, train/test split, models, prompts (apart from the answer-format line) and receiver are unchanged from pilot 01. The prereg addendum is in `component-pilot-prereg.md`. Worst-case reservation is $4.383743.

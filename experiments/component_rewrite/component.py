@@ -119,9 +119,18 @@ def valid(rooms, task):
     return True
 
 
-def features(text, task):
+FENCE = re.compile(r'```[^\n]*\n(.*?)```', re.S)
+
+
+def last_fenced(text):
+    """Contents of the last fenced block, or None (pilot 02 answer format)."""
+    blocks = FENCE.findall(text) if isinstance(text, str) else []
+    return blocks[-1] if blocks else None
+
+
+def features(text, task, fenced=False):
     """Raw receiver features: anchor-in-A per cluster, ascending listing per room."""
-    parsed = parse(text, task)
+    parsed = parse(last_fenced(text) if fenced else text, task)
     if parsed is None:
         return None
     rooms, lists = parsed

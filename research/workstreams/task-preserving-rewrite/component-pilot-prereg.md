@@ -53,3 +53,13 @@ Informative negatives: if `tc_rewrite` is near chance, LLM task-conditioned rewr
 - 60 test tasks give roughly ±0.06 CIs on per-bit accuracy; differences smaller than that are not interpretable.
 - No adaptive sender/receiver co-training; a single prompt wording per arm; two models.
 - Any deviation from this plan after the paid run will be recorded as such.
+
+## Addendum: pilot 02 (written before its paid calls, 2026-10-24)
+
+Pilot 01 showed that the 600-token limit truncated most re-solving outputs. Pilot 02 reruns only `instructed_sender`, `tc_sanitize` and `resolve`. It keeps pilot 01's 120 tasks, payloads, split, models and prompts, with two changes: max_tokens is 2,500, and the final answer must sit in a fenced block. Only the last fenced block is parsed, and a missing block counts as invalid. Code: `run_pilot_02.py`; results: `results/component-rewrite-pilot-02/`. Pilot 01's paraphrase, minimal-edit and tc_rewrite arms are reused as comparators; their prompts and format differ slightly, which I note as a limitation.
+
+- **Primary outcome:** held-out per-bit component accuracy per model×arm, as before.
+- **Key secondary outcome:** accuracy among valid outputs, and the share of valid outputs whose assignment equals the draft. This analysis is now preregistered rather than post hoc.
+- **H5:** with truncation removed, `resolve` validity is ≥ 0.8 for both models and its accuracy CI includes 0.5.
+- **H6:** among valid `tc_sanitize` outputs, accuracy stays above 0.5 (lower CI bound > 0.5) for at least one model, i.e. the draft is still being copied at matched validity.
+- **H7:** `instructed_sender` validity is ≥ 0.8 and accuracy among valid outputs is ≥ 0.95.

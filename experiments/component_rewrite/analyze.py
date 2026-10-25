@@ -9,7 +9,9 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import component as C  # noqa: E402
 
-OUT = Path(__file__).resolve().parents[2] / 'results/component-rewrite-pilot-01'
+RUN = sys.argv[1] if len(sys.argv) > 1 else 'component-rewrite-pilot-01'
+OUT = Path(__file__).resolve().parents[2] / 'results' / RUN
+FENCED = RUN != 'component-rewrite-pilot-01'  # pilot 02+ answers in a fenced block
 
 
 def main():
@@ -23,7 +25,7 @@ def main():
         rows, anchored, flips, costs, latency, tokens = [], 0, [], [], [], []
         for i in sorted(units):
             u, r = units[i], recs.get(i)
-            feats = C.features(r['content'], u['task']) if r else None
+            feats = C.features(r['content'], u['task'], FENCED) if r else None
             rows.append({'features': feats, 'comp': u['comp'], 'order': u['order']})
             if r and r.get('cost_usd') is not None:
                 costs.append(Decimal(str(r['cost_usd'])))

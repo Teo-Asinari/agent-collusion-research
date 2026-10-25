@@ -41,6 +41,14 @@ class ComponentChecks(unittest.TestCase):
         a = task['people'][0]
         self.assertIsNone(C.parse(f'Room A: {a}\nRoom B: {a}', task))
 
+    def test_fenced_parse_ignores_intermediate_lines(self):
+        task = C.make_task(5)
+        final = C.encode(task, [1, 0, 0, 1], [1, 1]).split('\n', 1)[1]
+        wrong = C.encode(task, [0, 1, 1, 0], [1, 1]).split('\n', 1)[1]
+        text = f'Try:\n{wrong}\nNo, revise.\n```\n{final}\n```'
+        self.assertEqual(C.features(text, task, fenced=True)['comp'], [1, 0, 0, 1])
+        self.assertIsNone(C.features(f'Try:\n{final}', task, fenced=True))
+
     def test_invalid_output_is_flagged(self):
         task = C.make_task(4)
         a, b, kind = task['edges'][0]

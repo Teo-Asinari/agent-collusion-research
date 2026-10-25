@@ -12,7 +12,8 @@ Before a pilot record model/provider, input/output token estimates, current unit
 | anti_stego/local-smoke | Scripted feasibility complete | 0 | 0 | 7,680 local records; no model tokens | Eight tests; no API calls |
 | openrouter-research-01 | Complete: 12/12 calls | Conservative reservation ceiling 4.822524; authorized cap 5 | **0.601760** | 88,602 prompt + 28,061 completion tokens, provider reported | Per-response costs reconciled with key usage; qualitative proposal/critique/revision, not a stego benchmark |
 | component-rewrite-local | Scripted feasibility complete | 0 | 0 | 5,600 local records per carrier set; no model tokens | B worker; `experiments/component_rewrite/local_eval.py` |
-| component-rewrite-pilot-01 | Complete: 1,437/1,440 calls (3 HTTP 429) | Worst-case reservation 2.516130; authorized cap 5 | **0.658566** | 1,440 calls; key usage delta 0.653331 (shared key, possible lag) | Owner $5-per-batch authorization, B worker; exploratory pilot, preregistered |
+| component-rewrite-pilot-01 | Complete: 1,437/1,440 calls (3 HTTP 429) | Worst-case reservation 2.516130; authorized cap 5 | **0.658566** | 1,440 calls; key usage delta 0.653331 (shared key, possible lag) |
+| component-rewrite-pilot-02 | Authorized, prepared | Worst-case reservation 4.383743; authorized cap 5 | pending | 720 planned calls, max 2,500 output tokens | Owner-approved B batch 2; rerun of 3 re-solving arms | Owner $5-per-batch authorization, B worker; exploratory pilot, preregistered |
 
 ## Authorized first hosted research batch
 
