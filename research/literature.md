@@ -1,5 +1,10 @@
 # Living literature review
 
+2026-10-25: [Residue-network prior-art assessment](workstreams/architecture/residue-network/prior-art.md)
+records polynomial, modular-arithmetic, finite-ring, canonical-interface and IFC
+precedents. No new primitive/theorem is established. Full-text/code limitations
+and inspected versions are explicit in that note.
+
 2026-10-25 operation-level follow-up: [factorization-quotient candidate and sources](workstreams/architecture/quotient-primitive.md)
 compares GL-equivariant LoRA processing, polynomial graph filters and Reynolds
 networks. Direct predecessors constrain novelty. The candidate has an exact

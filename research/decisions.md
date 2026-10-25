@@ -1,5 +1,17 @@
 # Decision log
 
+## 2026-10-25 — targeted residue-network prior-art check
+
+- Owner requested prior-art comparison. Read primary polynomial-network,
+  finite-ring fitting, canonical-interface and architectural IFC sources, plus
+  standard ZMod projection code; ModuloNET remains abstract-level because its
+  publisher full text was blocked. Author BasisLearner archive download failed.
+- Current protection is standard projection through polynomial computation;
+  the released answer equals direct modulo-3 computation. No new neural primitive
+  or security theorem established. Updated report and living literature with
+  [scope/version ledger](workstreams/architecture/residue-network/prior-art.md).
+- No paid calls, cloud jobs, upstream execution or new experimental selection.
+
 ## 2026-10-25 — owner reaffirms architecture; first finite design loop completed
 
 - Owner rejected the suggested EOD pivot to rewriting and explicitly insists on

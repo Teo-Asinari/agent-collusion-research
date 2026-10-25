@@ -139,6 +139,19 @@ limitations before adding more toy cases. No next paid run is selected here.
 
 ## Prior art and novelty status
 
+The [targeted prior-art assessment](prior-art.md) compares polynomial networks,
+modular neural arithmetic, finite-ring fitting, congruence preservation,
+canonical communication and architectural ML information-flow control. It records
+reading scope and unavailable code/full-text checks. **No new neural primitive
+or security theorem has been established.**
+
+Our projection theorem says that the released answer is identical to running the
+same polynomial network directly modulo 3 on reduced inputs and weights. The
+extra parts add no expressive power for that answer. This is a standard
+ring-homomorphism property, also represented by `ZMod.castHom` in mathlib.
+Our contribution so far is the concrete checked demonstration and failure
+analysis; independent research novelty remains unestablished.
+
 ModuloNET already constructs modular neural networks for hardware masking. The
 author's [2021 abstract](https://research.ece.ncsu.edu/aaysu/publication/modulonet-neural-networks-meet-modular-arithmetic-for-efficient-hardware-masking/)
 was inspected 2026-10-25; its full proof and code were not audited in this loop.
