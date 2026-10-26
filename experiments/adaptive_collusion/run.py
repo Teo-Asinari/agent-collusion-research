@@ -114,7 +114,7 @@ class Client:
                 with urllib.request.urlopen(req, timeout=180) as r:
                     response = json.load(r)
                 break
-            except (urllib.error.URLError, TimeoutError) as e:
+            except (urllib.error.URLError, OSError, ValueError) as e:  # incl. socket.timeout, bad JSON
                 error = repr(e)
                 if isinstance(e, urllib.error.HTTPError) and e.code < 500 and e.code != 429:
                     break

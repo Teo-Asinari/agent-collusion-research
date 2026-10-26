@@ -74,3 +74,12 @@ then sorted. 12 training rounds x 40 episodes; held-out 300 per condition;
 honest utility 300 per menu size and for free answers. Same models, prompts
 and estimator as run 01. Primary new outcome: leaked bits and utility vs k,
 with spread across the three runs.
+
+## Runs 02a-c crashed; relaunch as 03a-e (written before relaunch)
+
+All three 02 runs crashed after training rounds 5-6 on an uncaught
+`socket.timeout` (Python 3.9 does not map it to TimeoutError). $10.26 spent;
+partial logs kept in `results/adaptive-collusion-02*/` and excluded from
+analysis. Fix: retry on any OSError/ValueError. Owner asked to use the
+remaining OpenRouter credit (about $84), so the relaunch uses five runs
+(`--run-seed 1..5`, same protocol), $15.50 cap each, 16 workers each.
