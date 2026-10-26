@@ -9,8 +9,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{microtype}
 
-\title{After Canonicalization, Choice Remains:\\
-Content-Erasing Brokers and a Proved $k$-Bit Cap\\ on Untrusted Agent Selection}
+\title{Letting AI Agents Choose Without Letting Them Whisper:\\
+Proved Leakage Caps Against Adaptive LLM Colluders}
 \author{Teo Asinari\\ Independent researcher\\ \texttt{tasinari@protonmail.com}}
 \date{Apart Research AI Collusion Research Sprint, October 23--25, 2026}
 
@@ -18,28 +18,7 @@ Content-Erasing Brokers and a Proved $k$-Bit Cap\\ on Untrusted Agent Selection}
 \maketitle
 
 \begin{abstract}
-Defenses against steganographic collusion between LLM agents often rewrite
-messages. We ask what rewriting can remove and how to bound what remains. A
-trusted broker that reduces a structured task message to its validated result
-erases every scripted presentation carrier we tested, but a bit hidden in
-\emph{which} equally good answer is chosen survives. We bound that residual
-choice with a leak-capped interface: a trusted proposer offers $2^k$
-candidates and the untrusted model emits only a $k$-bit index. A Lean~4
-proof covering every weight setting shows the receiver's view takes at most
-$2^{\sum k}$ values. Learned residue networks occupy the zero-leakage end, at
-the cost of all private freedom. We then pit adaptive LLM colluders
-(GPT-4.1-mini, with a Claude Sonnet~4.6 strategist rewriting their scheme
-over 12 rounds) against eight defenses, in five independent runs with 300
-held-out episodes per condition. Under menus of $2^k$ options, colluders
-leaked 0.97, 1.87, 2.89, 3.65 and 4.51 bits for $k=1\ldots5$: close to the
-proved cap and never above it. Unprotected messages leaked up to 7.0 of 8 bits.
-Paraphrasing leaked 0.32 bits on average. A canonicalizing broker leaked
-almost nothing in three runs, but 1.7--2.3 bits in two, once colluders found
-the set-choice channel. Honest utility rose with $k$ (0.75 to 0.91) and
-exceeded free answers (0.79) from $k=2$, because menus contain only valid
-answers. Proved caps are ceilings that adaptive colluders reach quickly; nominally
-larger channels are found only sometimes. Bounds and adaptive measurements
-belong together.
+AI agents that work together can hide secret messages inside ordinary answers, for example in wording, formatting, or which of several equally good answers they pick. We study defenses that limit this. First, rewriting an agent's message into a standard form removes every hidden signal we tried except one: which answer the agent chose. Second, we restrict that choice to a menu. A trusted model writes a short list of good answers and the agent may only pick one. Picking one of 8 options carries at most 3 bits, so at most 3 secret bits can leak per answer, and we prove this limit in Lean for every possible model. Third, networks built to depend only on approved information leak nothing, but leave the agent no freedom. Finally, we tested the defenses against real AI agents (GPT-4.1-mini, coached by Claude Sonnet 4.6) that improved their own secret code over 12 rounds, in five independent runs. Unprotected, they leaked up to 7 of 8 secret bits per answer. With menus of 2, 4, 8, 16 and 32 options, they leaked 1.0, 1.9, 2.9, 3.7 and 4.5 bits, against proven limits of 1 to 5, never meaningfully above them. Larger menus also gave better honest answers than free answers. The standard-form defense leaked nothing in three runs but about 2 bits in two, once the agents found its loophole.
 \end{abstract}
 
 \section{Introduction}
