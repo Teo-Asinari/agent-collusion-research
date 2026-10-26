@@ -84,3 +84,9 @@ Owner approved a $30 hard cap. 3,045 calls: `openai/gpt-4.1-mini`/openai,
 `anthropic/claude-sonnet-4.6`/anthropic, `meta-llama/llama-3.1-8b-instruct`/deepinfra/fp8.
 Provider-reported cost **$2.58466186** (plus ~$0.32 for two smoke runs before
 the full run). No unknown-cost calls. Details in `results/adaptive-collusion-01/`.
+
+## Adaptive-collusion scale-up (2026-10-25/26)
+
+Owner approved $50, then asked to use the remaining credit. Runs 02a-c
+crashed after rounds 5-6: $10.26. Runs 03a-e completed: 75,813 calls,
+**$56.87405154** provider-reported. Same models/providers as run 01.

@@ -1,4 +1,4 @@
-"""Aggregate scaled runs (02a-c): leakage and utility vs menu size, plus figure.
+"""Aggregate scaled runs (03a-e): leakage and utility vs menu size, plus figure.
 
 python experiments/adaptive_collusion/aggregate.py results/adaptive-collusion-02a results/adaptive-collusion-02b ...
 """
@@ -31,7 +31,7 @@ for d in FREE + [f"menu{k}" for k in KS]:
 for d in ["none"] + [f"menu{k}" for k in KS] + ["trusted_only"]:
     summary["honest"][d] = [m["honest"][d]["mean_score"] for m in metrics]
 summary["committed_usd"] = [m["committed_usd"] for m in metrics]
-(ROOT / "results/adaptive-collusion-02-summary.json").write_text(json.dumps(summary, indent=1))
+(ROOT / "results/adaptive-collusion-03-summary.json").write_text(json.dumps(summary, indent=1))
 
 fig, (ax_l, ax_u, ax_t) = plt.subplots(1, 3, figsize=(7.4, 2.6))
 for i, m in enumerate(metrics):

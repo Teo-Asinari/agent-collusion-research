@@ -3,7 +3,7 @@
 **Sprint submission:** [report PDF](submission/report.pdf). Four experiments on
 stopping AI agents from passing secret messages: a cleanup broker, a menu with a
 proved k-bit cap, zero-leakage residue networks, and adaptive GPT-4.1-mini
-colluders against all of them ([results](results/adaptive-collusion-01/README.md)).
+colluders against all of them ([results](results/adaptive-collusion-03-README.md)).
 
 **Latest local experiment:** [bilinear-network report](research/workstreams/architecture/bilinear-network/report.md).
 Exact linear algebra replaces weight search for a structured quadratic task family:

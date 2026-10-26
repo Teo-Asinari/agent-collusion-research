@@ -340,3 +340,11 @@
   rejected), menu 2.97 (at the proved 3-bit cap). Menu raised honest utility.
 - Added to the submission as Experiment 4. Instructed, in-context colluders
   only; the broker result is not a bound.
+
+## 2026-10-26 — scaled adaptive-collusion results
+
+- Five runs, eight conditions (none, paraphrase, broker, menus k=1..5).
+  Menu leakage tracks k (0.97/1.87/2.89/3.65/4.51 bits); never meaningfully
+  above the cap. Broker bimodal (chance in 3 runs, 1.7-2.3 bits in 2).
+  Honest utility rises with k and beats free answers from k=2.
+- Experiment 4 of the submission rewritten around these runs; run 01 kept as pilot.
